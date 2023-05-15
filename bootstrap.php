@@ -1,5 +1,6 @@
 <?php
 
+use App\Listeners\ImagesNextToBuiltFiles;
 use TightenCo\Jigsaw\Jigsaw;
 
 /** @var \Illuminate\Container\Container $container */
@@ -15,3 +16,4 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+$events->afterBuild(ImagesNextToBuiltFiles::class);

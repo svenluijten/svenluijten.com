@@ -68,11 +68,11 @@
     <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-300 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
         @include('_partials.header')
 
-        <div class="container mx-auto">
+        <main id="post-content" class="container mx-auto">
             <div class="mx-auto w-full py-4 px-6 | lg:w-3/5 md:py-12 lg:px-0">
                 @yield('content')
             </div>
-        </div>
+        </main>
 
         @include('_partials.footer')
     </body>
