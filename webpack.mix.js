@@ -10,6 +10,12 @@ mix.jigsaw()
         require('postcss-import'),
         require('tailwindcss'),
     ])
+    .css('source/_assets/css/hljs-light.css', 'css', [
+        require('postcss-import'),
+    ])
+    .css('source/_assets/css/hljs-dark.css', 'css', [
+        require('postcss-import'),
+    ])
     .options({
         processCssUrls: false,
     })

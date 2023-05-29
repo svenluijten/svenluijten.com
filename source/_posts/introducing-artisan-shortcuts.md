@@ -2,7 +2,8 @@
 title: Introducing Artisan Shortcuts
 date: 2019-01-10
 excerpt: Artisan Shortcuts is a new package to execute multiple artisan commands in one fell swoop.
-extends: _layouts.main
+extends: _layouts.post
+section: body
 ---
 
 In this blog post I would like to introduce you to a new package I have been 

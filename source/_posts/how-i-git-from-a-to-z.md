@@ -2,7 +2,8 @@
 title: How I git from A to Z
 date: 2021-05-24
 excerpt: An in-depth look at my git setup and configuration.
-extends: _layouts.main
+extends: _layouts.post
+section: body
 ---
 
 Excuse the pun in the title, I couldn't resist. In this post I will walk you through my git setup. I recently had to install a new MacBook for work, which included configuring my git setup like new, and I found some interesting tidbits I thought would be worth sharing.

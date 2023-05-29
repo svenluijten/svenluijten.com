@@ -2,7 +2,8 @@
 title: What is a lock file, and why should you care?
 date: 2021-02-26
 excerpt: Why should you care about lock files, and what could go wrong if you delete them? This post explains!
-extends: _layouts.main
+extends: _layouts.post
+section: body
 ---
 
 As a PHP or JavaScript developer, you have probably come across `composer.lock`, `package-lock.json`, and/or `yarn.lock`. These files are often committed to version control, but not a lot of people realize what they do, and why they should be handled with care.

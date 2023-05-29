@@ -1,3 +1,37 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.post p {
+    @apply mb-5 text-xl leading-relaxed;
+}
+
+.post a {
+    @apply text-indigo-700 dark:text-indigo-300;
+}
+
+.post a:hover {
+    @apply text-indigo-600 dark:text-indigo-200 underline;
+}
+
+.post code, code {
+    @apply bg-gray-50 rounded px-2 py-0.5 text-lg dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900;
+    box-decoration-break: clone;
+}
+
+.post pre {
+    @apply my-4;
+}
+
+.post pre code {
+    @apply lg:px-8 py-4 lg:-mx-8 my-4 bg-gray-50 dark:bg-gray-900 border;
+}
+
+.post h2 {
+    @apply text-2xl font-bold;
+}
+
+.post h3 {
+    @apply text-xl font-bold;
+}
+

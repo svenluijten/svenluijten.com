@@ -2,7 +2,8 @@
 title: Manage your DNS from GitHub with DNSControl
 date: 2021-03-05
 excerpt: How you can leverage DNSControl and GitHub Actions to make DNS configuration a breeze.
-extends: _layouts.main
+extends: _layouts.post
+section: body
 ---
 
 DNS is a pain. Especially with multiple DNS providers and domains scattered all over the place. What if you could edit a JavaScript file with your desired DNS configuration, submit a pull request on GitHub, see a preview of the changes you are about to make, and when you merge it, have those changes be applied completely automatically?

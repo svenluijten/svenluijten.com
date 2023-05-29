@@ -38,7 +38,7 @@
             <p class="mb-4">
                 If you would like to get in touch, you can do so <a href="mailto:contact@svenluijten.com" class="link">via email</a>.
                 You can also visit <a href="https://github.com/svenluijten" class="link">my GitHub profile</a> to see my contributions
-                and open source libraries I have developed over time.
+                and open source libraries I have worked on over time.
             </p>
 
             <p class="text-gray-600 bg-indigo-100 border rounded border-indigo-200 py-2 px-4 -mx-4 | dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200">
