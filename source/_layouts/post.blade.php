@@ -1,7 +1,7 @@
 @extends('_layouts.main')
 
 @section('content')
-    <article class="dark:text-indigo-100">
+    <article class="dark:text-indigo-100 post">
         <header>
             <h1 class="text-4xl font-bold text-center">{{ $page->title }}</h1>
 
@@ -10,9 +10,7 @@
 
         <hr class="my-8 | dark:border-gray-900">
 
-        <main class="post">
-            @yield('body')
-        </main>
+        @yield('body')
 
         <footer class="mt-8">
             @if($previous = $page->previous())

@@ -2,28 +2,6 @@
 /** @var \TightenCo\Jigsaw\PageVariable $page */
 @endphp
 
-{{--<!DOCTYPE html>--}}
-{{--<html lang="{{ $page->language ?? 'en' }}">--}}
-{{--    <head>--}}
-{{--        <meta charset="utf-8">--}}
-{{--        <meta name="viewport" content="width=device-width, initial-scale=1">--}}
-{{--        <link rel="canonical" href="{{ $page->getUrl() }}">--}}
-{{--        <meta name="description" content="{{ $page->description }}">--}}
-{{--        <title>{{ $page->title }}</title>--}}
-{{--        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">--}}
-{{--        <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>--}}
-{{--    </head>--}}
-{{--    <body class="text-gray-900 font-sans antialiased">--}}
-{{--        @yield('body')--}}
-{{--    </body>--}}
-{{--</html>--}}
-
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -53,8 +31,8 @@
     {{--    <meta property="og:type" content="website">--}}
     {{--    <meta property="og:url" content="{{ $page->getUrl() }}">--}}
     {{--    <meta property="og:title" content="{{ $page->title }}">--}}
-    {{--    <meta property="og:description" content="{{ isset($post) ? $post->excerpt() : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
-    {{--    <meta property="og:image" content="https://rawcdn.githack.com/svenluijten/assets/HEAD/{{ isset($post) ? $post->slug() : 'misc' }}/card.png">--}}
+    {{--    <meta property="og:description" content="{{ isset($post) ? $post->excerpt : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
+    {{--    <meta property="og:image" content="{{ isset($post) ? $post->getUrl() : 'misc' }}/card.png">--}}
 
         <!-- Twitter -->
     {{--    <meta property="twitter:card" content="summary">--}}
@@ -69,9 +47,9 @@
         @include('_partials.header')
 
         <div class="container mx-auto">
-            <div class="mx-auto w-full py-4 px-6 | lg:w-3/5 md:py-12 lg:px-0">
+            <main class="mx-auto w-full px-6 leading-relaxed text-xl dark:text-gray-100 | lg:w-3/5 lg:px-0">
                 @yield('content')
-            </div>
+            </main>
         </div>
 
         @include('_partials.footer')

@@ -726,6 +726,12 @@ video {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.no-underline {
+  text-decoration-line: none;
+}
+.decoration-4 {
+  text-decoration-thickness: 4px;
+}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -750,25 +756,25 @@ video {
   line-height: 1.75rem;
   line-height: 1.625;
 }
-.post a {
+a {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
 }
 @media (prefers-color-scheme: dark) {
 
-  .post a {
+  a {
     --tw-text-opacity: 1;
     color: rgb(165 180 252 / var(--tw-text-opacity));
   }
 }
-.post a:hover {
+a:hover {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
   text-decoration-line: underline;
 }
 @media (prefers-color-scheme: dark) {
 
-  .post a:hover {
+  a:hover {
     --tw-text-opacity: 1;
     color: rgb(199 210 254 / var(--tw-text-opacity));
   }
@@ -850,6 +856,19 @@ video {
 .hover\:text-indigo-50:hover {
   --tw-text-opacity: 1;
   color: rgb(238 242 255 / var(--tw-text-opacity));
+}
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.hover\:no-underline:hover {
+  text-decoration-line: none;
+}
+.hover\:decoration-0:hover {
+  text-decoration-thickness: 0px;
+}
+.hover\:underline-offset-2:hover {
+  text-underline-offset: 2px;
 }
 @media (prefers-color-scheme: dark) {
 
