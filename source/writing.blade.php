@@ -1,11 +1,11 @@
 @extends('_layouts.main')
 
 @php
-/** @var \TightenCo\Jigsaw\Collection\CollectionItem[] $posts */
+/** @var \TightenCo\Jigsaw\Collection\CollectionItem[] $devPosts */
 @endphp
 
 @section('content')
-    @foreach ($posts as $post)
+    @foreach ($devPosts as $post)
         <article class="mb-8">
             <header class="text-3xl font-extrabold mb-1">
                 <h2>

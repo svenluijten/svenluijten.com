@@ -47,7 +47,7 @@
         @include('_partials.header')
 
         <div class="container mx-auto">
-            <main class="mx-auto w-full px-6 leading-relaxed text-xl dark:text-gray-100 | lg:w-3/5 lg:px-0">
+            <main class="mx-auto mt-8 w-full px-6 leading-relaxed text-xl dark:text-gray-100 | lg:w-3/5 lg:px-0">
                 @yield('content')
             </main>
         </div>

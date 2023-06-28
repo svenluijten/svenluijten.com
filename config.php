@@ -11,10 +11,9 @@ return [
     'title' => 'Sven Luijten',
     'description' => 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.',
     'collections' => [
-        'posts' => [
-            'author' => 'Sven Luijten',
+        'devPosts' => [
+            'path' => '/dev/{filename}',
             'sort' => '-date',
-            'path' => '/writing/{filename}',
             'minutesToRead' => function (CollectionItem $post): int {
                 return round(str_word_count($post->getContent()) / 220);
             },
@@ -31,6 +30,15 @@ return [
                     ->sortByDesc(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->timestamp)
                     ->last(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->greaterThan(new CarbonImmutable($post->date)));
             },
+        ],
+        'photography' => [
+            'path' => 'photography/{filename}',
+        ],
+        'concerts' => [
+            'path' => 'concerts/{date|Y-m-d}/{filename}',
+        ],
+        'writing' => [
+            'path' => 'writing/{filename}',
         ],
     ],
     'link' => function (PageVariable $page, string $path) {
