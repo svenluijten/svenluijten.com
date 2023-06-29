@@ -10,10 +10,10 @@
         <div class="lg:px-4">
             <h1 class="text-3xl font-bold">Hi 👋 — My name is Sven Luijten</h1>
             <p class="mb-4">
-                and I am a full stack developer for the web, a photographer, and writer of text. From an early age, I
-                became interested in everything to do with computers. To dismay of my parents, I hacked away at the
-                family computer, took apart video players to try and figure out how they worked, and wrote small scripts
-                to impress my classmates.
+                and I am a full stack developer for the web, a photographer, and lifter of heavy things. From an early
+                age, I became interested in everything to do with computers. To dismay of my parents, I hacked away at
+                the family computer, took apart video players to try and figure out how they worked, and wrote small
+                scripts to impress my classmates.
             </p>
         </div>
     </div>
@@ -29,12 +29,12 @@
     <p class="mb-4">
         I am nearly always capturing what's around me with either my phone or my camera, both for pleasure and in a
         professional capacity. You can view some of my work on <a href="https://instagram.com/luijten.photography">
-            Instagram</a> or read about the shoots I do in <a href="{{ $page->link('photography') }}">my photography
-            blog</a>.
+            Instagram</a> or read about the shoots I do on <a href="https://luijten.photography">my (Dutch)
+            photography blog</a>.
     </p>
 
     <p class="mb-4">
-        I also occasionally keep <a href="{{ $page->link('concerts') }}">a concert log</a> and do some
+        I also keep <a href="{{ $page->link('concerts') }}">a concert log</a> and do some
         <a href="{{ $page->link('writing') }}">general writing</a> on this site.
     </p>
 

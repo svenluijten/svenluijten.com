@@ -1,7 +1,9 @@
 <?php
 
+use App\Concert;
+use App\DevPost;
+use App\HasDate;
 use Carbon\Carbon;
-use Carbon\CarbonImmutable;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\PageVariable;
 
@@ -14,34 +16,27 @@ return [
         'devPosts' => [
             'path' => '/dev/{filename}',
             'sort' => '-date',
-            'minutesToRead' => function (CollectionItem $post): int {
-                return round(str_word_count($post->getContent()) / 220);
-            },
-            'getDate' => function (CollectionItem $post, string $format, string $key = 'date') {
-                return (new Carbon($post->{$key}))->format($format);
-            },
-            'previous' => function (CollectionItem $post) {
-                return $post->collection
-                    ->sortByDesc(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->timestamp)
-                    ->first(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->lessThan(new CarbonImmutable($post->date)));
-            },
-            'next' => function (CollectionItem $post) {
-                return $post->collection
-                    ->sortByDesc(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->timestamp)
-                    ->last(fn(CollectionItem $item) => (new CarbonImmutable($item->date))->greaterThan(new CarbonImmutable($post->date)));
-            },
-        ],
-        'photography' => [
-            'path' => 'photography/{filename}',
+            'map' => fn ($post) => DevPost::fromItem($post),
         ],
         'concerts' => [
             'path' => 'concerts/{date|Y-m-d}/{filename}',
+            'sort' => '-date',
+            'map' => fn ($concert) => Concert::fromItem($concert),
         ],
-        'writing' => [
-            'path' => 'writing/{filename}',
+        'photography' => [
+            'path' => 'photography/{date|Y}-{filename}',
         ],
     ],
+
+    'getDate' => function (PageVariable $page, string $format, string $key = 'date'): string {
+        return (new Carbon($page->{$key}))->format($format);
+    },
     'link' => function (PageVariable $page, string $path) {
         return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
     },
+    'groupByYear' => function (PageVariable $page, PageVariable $collection) {
+        return $collection->mapToGroups(function (CollectionItem $item) {
+            return [$item->getDate('Y') => $item];
+        });
+    }
 ];

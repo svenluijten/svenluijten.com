@@ -43,11 +43,11 @@
     {{--    <meta property="twitter:creator" content="@svenluijten">--}}
     </head>
 
-    <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-300 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
+    <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-300 bg-white min-h-screen relative leading-normal | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
         @include('_partials.header')
 
         <main id="post-content" class="container mx-auto">
-            <div class="mx-auto mt-8 w-full py-4 px-6 leading-relaxed text-xl dark:text-gray-100 | lg:w-3/5 md:py-12 lg:px-0">
+            <div class="mx-auto w-full px-6 leading-relaxed text-xl dark:text-gray-100 | lg:w-3/5 md:py-6 lg:px-0">
                 @yield('content')
             </div>
         </main>

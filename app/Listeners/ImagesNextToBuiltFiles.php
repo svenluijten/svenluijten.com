@@ -10,19 +10,23 @@ use TightenCo\Jigsaw\Jigsaw;
 
 class ImagesNextToBuiltFiles
 {
-    public function handle(Jigsaw $jigsaw)
+    public function handle(Jigsaw $jigsaw): void
     {
         collect($jigsaw->getPages())
             ->filter(fn($page) => $page instanceof CollectionItem)
             ->each(function (CollectionItem $item) use ($jigsaw) {
                 // Read the output file
-                $itemFolderName = $item->getUrl();
+                $itemFolderName = $item->getPath();
                 $html = $jigsaw->readOutputFile($itemFolderName.'/index.html');
 
                 // Scan the HTML for collection-specific images.
                 $document = new DOMDocument();
                 @$document->loadHTML($html);
                 $container = $document->getElementById('post-content');
+
+                if ($container === null) {
+                    return;
+                }
 
                 /** @var \DOMElement[] $images */
                 $images = $container->getElementsByTagName('img');
