@@ -151,6 +151,7 @@ jobs:
           # way we can easily visit the deployed site from the pull
           # request.
           env_url: ${{ steps.vercel_action_pr.outputs.preview-url }}
+          env: 'Pull Request #${{ github.event.number }} Preview'
 
       - name: Delete production build artifact
         uses: geekyeggo/delete-artifact@v2
@@ -236,6 +237,7 @@ jobs:
           status: ${{ job.status }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{ steps.vercel-action.outputs.preview-url }}
+          env: production
 
       - name: Delete production build artifact
         uses: geekyeggo/delete-artifact@v2
