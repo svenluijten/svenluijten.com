@@ -2,7 +2,6 @@
 
 use App\Concert;
 use App\DevPost;
-use App\HasDate;
 use Carbon\Carbon;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\PageVariable;

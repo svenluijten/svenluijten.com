@@ -40,7 +40,7 @@ class ImagesNextToBuiltFiles
 
                     // Move the image into the post's output folder.
                     $newImageLocation = $itemFolderName.'/'.basename($originalImageLocation);
-                    $jigsaw->writeOutputFile($newImageLocation, $jigsaw->readOutputFile($originalImageLocation));
+                    $jigsaw->writeOutputFile($newImageLocation, $jigsaw->readOutputFile(ltrim($originalImageLocation, DIRECTORY_SEPARATOR)));
 
                     // Change the src of the image to the new path.
                     $image->setAttribute('src', $newImageLocation);
