@@ -20,7 +20,7 @@
 
     <section class="py-4" id="development-blog">
         <h2 class="text-3xl font-bold">
-            <a href="{{ $page->link('dev') }}" class="text-black hover:text-black relative group">
+            <a href="{{ $page->link('dev') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
                 <span class="absolute -left-8 invisible group-hover:visible">&rarr;</span> Development blog
             </a>
         </h2>
@@ -47,7 +47,7 @@
 
     <section class="py-4" id="concerts">
         <h2 class="text-3xl font-bold">
-            <a href="{{ $page->link('concerts') }}" class="text-black hover:text-black relative group">
+            <a href="{{ $page->link('concerts') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
                 <span class="absolute -left-8 invisible group-hover:visible">&rarr;</span> Concert log
             </a>
         </h2>

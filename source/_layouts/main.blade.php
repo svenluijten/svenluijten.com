@@ -32,14 +32,12 @@
     {{--    <meta property="og:url" content="{{ $page->getUrl() }}">--}}
     {{--    <meta property="og:title" content="{{ $page->title }}">--}}
     {{--    <meta property="og:description" content="{{ isset($post) ? $post->excerpt : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
-    {{--    <meta property="og:image" content="{{ isset($post) ? $post->getUrl() : 'misc' }}/card.png">--}}
 
         <!-- Twitter -->
     {{--    <meta property="twitter:card" content="summary">--}}
     {{--    <meta property="twitter:url" content="{{ rtrim(config('app.url'), '/') . request()->getPathInfo() }}">--}}
     {{--    <meta property="twitter:title" content="{{ $title }}">--}}
     {{--    <meta property="twitter:description" content="{{ isset($post) ? $post->excerpt() : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
-    {{--    <meta property="twitter:image" content="https://rawcdn.githack.com/svenluijten/assets/HEAD/{{ isset($post) ? $post->slug() : 'misc' }}/card.png">--}}
     {{--    <meta property="twitter:creator" content="@svenluijten">--}}
     </head>
 

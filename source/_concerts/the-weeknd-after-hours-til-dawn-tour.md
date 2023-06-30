@@ -14,4 +14,7 @@ unreleased exclusives, and his newest stuff with Aminé thrown in.
 30 minutes before The Weeknd was scheduled to take the stage, the lights dimmed and the music started, which was a nice
 surprise. Immediately noticable is how Abel gave his all during this performance; the way this man commanded the stage
 was absolutely incredible. Standouts for me were him performing _Hurricane_ (+ accompanying pyrotechnics), _Less Than
-Zero_, and _Blinding Lights_
+Zero_, and _Blinding Lights_.
+
+![](/assets/images/weeknd-1.jpg)
+
