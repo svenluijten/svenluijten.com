@@ -8,7 +8,6 @@ use TightenCo\Jigsaw\PageVariable;
 
 return [
     'production' => env('APP_ENVIRONMENT', 'local') === 'production',
-    'baseUrl' => env('APP_URL'),
     'title' => 'Sven Luijten',
     'description' => 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.',
     'collections' => [
@@ -31,7 +30,7 @@ return [
         return (new Carbon($page->{$key}))->format($format);
     },
     'link' => function (PageVariable $page, string $path) {
-        return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
+        return '/' . ltrim($path, '/');
     },
     'groupByYear' => function (PageVariable $page, PageVariable $collection) {
         return $collection->mapToGroups(function (CollectionItem $item) {
