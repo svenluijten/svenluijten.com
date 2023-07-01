@@ -8,11 +8,8 @@ on:
       - main
 
 jobs:
-  # Build Job
-  # This job install necessary dependencies, generate a new production build
-  # of the website and make the build available to other jobs in the workflow.
-  build:
-    name: Build
+  dependencies:
+    name: Install dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +25,8 @@ jobs:
             ${{ runner.os }}-node-v2
 
       - name: Install frontend dependencies
-        if: steps.cache-node.outputs.cache-hit != 'true'
+        if: steps/cache-node.outputs.cache-hit != 'true'
         run: npm ci
-        env:
-          CI: true
 
       - name: Restore Composer dependencies
         id: cache-php
@@ -47,6 +42,13 @@ jobs:
         if: steps.cache-php.outputs.cache-hit != 'true'
         run: composer install --no-dev --ignore-platform-reqs
 
+  # This job generates a new production build of the website and makes it available to other jobs in the workflow.
+  build_production:
+    name: Build production assets
+    runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/main'
+
+    steps:
       - name: Create production build of CSS and JS
         run: npm run prod
 
@@ -54,27 +56,47 @@ jobs:
         run: ./vendor/bin/jigsaw build production
 
       - name: Create ZIP file of production build
-        run: zip -r build_production.zip build_production/
+        run: zip -r build.zip build_production/
 
       - name: Keep ZIP file as artifact
         uses: actions/upload-artifact@v3
         with:
-          name: build_production_zip
-          path: build_production.zip
+          name: build_zip
+          path: build.zip
           retention-days: 1
 
-  # Deploy Preview Job
-  # This job will deploy the website to a preview domain and is only executed
-  # when a commit has been pushed to a pull request and the author of the pull
-  # request is not Dependabot.
+  # This job generates a new preview build of the website and makes it available to other jobs in the workflow.
+  build_preview:
+    name: Build preview
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+
+    steps:
+      - name: Create preview build of CSS and JS
+        run: npm run prod
+
+      - name: Create new preview build of website
+        run: ./vendor/bin/jigsaw build preview
+
+      - name: Create zip file of preview build
+        run: zip -r build.zip build_preview/
+
+      - name: Keep ZIP file as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_${{ github.event.number }}_zip
+          path: build.zip
+          retention-days: 1
+
+  # This job will deploy the website to a preview domain.
   deploy_preview:
     name: Deployment Preview
-    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
     # The job is only run, when the `build`-job is finished.
     needs:
-      - build
+      - build_preview
 
     steps:
       - uses: actions/checkout@v3
@@ -82,11 +104,11 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v3
         with:
-          name: build_production_zip
+          name: build_${{ github.event.number }}_zip
           path: ./build
 
-      - name: Unzip production build
-        run: unzip ./build/build_production.zip -d ./build_production
+      - name: Unzip preview build
+        run: unzip ./build/build.zip -d ./build
 
       # Start tracking the deployment status using GitHub deployments
       - name: Start deployment
@@ -96,30 +118,9 @@ jobs:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
           env: 'Pull Request #${{ github.event.number }} Preview'
-          # `head_ref` has to be used here, as otherwhise the
-          # deployments are not shown near the status overview inside
-          # a pull request
+          # `head_ref` has to be used here, as otherwhise the deployments
+          # are not shown near the status overview inside a pull request.
           ref: ${{ github.head_ref }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Restore node_modules folder
-        id: cache-node
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-v2
-
-      - name: Install frontend dependencies
-        if: steps.cache-node.outputs.cache-hit != 'true'
-        run: npm ci
-        env:
-          CI: true
 
       # Deploy website as a preview to Vercel.
       - name: Deploy to Vercel
@@ -130,12 +131,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          # Disable GitHub comments. I don't need a comment telling me
-          # that a deployment is happening.
+          # Disable GitHub comments. I don't need a comment telling me that a deployment is happening.
           github-comment: false
-          # This is not a typo. This structure is created by unzipping
-          # the production build artifact.
-          working-directory: ./build_production/build_production
+          # This is not a typo. This structure is created by unzipping the build artifact.
+          working-directory: ./build/build
 
       # Set the deployment status in GitHub to finished.
       - name: Update Deployment Status
@@ -153,23 +152,21 @@ jobs:
           env_url: ${{ steps.vercel_action_pr.outputs.preview-url }}
           env: 'Pull Request #${{ github.event.number }} Preview'
 
-      - name: Delete production build artifact
+      - name: Delete build artifact
         uses: geekyeggo/delete-artifact@v2
         if: always()
         with:
-          name: build_production_zip
+          name: build_${{ github.event.number }}_zip
 
-  # Deploy Production Job
-  # This job will deploy the website to production and will only be executed
-  # when a commit is pushed to the default `main`-branch.
-  deploy_prod:
+  # This job will deploy the website to production.
+  deploy_production:
     name: Deployment
-    if: github.event.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/main'
 
     # The job is only run, when the `build`-job is finished.
     needs:
-      - build
+      - build_production
 
     steps:
       - uses: actions/checkout@v3
@@ -177,11 +174,11 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v3
         with:
-          name: build_production_zip
+          name: build_zip
           path: ./build
 
       - name: Unzip production build
-        run: unzip ./build/build_production.zip -d ./build_production
+        run: unzip ./build/build.zip -d ./build
 
       # Start tracking the deployment status using GitHub deployments.
       # Instead of using a dynamic environment name, we use production
@@ -192,25 +189,6 @@ jobs:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
           env: production
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Restore node_modules folder
-        id: cache-node
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-v2
-
-      - name: Install frontend dependencies
-        if: steps.cache-node.outputs.cache-hit != 'true'
-        run: npm ci
-        env:
-          CI: true
 
       # Deploy website for production to Vercel.
       - name: Deploy to Vercel
@@ -223,8 +201,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: false
           working-directory: ./build_production/build_production
-          # This argument tells the Vercel Action to mark the deployment
-          # for production
+          # This argument tells the Vercel Action to mark the deployment for production.
           vercel-args: '--prod'
 
       # Set the deployment status in GitHub to finished.
@@ -243,4 +220,4 @@ jobs:
         uses: geekyeggo/delete-artifact@v2
         if: always()
         with:
-          name: build_production_zip
+          name: build_zip
