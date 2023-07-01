@@ -260,7 +260,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: false
-          working-directory: ./build_production/build_production
+          working-directory: ./build/build
           # This argument tells the Vercel Action to mark the deployment for production.
           vercel-args: '--prod'
 
