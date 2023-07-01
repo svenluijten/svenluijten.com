@@ -124,7 +124,7 @@ jobs:
           # Disable GitHub comments. I don't need a comment telling me that a deployment is happening.
           github-comment: false
           # This is not a typo. This structure is created by unzipping the build artifact.
-          working-directory: ./build/build
+          working-directory: ./build_preview
 
       # Set the deployment status in GitHub to finished.
       - name: Update Deployment Status
@@ -260,7 +260,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: false
-          working-directory: ./build/build
+          working-directory: ./build/build_production
           # This argument tells the Vercel Action to mark the deployment for production.
           vercel-args: '--prod'
 
