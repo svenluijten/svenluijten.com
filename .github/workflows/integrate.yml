@@ -10,7 +10,7 @@ on:
 jobs:
   # This job generates a new preview build of the website and makes it available to other jobs in the workflow.
   build_preview:
-    name: Build preview
+    name: Build preview assets
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
@@ -62,7 +62,7 @@ jobs:
 
   # This job will deploy the website to a preview domain.
   deploy_preview:
-    name: Deploym to preview
+    name: Deploy to preview
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
