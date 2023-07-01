@@ -31,7 +31,7 @@ return [
         return (new Carbon($page->{$key}))->format($format);
     },
     'link' => function (PageVariable $page, string $path) {
-        return '/' . ltrim($path, '/');
+        return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
     },
     'groupByYear' => function (PageVariable $page, PageVariable $collection) {
         return $collection->mapToGroups(function (CollectionItem $item) {
