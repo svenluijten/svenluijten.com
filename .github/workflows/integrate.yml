@@ -8,58 +8,6 @@ on:
       - main
 
 jobs:
-  # This job generates a new production build of the website and makes it available to other jobs in the workflow.
-  build_production:
-    name: Build production assets
-    runs-on: ubuntu-latest
-    if: github.event.ref == 'refs/heads/main'
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Restore node_modules folder
-        id: cache-node
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-v2
-
-      - name: Install frontend dependencies
-        if: steps.cache-node.outputs.cache-hit != 'true'
-        run: npm ci
-
-      - name: Restore Composer dependencies
-        id: cache-php
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
-
-      # If no Composer cache exists, install Composer dependencies
-      - name: Install Composer dependencies
-        if: steps.cache-php.outputs.cache-hit != 'true'
-        run: composer install --no-dev --ignore-platform-reqs
-
-      - name: Create production build of CSS and JS
-        run: npm run prod
-
-      - name: Create new production build of website
-        run: ./vendor/bin/jigsaw build production
-
-      - name: Create ZIP file of production build
-        run: zip -r build.zip build_production/
-
-      - name: Keep ZIP file as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build_zip
-          path: build.zip
-          retention-days: 1
-
   # This job generates a new preview build of the website and makes it available to other jobs in the workflow.
   build_preview:
     name: Build preview
@@ -114,7 +62,7 @@ jobs:
 
   # This job will deploy the website to a preview domain.
   deploy_preview:
-    name: Deployment Preview
+    name: Deploym to preview
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
@@ -133,6 +81,24 @@ jobs:
 
       - name: Unzip preview build
         run: unzip ./build/build.zip -d ./build
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Restore node_modules folder
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v2
+
+      - name: Install frontend dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: npm ci
 
       # Start tracking the deployment status using GitHub deployments
       - name: Start deployment
@@ -182,9 +148,61 @@ jobs:
         with:
           name: build_${{ github.event.number }}_zip
 
+  # This job generates a new production build of the website and makes it available to other jobs in the workflow.
+  build_production:
+    name: Build production assets
+    runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Restore node_modules folder
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v2
+
+      - name: Install frontend dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Restore Composer dependencies
+        id: cache-php
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      # If no Composer cache exists, install Composer dependencies
+      - name: Install Composer dependencies
+        if: steps.cache-php.outputs.cache-hit != 'true'
+        run: composer install --no-dev --ignore-platform-reqs
+
+      - name: Create production build of CSS and JS
+        run: npm run prod
+
+      - name: Create new production build of website
+        run: ./vendor/bin/jigsaw build production
+
+      - name: Create ZIP file of production build
+        run: zip -r build.zip build_production/
+
+      - name: Keep ZIP file as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_zip
+          path: build.zip
+          retention-days: 1
+
   # This job will deploy the website to production.
   deploy_production:
-    name: Deployment
+    name: Deploy to production
     runs-on: ubuntu-latest
     if: github.event.ref == 'refs/heads/main'
 
@@ -203,6 +221,24 @@ jobs:
 
       - name: Unzip production build
         run: unzip ./build/build.zip -d ./build
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Restore node_modules folder
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v2
+
+      - name: Install frontend dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: npm ci
 
       # Start tracking the deployment status using GitHub deployments.
       # Instead of using a dynamic environment name, we use production
