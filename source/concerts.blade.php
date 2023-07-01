@@ -4,6 +4,11 @@
     /** @var \App\Concert[] $concerts */
 @endphp
 
+@section('meta')
+    <link href="{{ $page->link('/feeds/concerts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten Concert Posts">
+    @parent
+@endsection
+
 @section('content')
     <ul>
         @foreach ($page->groupByYear($concerts) as $year => $concerts)

@@ -7,9 +7,10 @@ use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\PageVariable;
 
 return [
-    'production' => env('APP_ENVIRONMENT', 'local') === 'production',
+    'production' => false,
+    'baseUrl' => 'http://localhost:8000',
     'title' => 'Sven Luijten',
-    'description' => 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.',
+    'buildTime' => new Carbon(),
     'collections' => [
         'devPosts' => [
             'path' => '/dev/{filename}',

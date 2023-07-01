@@ -41,7 +41,7 @@
         <p>
             You can <a href="{{ $page->link('dev') }}">visit the overview page</a> for {{ $devPosts->count() - 5 }} more
             {{ \Illuminate\Support\Str::plural('article', $devPosts->count() - 5) }}, or <a
-                    href="{{ $page->link('feeds/dev.atom') }}">subscribe to the RSS feed here</a>.
+                    href="{{ $page->link('feeds/dev.xml') }}">subscribe to the RSS feed here</a>.
         </p>
     </section>
 
@@ -68,7 +68,7 @@
         <p>
             Check out <a href="{{ $page->link('concerts') }}">the concerts page</a> for an overview of all
             {{ $concerts->count() }} shows I've been to. You can also <a
-                    href="{{ $page->link('feeds/concerts.atom') }}">subscribe to the RSS feed here</a>.
+                    href="{{ $page->link('feeds/concerts.xml') }}">subscribe to the RSS feed here</a>.
         </p>
     </section>
 @endsection

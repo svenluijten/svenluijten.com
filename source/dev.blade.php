@@ -2,8 +2,12 @@
 
 @php
 /** @var \App\DevPost[] $devPosts */
-
 @endphp
+
+@section('meta')
+    <link href="{{ $page->link('/feeds/dev.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten Development Posts">
+    @parent
+@endsection
 
 @section('content')
     @foreach ($devPosts as $post)

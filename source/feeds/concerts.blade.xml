@@ -1,0 +1,11 @@
+@extends('_layouts.atom')
+
+@section('id', 'https://svenluijten.com/concerts')
+@section('title', 'Sven Luijten Concerts')
+@section('subtitle', 'Sven Luijten\'s concert posts.')
+
+@section('entries')
+    @foreach($concerts as $entry)
+        @include('_partials.atom-entry', ['entry' => $entry])
+    @endforeach
+@endsection

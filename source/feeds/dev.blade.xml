@@ -1,0 +1,11 @@
+@extends('_layouts.atom')
+
+@section('id', 'https://svenluijten.com/dev')
+@section('title', 'Sven Luijten Development')
+@section('subtitle', 'Sven Luijten\'s technical/development blog posts.')
+
+@section('entries')
+    @foreach($devPosts as $entry)
+        @include('_partials.atom-entry')
+    @endforeach
+@endsection

@@ -9,9 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {{--    @include('feed::links')--}}
+        @section('meta')
+            <link href="{{ $page->link('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten">
+        @show
 
-    {{--    @include('meta.look')--}}
+        @include('_partials.meta')
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
 
@@ -26,19 +28,6 @@
         <title>{{ $page->title }}</title>
         <meta name="title" content="{{ $page->title }}">
         <meta name="description" content="{{ $page->description }}">
-
-        <!-- Open Graph / Facebook -->
-    {{--    <meta property="og:type" content="website">--}}
-    {{--    <meta property="og:url" content="{{ $page->getUrl() }}">--}}
-    {{--    <meta property="og:title" content="{{ $page->title }}">--}}
-    {{--    <meta property="og:description" content="{{ isset($post) ? $post->excerpt : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
-
-        <!-- Twitter -->
-    {{--    <meta property="twitter:card" content="summary">--}}
-    {{--    <meta property="twitter:url" content="{{ rtrim(config('app.url'), '/') . request()->getPathInfo() }}">--}}
-    {{--    <meta property="twitter:title" content="{{ $title }}">--}}
-    {{--    <meta property="twitter:description" content="{{ isset($post) ? $post->excerpt() : 'Hi 👋 — My name is Sven Luijten, and I am a full stack developer for the web.' }}">--}}
-    {{--    <meta property="twitter:creator" content="@svenluijten">--}}
     </head>
 
     <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-300 bg-white min-h-screen relative leading-normal | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
