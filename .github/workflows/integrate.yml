@@ -25,7 +25,7 @@ jobs:
             ${{ runner.os }}-node-v2
 
       - name: Install frontend dependencies
-        if: steps/cache-node.outputs.cache-hit != 'true'
+        if: steps.cache-node.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Restore Composer dependencies
