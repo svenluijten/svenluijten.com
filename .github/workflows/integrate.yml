@@ -124,7 +124,7 @@ jobs:
           # Disable GitHub comments. I don't need a comment telling me that a deployment is happening.
           github-comment: false
           # This is not a typo. This structure is created by unzipping the build artifact.
-          working-directory: ./build_preview
+          working-directory: ./build/build_preview
 
       # Set the deployment status in GitHub to finished.
       - name: Update Deployment Status
