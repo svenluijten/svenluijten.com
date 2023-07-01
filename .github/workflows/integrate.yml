@@ -8,9 +8,11 @@ on:
       - main
 
 jobs:
-  dependencies:
-    name: Install dependencies
+  # This job generates a new production build of the website and makes it available to other jobs in the workflow.
+  build_production:
+    name: Build production assets
     runs-on: ubuntu-latest
+    if: github.event.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v3
@@ -42,13 +44,6 @@ jobs:
         if: steps.cache-php.outputs.cache-hit != 'true'
         run: composer install --no-dev --ignore-platform-reqs
 
-  # This job generates a new production build of the website and makes it available to other jobs in the workflow.
-  build_production:
-    name: Build production assets
-    runs-on: ubuntu-latest
-    if: github.event.ref == 'refs/heads/main'
-
-    steps:
       - name: Create production build of CSS and JS
         run: npm run prod
 
@@ -72,6 +67,35 @@ jobs:
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Restore node_modules folder
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v2
+
+      - name: Install frontend dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Restore Composer dependencies
+        id: cache-php
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      # If no Composer cache exists, install Composer dependencies
+      - name: Install Composer dependencies
+        if: steps.cache-php.outputs.cache-hit != 'true'
+        run: composer install --no-dev --ignore-platform-reqs
+
       - name: Create preview build of CSS and JS
         run: npm run prod
 
