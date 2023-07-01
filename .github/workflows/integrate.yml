@@ -248,7 +248,7 @@ jobs:
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: production
+          env: Production
 
       # Deploy website for production to Vercel.
       - name: Deploy to Vercel
