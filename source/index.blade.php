@@ -8,7 +8,7 @@
         >
 
         <div class="lg:px-4">
-            <h1 class="text-3xl font-bold">Hi 👋 — My name is Sven</h1>
+            <h1 class="text-3xl font-bold">Hi 👋 — My name is Someone else</h1>
             <p>
                 I am a full-stack developer for the web, photographer, and lifter of heavy things. I <a
                         href="{{ $page->link('dev') }}">write technical articles</a>, <a
