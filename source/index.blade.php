@@ -27,7 +27,7 @@
 
         <p class="mb-4">
             This is where I write technical articles about my learnings, what's happening in my career as a full-stack
-            developer, and the occasional random showerthought. Here are the 5 most recent articles:
+            developer, and the occasional random showerthought. Here are my 5 most recent articles:
         </p>
 
         <ul class="mb-4">
