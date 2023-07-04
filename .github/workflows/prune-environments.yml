@@ -14,17 +14,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           env: 'Pull Request #${{ github.event.number }} Preview'
           desc: Deployment was pruned
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Vercel CLI
-        run: npm install --global vercel
-
-      - name: Destroy preview deployment in Vercel
-        run: |
-          vercel --no-color \
-            --token ${{ secrets.VERCEL_TOKEN }} \
-            remove "preview-${{ github.event.number }}.website.sven.luijten.dev"
