@@ -3,7 +3,7 @@
     <id>@yield('id')</id>
     <title>@yield('title')</title>
     <subtitle>@yield('subtitle')</subtitle>
-    <updated>{{ $page->buildTime->format('Y-m-d\TH:i\Z') }}</updated>
+    <updated>{{ $page->buildTime->format('Y-m-d\TH:i:s\Z') }}</updated>
     @yield('links')
 
     <author>
