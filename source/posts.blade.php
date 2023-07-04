@@ -13,6 +13,8 @@ title: Blog posts
     @parent
 @endsection
 
+@section('social-image', $page->link('/assets/images/card-posts.jpg'))
+
 @section('content')
     @foreach ($posts as $post)
         <article class="mb-8">

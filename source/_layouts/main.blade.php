@@ -34,7 +34,7 @@
         <meta property="og:url" content="{{ $page->getUrl() }}">
         <meta property="og:title" content="{{ $page->title }}">
         <meta property="og:description" content="@yield('description', $page->excerpt ?? $page->description)">
-        {{--<meta property="og:image" content="URL TO SOCIAL IMAGE">--}}
+        <meta property="og:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-og">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary">
@@ -42,7 +42,7 @@
         <meta property="twitter:title" content="{{ $page->title }}">
         <meta property="twitter:description" content="@yield('description', $page->excerpt ?? $page->description)">
         <meta property="twitter:creator" content="@svenluijten">
-        {{--<meta property="twitter:image" content="URL TO SOCIAL IMAGE">--}}
+        <meta property="twitter:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-tw">
     </head>
 
     <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-300 bg-white min-h-screen relative leading-normal | dark:bg-gray-800 dark:border-gray-900 lg:border-0">

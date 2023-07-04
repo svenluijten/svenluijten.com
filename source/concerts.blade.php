@@ -13,6 +13,8 @@ title: Concerts
     @parent
 @endsection
 
+@section('social-image', $page->link('/assets/images/card-concerts.jpg'))
+
 @section('content')
     <ul>
         @foreach ($page->groupByYear($concerts) as $year => $concerts)
