@@ -35,3 +35,7 @@ a:hover {
     @apply text-xl font-bold;
 }
 
+.post blockquote {
+    @apply border-l-4 border-l-indigo-100 pl-4
+}
+
