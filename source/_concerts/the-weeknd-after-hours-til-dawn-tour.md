@@ -16,5 +16,5 @@ surprise. Immediately noticable is how Abel gave his all during this performance
 was absolutely incredible. Standouts for me were him performing _Hurricane_ (+ accompanying pyrotechnics), _Less Than
 Zero_, and _Blinding Lights_.
 
-![the weeknd](/assets/images/weeknd-1.jpg)
+![The Weeknd](/assets/images/weeknd-1.jpg)
 

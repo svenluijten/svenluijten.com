@@ -10,7 +10,7 @@ I'm writing this in 2023, and honestly I don't remember a lot from this show bes
 live and that he called Justin Roiland (co-creator of Rick & Morty) live on stage. Though I'm pretty sure that part of
 the show was scripted.
 
-![logic](/assets/images/logic.jpg)
+![Logic](/assets/images/logic.jpg)
 
 Standout songs from the show were _America_ and _Gang Related_.
 

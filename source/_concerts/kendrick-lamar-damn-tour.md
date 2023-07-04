@@ -16,4 +16,4 @@ from his other albums, so the show was definitely still very enjoyable!
 
 Standouts from the show were Kendrick performing _Money Trees_ and _DNA_.
 
-![kendrick damn](/assets/images/kendrick-damn.jpg)
+![Kendrick Lamar](/assets/images/kendrick-damn.jpg)

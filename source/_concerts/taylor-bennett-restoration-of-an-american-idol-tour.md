@@ -17,4 +17,4 @@ all.
 I even got a photo and a little chat with the DJ and Taylor after the show, so that was nice! The small crowd managed to
 turn up the energy during _Minimum Wage_, which really stands out in my mind from the show.
 
-![taylor bennett](/assets/images/taylor-bennett.jpg)
+![Taylor Bennett](/assets/images/taylor-bennett.jpg)
