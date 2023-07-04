@@ -1,8 +1,13 @@
 @extends('_layouts.atom')
 
-@section('id', 'https://svenluijten.com/archive')
+@section('id', $page->link('/archive'))
 @section('title', 'Sven Luijten')
 @section('subtitle', 'All of Sven Luijten\'s posts.')
+
+@section('links')
+    <link rel="self" href="{{ $page->link('/feeds/all.xml') }}" type="text/xml+atom" />
+    <link rel="alternate" href="{{ $page->link('/archive') }}" type="text/html" />
+@endsection
 
 @section('entries')
     @foreach(collect([...$posts, ...$concerts])->sortBy('date', descending: true) as $entry)

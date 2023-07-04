@@ -1,8 +1,13 @@
 @extends('_layouts.atom')
 
-@section('id', 'https://svenluijten.com/concerts')
+@section('id', $page->link('/concerts'))
 @section('title', 'Sven Luijten Concerts')
 @section('subtitle', 'Sven Luijten\'s concert posts.')
+
+@section('links')
+    <link rel="self" href="{{ $page->link('/feeds/concerts.xml') }}" type="text/xml+atom" />
+    <link rel="alternate" href="{{ $page->link('/concerts') }}" type="text/html" />
+@endsection
 
 @section('entries')
     @foreach($concerts as $entry)
