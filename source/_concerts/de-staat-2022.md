@@ -5,3 +5,14 @@ extends: _layouts.concert
 section: body
 location: Tilburg
 ---
+
+De Staat is a Dutch rockband with a massive catalog of classics. So when friends asked if I wanted to come, I 
+_immediately_ said _yes_. I had a fantastic time seeing them perform both newer tracks that I hadn't heard before, as
+well as the old classics I just mentioned.
+
+Admittedly I don't normally listen to a lot of their music, but I took a dive into their discography after this show and
+loved every second of it!
+
+Standouts from the night are _Witchdoctor_ and _KITTY KITTY_.
+
+![De Staat](/assets/images/de-staat.jpg)

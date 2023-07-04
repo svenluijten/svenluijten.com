@@ -5,3 +5,11 @@ extends: _layouts.concert
 section: body
 location: Haarlem
 ---
+
+When I saw they were coming over to The Netherlands, I immediately got a ticket to see the Souls of Mischief live. The 
+venue wasn't fully packed, which I think was a shame! These guys are a cornerstone of the hip-hop game and deserve way 
+more respect.
+
+Either way, they put on a great show! There's still love for classic boom-bap hip-hop.
+
+![Souls of Mischief](/assets/images/souls-of-mischief.jpg)
