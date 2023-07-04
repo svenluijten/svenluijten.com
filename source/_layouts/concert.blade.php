@@ -1,5 +1,7 @@
 @extends('_layouts.main')
 
+@section('description', $page->title . ' in ' . $page->location . ', a mini-review.')
+
 @section('content')
     <article class="dark:text-indigo-100 post">
         <header>

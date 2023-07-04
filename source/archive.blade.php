@@ -1,3 +1,7 @@
+---
+title: Archive
+---
+
 @extends('_layouts.main')
 
 @section('meta')

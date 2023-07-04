@@ -1,3 +1,7 @@
+---
+title: Concerts
+---
+
 @extends('_layouts.main')
 
 @php

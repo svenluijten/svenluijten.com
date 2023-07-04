@@ -1,3 +1,7 @@
+---
+title: Blog posts
+---
+
 @extends('_layouts.main')
 
 @php
