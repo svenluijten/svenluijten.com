@@ -17,6 +17,10 @@
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
 
+        @if(! $page->production)
+            <meta name="robots" content="noindex, nofollow">
+        @endif
+
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <link rel="stylesheet" href="{{ mix('css/hljs-light.css', 'assets/build') }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
         <link rel="stylesheet" href="{{ mix('css/hljs-dark.css', 'assets/build') }}" media="(prefers-color-scheme: dark)">
