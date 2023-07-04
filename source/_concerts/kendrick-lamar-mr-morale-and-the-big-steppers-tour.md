@@ -5,3 +5,13 @@ extends: _layouts.concert
 section: body
 location: Amsterdam
 ---
+
+When you [see Kendrick once](./kendrick-lamar-damn-tour.md), you _have_ to go see him again. With his new album
+_Mr. Morale And The Big Steppers_ out, a tour was bound to happen. And sure enough, a tour! I was extremely excited for
+this one, and this time I got GA tickets. Less sitting, more moshing for this guy!
+
+I was _all the way up front_, pushed up against the stage. The opening act (Baby Keem) was already fantastic, and then
+when Kendrick took the stage, the crowd went absolutely nuts. This was a phenomenal show. Standouts from the night were
+_N95_, _Rich Spirit_, and _Family Ties_ with Baby Keem.
+
+![Kendrick Lamar](/assets/images/kendrick-mmatbs.jpg)
