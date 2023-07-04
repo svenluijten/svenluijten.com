@@ -2,5 +2,5 @@
 
 return [
     'production' => false,
-    'baseUrl' => '',
+    'baseUrl' => env('PREVIEW_URL', ''),
 ];

@@ -49,6 +49,8 @@ jobs:
 
       - name: Create new preview build of website
         run: ./vendor/bin/jigsaw build preview
+        env:
+          PREVIEW_URL: https://preview-${{ github.event.number }}.website.sven.luijten.dev
 
       - name: Create zip file of preview build
         run: zip -r build.zip build_preview/
@@ -125,6 +127,8 @@ jobs:
           github-comment: false
           # This is not a typo. This structure is created by unzipping the build artifact.
           working-directory: ./build/build_preview
+          alias-domains: |
+            preview-{{PR_NUMBER}}.website.sven.luijten.dev
 
       # Set the deployment status in GitHub to finished.
       - name: Update Deployment Status
