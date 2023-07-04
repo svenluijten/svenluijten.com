@@ -23,5 +23,5 @@ signed!
 
 ![Anderson .Paak signing my vinyl record(s)](/assets/images/nxworries-2.jpg)
 
-![5 signed vinyl records; Knxwledge's Meek Remixes parts 1 through 6, NxWorries' "Yes Lawd!", and Anderson .Paak's "Malibu"](/assets/images/nxworries-3.jpg)
+![5 signed vinyl records; Knxwledge's Meek Remixes parts 1 through 6, NxWorries' "Yes Lawd!", and Anderson .Paak's "Malibu"](/assets/images/nxworries-3.jpg){#social-image}
 
