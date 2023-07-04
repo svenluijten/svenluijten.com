@@ -36,6 +36,6 @@ a:hover {
 }
 
 .post blockquote {
-    @apply border-l-4 border-l-indigo-100 pl-4
+    @apply border-l-4 border-indigo-200 pl-4 dark:border-indigo-500
 }
 
