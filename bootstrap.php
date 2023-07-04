@@ -1,6 +1,7 @@
 <?php
 
 use App\Listeners\ImagesNextToBuiltFiles;
+use App\Listeners\RelativeMarkdownLinks;
 use TightenCo\Jigsaw\Jigsaw;
 
 /** @var \Illuminate\Container\Container $container */
@@ -17,3 +18,4 @@ use TightenCo\Jigsaw\Jigsaw;
  * });
  */
 $events->afterBuild(ImagesNextToBuiltFiles::class);
+$events->afterBuild(RelativeMarkdownLinks::class);
