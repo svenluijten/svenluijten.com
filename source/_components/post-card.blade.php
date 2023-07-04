@@ -1,11 +1,12 @@
 @php
-    /** @var \App\DevPost $post */
+    /** @var \App\Post $post */
 @endphp
 
 <article class="mb-8">
     <header class="text-3xl font-extrabold mb-1">
         <h2>
-            <a href="{{ $post->getUrl() }}" class="border-b-4 border-indigo-200 text-black | dark:text-indigo-100 dark:border-indigo-500 hover:text-indigo-50 hover:bg-indigo-500 hover:border-indigo-600 hover:no-underline">
+            <a href="{{ $post->getUrl() }}"
+               class="border-b-4 border-indigo-200 text-black | dark:text-indigo-100 dark:border-indigo-500 hover:text-indigo-50 hover:bg-indigo-500 hover:border-indigo-600 hover:no-underline">
                 {{ $post->title }}
             </a>
         </h2>
@@ -16,6 +17,6 @@
     </section>
 
     <footer>
-        <x-post-meta :post="$post" />
+        <x-post-meta :post="$post"/>
     </footer>
 </article>

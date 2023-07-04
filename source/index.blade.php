@@ -11,27 +11,27 @@
             <h1 class="text-3xl font-bold">Hi 👋 — My name is Sven</h1>
             <p>
                 I am a full-stack developer for the web, photographer, and lifter of heavy things. I <a
-                        href="{{ $page->link('dev') }}">write technical articles</a>, <a
+                        href="{{ $page->link('posts') }}">write blog posts</a>, <a
                         href="{{ $page->link('concerts') }}">go to concerts</a>, and <a
                         href="https://instagram.com/luijten.photography">photograph animals</a>.
             </p>
         </div>
     </div>
 
-    <section class="py-4" id="development-blog">
+    <section class="py-4" id="blog">
         <h2 class="text-3xl font-bold">
-            <a href="{{ $page->link('dev') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
-                <span class="absolute -left-8 invisible group-hover:visible">&rarr;</span> Development blog
+            <a href="{{ $page->link('posts') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
+                <span class="absolute -left-8 invisible group-hover:visible">&rarr;</span> Blog
             </a>
         </h2>
 
         <p class="mb-4">
             This is where I write technical articles about my learnings, what's happening in my career as a full-stack
-            developer, and the occasional news about my open-source efforts. Here are the 5 most recent articles:
+            developer, and the occasional random showerthought. Here are my 5 most recent articles:
         </p>
 
         <ul class="mb-4">
-            @foreach ($devPosts->take(5) as $post)
+            @foreach ($posts->take(5) as $post)
                 <li class="list-disc ml-6">
                     <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
                 </li>
@@ -39,9 +39,9 @@
         </ul>
 
         <p>
-            You can <a href="{{ $page->link('dev') }}">visit the overview page</a> for {{ $devPosts->count() - 5 }} more
-            {{ \Illuminate\Support\Str::plural('article', $devPosts->count() - 5) }}, or <a
-                    href="{{ $page->link('feeds/dev.xml') }}">subscribe to the RSS feed here</a>.
+            You can <a href="{{ $page->link('posts') }}">visit the overview page</a> for {{ $posts->count() - 5 }} more
+            {{ \Illuminate\Support\Str::plural('article', $posts->count() - 5) }}, or <a
+                    href="{{ $page->link('feeds/posts.xml') }}">subscribe to the RSS feed here</a>.
         </p>
     </section>
 

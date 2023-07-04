@@ -1,11 +1,11 @@
 @extends('_layouts.atom')
 
-@section('id', 'https://svenluijten.com/')
+@section('id', 'https://svenluijten.com/archive')
 @section('title', 'Sven Luijten')
 @section('subtitle', 'All of Sven Luijten\'s posts.')
 
 @section('entries')
-    @foreach(collect([...$devPosts, ...$concerts])->sortBy('date', descending: true) as $entry)
+    @foreach(collect([...$posts, ...$concerts])->sortBy('date', descending: true) as $entry)
         @include('_partials.atom-entry', ['entry' => $entry])
     @endforeach
 @endsection

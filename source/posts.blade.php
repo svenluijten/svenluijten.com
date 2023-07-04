@@ -1,20 +1,21 @@
 @extends('_layouts.main')
 
 @php
-/** @var \App\DevPost[] $devPosts */
+    /** @var \App\Post[] $posts */
 @endphp
 
 @section('meta')
-    <link href="{{ $page->link('/feeds/dev.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten Development Posts">
+    <link href="{{ $page->link('/feeds/posts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's blog posts">
     @parent
 @endsection
 
 @section('content')
-    @foreach ($devPosts as $post)
+    @foreach ($posts as $post)
         <article class="mb-8">
             <header class="text-3xl font-extrabold mb-1">
                 <h2>
-                    <a href="{{ $post->getUrl() }}" class="border-b-4 border-indigo-200 text-black | dark:text-indigo-100 dark:border-indigo-500 hover:no-underline hover:text-indigo-50 hover:bg-indigo-500 hover:border-indigo-600">
+                    <a href="{{ $post->getUrl() }}"
+                       class="border-b-4 border-indigo-200 text-black | dark:text-indigo-100 dark:border-indigo-500 hover:no-underline hover:text-indigo-50 hover:bg-indigo-500 hover:border-indigo-600">
                         {{ $post->title }}
                     </a>
                 </h2>
