@@ -25,6 +25,6 @@ jobs:
 
       - name: Destroy preview deployment in Vercel
         run: |
-          vercel --no-color && \
-            --token ${{ secrets.VERCEL_TOKEN }} && \ 
+          vercel --no-color \
+            --token ${{ secrets.VERCEL_TOKEN }} \
             remove "preview-${{ github.event.number }}.website.sven.luijten.dev"
