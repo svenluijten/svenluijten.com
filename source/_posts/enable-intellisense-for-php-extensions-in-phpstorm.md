@@ -1,6 +1,6 @@
 ---
 title: Enable IntelliSense for PHP Extensions in PhpStorm
-date: 2023-04-29
+date: 2023-07-07
 excerpt: How you can enable extensions in PhpStorm so you get working autocomplete on them.
 extends: _layouts.post
 section: body
