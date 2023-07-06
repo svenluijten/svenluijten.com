@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex flex-col justify-center items-start mb-4 lg:flex-row">
-        <img src="/assets/images/headshot.jpg"
+        <img src="{{ $page->link('/assets/images/headshot.jpg') }}"
              alt="A headshot of an insanely handsome developer looking at the camera with a strapping smile."
              class="w-36 h-36 my-4 rounded-full border-4 border-gray-100 shadow | lg:my-0 lg:-ml-36 lg:w-32 lg:h-32 dark:border-gray-700"
         >
@@ -53,8 +53,8 @@
         </h2>
 
         <p class="mb-4">
-            As a big music lover, I visit a lot of concerts. This is my attempt to log every show I go to with a
-            bite-sized review. Some of the most recent shows I've gone to:
+            I'm an avid music enjoyer, and so I visit a lot of concerts. This is my attempt to log every show I go to
+            with a bite-sized review. Some of the most recent shows I've gone to:
         </p>
 
         <ul class="mb-4">
