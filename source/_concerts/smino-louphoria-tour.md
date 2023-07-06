@@ -8,10 +8,12 @@ location: Amsterdam
 
 Smino is one of those artists you don't hear a lot about in the mainstream, but once you dig a big deeper you'll see how
 much of a gem you're missing out on. This show was great! The energy, the lyricism, and the _fun_ that Smino exudes are 
-something every artist should aspire to.  
+something every artist should aspire to.
 
 > I've never seen anybody moshing to _Anita_ before. Y'all are crazy.
 > 
 > **\- Smino**
 
 ![Smino](/assets/images/smino.jpg)
+
+Memorable tracks were _90 Proof_, _Pudgy_, and _Anita_.

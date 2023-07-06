@@ -19,7 +19,7 @@ to be performed live.
 
 I absolutely loved this. The long wait at the front of the queue was worth the result; standing all the way up against
 the stage seeing these two heroes of mine do what they do best. And I even managed to get some of my vinyl records 
-signed!
+signed by both of them!
 
 ![Anderson .Paak signing my vinyl record(s)](/assets/images/nxworries-2.jpg)
 
