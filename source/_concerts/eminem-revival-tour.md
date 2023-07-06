@@ -11,7 +11,8 @@ old songs from his prolific career as a rapper. I found it funny that his emcee 
 something to the effect of "What's up Amsterdam!!!" while we were in Nijmegen, nowhere near Amsterdam by Dutch standards.
 Thankfully Em corrected him a couple of times.
 
-What a show. Eminem is such a prolific artist that I'm glad I saw him live at least once before his inevitable 
-retirement. Standout tracks he did were _Rap God_, _Fast Lane_ together with Royce Da 5'9", and _Forever_.
-
 ![Eminem](/assets/images/eminem.jpg)
+
+What a show. Eminem is such a prolific artist that I'm glad I saw him live at least once before his inevitable 
+retirement. Standout tracks he did were _Rap God_, _Fast Lane_ together with Royce Da 5'9", and _Forever_. The girl next
+to me was surprised to see I knew _all_ the words to _Forever_. I'll take that as a compliment.

@@ -1,5 +1,5 @@
 ---
-title: "Denzel Curry: Melt My Eyes, See Your Future tour"
+title: "Denzel Curry: Melt My Eyez, See Your Future tour"
 date: 2022-05-08
 extends: _layouts.concert
 section: body
@@ -11,9 +11,9 @@ that almost immediately. Since then, Denzel has only put out bangers, and with h
 Future_, I was sure I wouldn't let another opportunity like this slip.
 
 I made sure to get to the venue fairly early on so I could claim a spot near the stage, and sure enough I was front row
-for this incredible performance. Denzel sounds _exactly_ like he does on his albums live, and the energy he brings to
-the show is infectious. 
-
-Standout tracks he performed are _Walkin'_, _Speedboat_, and _DIET\__.
+together with some people I'd met in line for this incredible performance. Denzel sounds _exactly_ like he does on his 
+albums live, and the energy he brings to the show is infectious. 
 
 ![Denzel Curry](/assets/images/denzel-curry.jpg)
+
+Standout tracks he performed are _Walkin'_, _Speedboat_, and _DIET\__.

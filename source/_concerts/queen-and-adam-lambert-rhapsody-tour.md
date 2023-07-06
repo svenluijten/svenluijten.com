@@ -14,3 +14,5 @@ The visuals of this show were also spectacular, with Brian May even shooting fir
 during _A Kind Of Magic_!
 
 ![Queen and Adam Lambert](/assets/images/queen-adam-lambert.jpg)
+
+_Bohemian Rhapsody_, _A Kind Of Magic_, and _Another One Bites The Dust_ stand out from this evening.

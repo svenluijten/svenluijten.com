@@ -1,7 +1,7 @@
-@if ($page->production === false)
-User-agent: *
-Disallow: /
-@else
+@if ($page->production)
 User-agent: *
 Disallow:
+@else
+User-agent: *
+Disallow: /
 @endif
