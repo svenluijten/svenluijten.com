@@ -19,6 +19,15 @@ in case of that example, the images would be built into `/blog/example-blog-post
 link to other collection items by using their relative links (so something like `[link to post](./another-post.md)`).
 This also works across collections, so I can `[link to another collection](../collectionB/post.md)`.
 
+### Social images
+The social image (`og:image` and `twitter:image` `<meta>` tags) is determined in the following order:
+
+1. If there is an image with the `social-image` ID present on the `<img>` tag, that will be used.
+2. If there are images on the page, the first image on the page will be used.
+3. If none of the above conditions are met, [the default image](./source/assets/images/card.jpg) will be used.
+
+This is all done thanks to [the `\App\Listeners\SetSocialImagesForCollectionItems` listener](./app/Listeners/SetSocialImagesForCollectionItems.php).
+
 ## Deployments
 Deployments are handled by [this workflow](./.github/workflows/integrate.yml). When a commit is pushed onto `main`, that
 branch will automatically be built using `jigsaw build production` and deployed onto Vercel. If anything happens to a

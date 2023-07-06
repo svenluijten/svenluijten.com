@@ -2,6 +2,7 @@
 
 use App\Listeners\ImagesNextToBuiltFiles;
 use App\Listeners\RelativeMarkdownLinks;
+use App\Listeners\SetSocialImagesForCollectionItems;
 use TightenCo\Jigsaw\Jigsaw;
 
 /** @var \Illuminate\Container\Container $container */
@@ -19,3 +20,4 @@ use TightenCo\Jigsaw\Jigsaw;
  */
 $events->afterBuild(ImagesNextToBuiltFiles::class);
 $events->afterBuild(RelativeMarkdownLinks::class);
+$events->afterBuild(SetSocialImagesForCollectionItems::class);

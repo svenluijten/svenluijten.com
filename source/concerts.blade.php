@@ -1,3 +1,7 @@
+---
+title: Concerts
+---
+
 @extends('_layouts.main')
 
 @php
@@ -8,6 +12,8 @@
     <link href="{{ $page->link('/feeds/concerts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten Concert Posts">
     @parent
 @endsection
+
+@section('social-image', $page->link('/assets/images/card-concerts.jpg'))
 
 @section('content')
     <ul>

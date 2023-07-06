@@ -10,6 +10,7 @@ return [
     'production' => false,
     'baseUrl' => 'http://localhost:8000',
     'title' => 'Sven Luijten',
+    'description' => 'Full-stack developer, photographer, music lover, and lifter of heavy things.',
     'buildTime' => new Carbon(),
     'collections' => [
         'posts' => [

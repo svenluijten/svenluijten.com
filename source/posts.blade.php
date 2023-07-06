@@ -1,3 +1,7 @@
+---
+title: Blog posts
+---
+
 @extends('_layouts.main')
 
 @php
@@ -8,6 +12,8 @@
     <link href="{{ $page->link('/feeds/posts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's blog posts">
     @parent
 @endsection
+
+@section('social-image', $page->link('/assets/images/card-posts.jpg'))
 
 @section('content')
     @foreach ($posts as $post)
