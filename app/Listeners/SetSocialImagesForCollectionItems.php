@@ -8,7 +8,7 @@ use RuntimeException;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\Jigsaw;
 
-class ReplaceSocialImageWithFirstImageInPost
+class SetSocialImagesForCollectionItems
 {
     public function handle(Jigsaw $jigsaw)
     {
