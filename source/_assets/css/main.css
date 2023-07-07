@@ -39,3 +39,14 @@ a:hover {
     @apply border-l-4 border-indigo-200 pl-4 dark:border-indigo-500
 }
 
+.post ol, .post ul {
+    @apply ml-8 mb-4
+}
+
+.post ol {
+    @apply list-decimal
+}
+
+.post ul {
+    @apply list-disc
+}
