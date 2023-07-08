@@ -2,8 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.post p {
-    @apply mb-5 text-xl leading-relaxed;
+.post-body {
+    @apply text-lg leading-relaxed;
+}
+
+.post-body p {
+    @apply mb-4;
 }
 
 a {
