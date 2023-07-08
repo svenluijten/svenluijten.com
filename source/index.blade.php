@@ -30,9 +30,9 @@
             developer, and the occasional random showerthought. Here are my 5 most recent articles:
         </p>
 
-        <ul class="mb-4">
+        <ul class="mb-4 list-disc ml-6">
             @foreach ($posts->take(5) as $post)
-                <li class="list-disc list-inside">
+                <li>
                     <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
                 </li>
             @endforeach
@@ -57,9 +57,9 @@
             with a bite-sized review. Some of the most recent shows I've gone to:
         </p>
 
-        <ul class="mb-4">
+        <ul class="mb-4 list-disc ml-6">
             @foreach ($concerts->take(5) as $concert)
-                <li class="list-disc list-inside">
+                <li>
                     <a href="{{ $concert->getUrl() }}">{{ $concert->title }} ({{ $concert->getDate('Y') }})</a>
                 </li>
             @endforeach
