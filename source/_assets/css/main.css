@@ -2,20 +2,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.post-body {
-    @apply text-lg leading-relaxed;
-}
-
-.post-body p {
-    @apply mb-4;
-}
-
 a {
     @apply text-indigo-700 dark:text-indigo-300;
 }
 
 a:hover {
     @apply text-indigo-600 dark:text-indigo-200 underline;
+}
+
+.post {
+    @apply text-lg leading-relaxed;
+}
+
+.post p {
+    @apply mb-4;
 }
 
 .post code, code {

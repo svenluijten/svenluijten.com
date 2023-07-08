@@ -1,7 +1,7 @@
 @extends('_layouts.main')
 
 @section('content')
-    <article class="dark:text-indigo-100 post">
+    <article class="dark:text-indigo-100">
         <h1 class="text-3xl font-bold text-center mt-4 sm:mt-0">{{ $page->title }}</h1>
 
         <header>
@@ -19,7 +19,7 @@
 
         <hr class="my-6 | dark:border-gray-900">
 
-        <section class="post-body">
+        <section class="post">
             @yield('body')
         </section>
 
