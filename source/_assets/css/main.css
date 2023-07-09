@@ -14,13 +14,8 @@ a:hover {
     @apply text-lg leading-relaxed;
 }
 
-.post p {
-    @apply mb-4;
-}
-
 .post code, code {
-    @apply bg-gray-50 rounded px-2 py-0.5 text-lg dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900;
-    box-decoration-break: clone;
+    @apply bg-gray-50 rounded px-2 py-0.5 text-lg dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 box-decoration-clone;
 }
 
 .post pre {
@@ -28,29 +23,5 @@ a:hover {
 }
 
 .post pre code {
-    @apply lg:px-8 py-4 lg:-mx-8 my-4 bg-gray-50 dark:bg-gray-900 border;
-}
-
-.post h2 {
-    @apply text-2xl font-bold;
-}
-
-.post h3 {
-    @apply text-xl font-bold;
-}
-
-.post blockquote {
-    @apply border-l-4 border-indigo-200 pl-4 dark:border-indigo-500
-}
-
-.post ol, .post ul {
-    @apply ml-8 mb-4
-}
-
-.post ol {
-    @apply list-decimal
-}
-
-.post ul {
-    @apply list-disc
+    @apply lg:-mx-8 my-4 bg-gray-50 dark:bg-gray-900 border;
 }

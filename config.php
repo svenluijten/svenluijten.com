@@ -3,11 +3,15 @@
 use App\Concert;
 use App\Post;
 use Carbon\Carbon;
+use League\CommonMark\Extension\Attributes\AttributesExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 use TightenCo\Jigsaw\PageVariable;
 
 return [
     'production' => false,
+    'commonmark' => include './commonmark.php',
     'baseUrl' => 'http://localhost:8000',
     'title' => 'Sven Luijten',
     'description' => 'Full-stack developer, photographer, music lover, and lifter of heavy things.',

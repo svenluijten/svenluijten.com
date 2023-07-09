@@ -6,7 +6,8 @@ mix.setPublicPath('source/assets/build');
 
 mix.jigsaw({
     watch: {
-        dirs: ['app/*/']
+        dirs: ['app/*/'],
+        files: ['config.php', 'commonmark.php'],
     },
 });
 
