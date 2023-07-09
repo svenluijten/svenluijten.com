@@ -1,6 +1,6 @@
 {
     "require": {
-        "tightenco/jigsaw": "^1.6",
+        "tightenco/jigsaw": "^1.7",
         "ext-dom": "*"
     },
     "autoload": {
