@@ -1,18 +1,29 @@
 @extends('_layouts.main')
 
 @section('content')
-    <article class="dark:text-indigo-100 post">
-        <header>
-            <h1 class="text-4xl font-bold text-center">{{ $page->title }}</h1>
+    <article class="dark:text-indigo-100">
+        <h1 class="text-3xl font-bold text-center mt-4 sm:mt-0">{{ $page->title }}</h1>
 
-            <x-post-meta class="mt-4 text-center" :post="$page" />
+        <header>
+            <div class="text-sm text-gray-700 mt-4 text-center | dark:text-indigo-100">
+                <span>
+                    Published on
+                    <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
+                </span>
+                &mdash;
+                <span class="italic">
+                    {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
+                </span>
+            </div>
         </header>
 
-        <hr class="my-8 | dark:border-gray-900">
+        <hr class="my-6 | dark:border-gray-900">
 
-        @yield('body')
+        <section class="post">
+            @yield('body')
+        </section>
 
-        <footer class="mt-8">
+        <footer class="mt-6">
             @if($previous = $page->previous())
                 <div class="flex justify-between items-center mb-6">
                     <hr class="flex-1 border-indigo-100 | dark:border-gray-900">

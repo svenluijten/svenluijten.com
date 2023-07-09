@@ -1,10 +1,10 @@
 <header class="container mx-auto">
-    <div class="mx-auto w-full flex flex-col items-center justify-between py-4 px-6 | sm:flex-row lg:w-3/5 lg:px-0 md:pt-12 md:pb-6">
+    <div class="mx-auto w-full flex flex-row items-center justify-between py-4 px-6 | lg:w-3/5 lg:px-0 md:pt-12 md:pb-6">
         <a href="/" class="text-2xl font-extrabold justify-center text-black hover:text-black hover:no-underline | dark:text-gray-100 dark:hover:text-indigo-100">
             Sven Luijten
         </a>
 
-        <nav class="w-full mt-3 | sm:w-auto sm:mt-0">
+        <nav>
             <ul class="flex justify-center text-lg">
                 <li class="px-2 | lg:px-4">
                     <a href="{{ $page->link('posts') }}"
