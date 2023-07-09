@@ -2,11 +2,8 @@
 
 use League\CommonMark\Extension\Attributes\AttributesExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
-use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 use League\CommonMark\Extension\CommonMark\Node\Block\ListBlock;
-use League\CommonMark\Extension\CommonMark\Node\Block\ListData;
-use League\CommonMark\Extension\CommonMark\Node\Inline\Code;
 use League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\Node\Block\Paragraph;
@@ -56,8 +53,8 @@ function defaultAttributeConfig(): array
         ListBlock::class => [
             'class' => static function (ListBlock $list) {
                 $type = match ($list->getListData()->type) {
-                    ListBlock::TYPE_BULLET => 'list-disc',
                     ListBlock::TYPE_ORDERED => 'list-decimal',
+                    ListBlock::TYPE_BULLET => 'list-disc',
                     default => 'list-disc',
                 };
 

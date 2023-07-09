@@ -3,15 +3,7 @@
 @import 'tailwindcss/utilities';
 
 a {
-    @apply text-indigo-700 dark:text-indigo-300;
-}
-
-a:hover {
-    @apply text-indigo-600 dark:text-indigo-200 underline;
-}
-
-.post {
-    @apply text-lg leading-relaxed;
+    @apply text-indigo-700 dark:text-indigo-300 hover:text-indigo-600 hover:dark:text-indigo-200 hover:underline;
 }
 
 .post code, code {
