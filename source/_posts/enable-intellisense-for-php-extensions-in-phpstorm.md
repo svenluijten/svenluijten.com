@@ -15,7 +15,8 @@ enable the extension in PhpStorm's settings:
 3. Make sure `Parle` (or whatever extension you are trying to install) is enabled.
 4. Hit apply and close the settings window.
 
-![Enabling PHP extensions in PHP's interpreter in PhpStorm](/assets/images/posts/phpstorm-extensions.jpg)
+![Enabling PHP extensions in PHP's interpreter in PhpStorm](/assets/images/posts/phpstorm-extensions.jpg){.l}
+![dark](/assets/images/posts/phpstorm-extensions-dark.jpg){.d}
 
 You should now have autocomplete/IntelliSense once again!
 

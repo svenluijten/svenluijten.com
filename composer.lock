@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea8a4febe08bcdd9da1e96c202c1946d",
+    "content-hash": "47411c61378a0f382810dd496ea47859",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -2400,6 +2400,62 @@
                 }
             ],
             "time": "2023-01-03T19:28:04+00:00"
+        },
+        {
+            "name": "sven/commonmark-dark-mode-images",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/svenluijten/commonmark-dark-mode-images.git",
+                "reference": "4b392b482b8db130e6d336492101f759d64546d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/svenluijten/commonmark-dark-mode-images/zipball/4b392b482b8db130e6d336492101f759d64546d6",
+                "reference": "4b392b482b8db130e6d336492101f759d64546d6",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^2.3"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "phpunit/phpunit": "^10.0",
+                "spatie/phpunit-snapshot-assertions": "^5.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sven\\CommonMark\\DarkModeImages\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Luijten",
+                    "email": "contact@svenluijten.com",
+                    "homepage": "https://svenluijten.com"
+                }
+            ],
+            "description": "Use different images in light- and dark mode in CommonMark-rendered Markdown",
+            "keywords": [
+                "color scheme",
+                "commonmark",
+                "dark",
+                "darkmode",
+                "images",
+                "light",
+                "markdown",
+                "prefers-color-scheme"
+            ],
+            "support": {
+                "issues": "https://github.com/svenluijten/commonmark-dark-mode-images/issues",
+                "source": "https://github.com/svenluijten/commonmark-dark-mode-images/tree/v1.0.0"
+            },
+            "time": "2023-07-11T12:23:11+00:00"
         },
         {
             "name": "symfony/console",
