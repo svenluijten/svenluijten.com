@@ -18,7 +18,7 @@
 
         <hr class="my-6 | dark:border-gray-900">
 
-        <section class="post">
+        <section class="post text-lg leading-relaxed">
             @yield('body')
         </section>
 
