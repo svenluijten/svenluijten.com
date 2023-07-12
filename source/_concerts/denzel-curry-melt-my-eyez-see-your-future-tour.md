@@ -14,6 +14,6 @@ I made sure to get to the venue fairly early on so I could claim a spot near the
 together with some people I'd met in line for this incredible performance. Denzel sounds _exactly_ like he does on his 
 albums live, and the energy he brings to the show is infectious. 
 
-![Denzel Curry](/assets/images/denzel-curry.jpg)
+![Denzel Curry](/assets/images/concerts/denzel-curry.jpg)
 
 Standout tracks he performed are _Walkin'_, _Speedboat_, and _DIET\__.

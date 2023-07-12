@@ -12,6 +12,6 @@ more respect.
 
 Either way, they put on a great show! There's still love for classic boom-bap hip-hop.
 
-![Souls of Mischief](/assets/images/souls-of-mischief.jpg)
+![Souls of Mischief](/assets/images/concerts/souls-of-mischief.jpg)
 
 Of course the highlight was their performance of their standout single _93 'Til Infinity_.

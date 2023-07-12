@@ -12,8 +12,8 @@ Nas traded places about 2 or 3 times to do some solo material, and all the class
 
 This was another reminder that these guys absolutely run the game.
 
-![Wu-Tang Clan](/assets/images/wu-tang-clan.jpg)
+![Wu-Tang Clan](/assets/images/concerts/wu-tang-clan.jpg)
 
-![Nas](/assets/images/nas.jpg)
+![Nas](/assets/images/concerts/nas.jpg)
 
 _Gravel Pit_, _NY State of Mind_, _C.R.E.A.M._, and _Ice Cream_ stand out in my mind from this show. 

@@ -13,6 +13,6 @@ well as the old classics I just mentioned.
 Admittedly I don't normally listen to a lot of their music, but I took a dive into their discography after this show and
 loved every second of it!
 
-![De Staat](/assets/images/de-staat.jpg)
+![De Staat](/assets/images/concerts/de-staat.jpg)
 
 Their performance of _Witchdoctor_ rocked the house, and _KITTY KITTY_ was super funky.

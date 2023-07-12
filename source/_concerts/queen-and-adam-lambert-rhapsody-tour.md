@@ -13,6 +13,6 @@ that positively changed the world of music.
 The visuals of this show were also spectacular, with Brian May even shooting fireworks out of his guitar at one point
 during _A Kind Of Magic_!
 
-![Queen and Adam Lambert](/assets/images/queen-adam-lambert.jpg)
+![Queen and Adam Lambert](/assets/images/concerts/queen-adam-lambert.jpg)
 
 _Bohemian Rhapsody_, _A Kind Of Magic_, and _Another One Bites The Dust_ stand out from this evening.

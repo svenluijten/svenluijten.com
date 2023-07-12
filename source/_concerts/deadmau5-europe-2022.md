@@ -13,4 +13,4 @@ visuals and some awesome live DJ-ing.
 We (the crowd) even managed to crowdsurf one dude from all the way in the front to the back of the venue upon his
 request. Challenge succeeded!
 
-![deadmau5](/assets/images/deadmau5.jpg)
+![deadmau5](/assets/images/concerts/deadmau5.jpg)

@@ -14,7 +14,7 @@ There were _maybe_ 50 people tops once the show was about to start. I felt kind 
 but it turned into a quite intimate show with an artist I liked, so I tried to ignore the kind of pathetic aspect of it 
 all. 
 
-![Taylor Bennett](/assets/images/taylor-bennett.jpg)
+![Taylor Bennett](/assets/images/concerts/taylor-bennett.jpg)
 
 I even got a photo and a little chat with the DJ and Taylor after the show, so that was nice! The small crowd managed to
 turn up the energy during _Minimum Wage_, which really stands out in my mind from the show.

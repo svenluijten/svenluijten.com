@@ -14,6 +14,6 @@ Anyway, after enough time had passed and I made it inside, the show was amazing.
 not my favorite Kendrick Lamar project, but the fact that I saw him live was enough. He also did more than enough songs
 from his other albums, so the show was definitely still very enjoyable!
 
-![Kendrick Lamar](/assets/images/kendrick-damn.jpg)
+![Kendrick Lamar](/assets/images/concerts/kendrick-damn.jpg)
 
 Standouts from the show were Kendrick's performances of _Money Trees_ and _DNA_.
