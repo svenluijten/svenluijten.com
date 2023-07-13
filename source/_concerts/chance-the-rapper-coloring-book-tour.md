@@ -15,7 +15,7 @@ I was nervous as this was my first ever live show (and I went alone!), but that 
 is a stranger, but you _at least_ have one thing in common, and that is your love and appreciation for the artist you're
 there to see. 
 
-![Chance The Rapper at the show in 2016](/assets/images/chance-the-rapper.jpg)
+![Chance The Rapper at the show in 2016](/assets/images/concerts/chance-the-rapper.jpg)
 
 Standouts from that evening were _Angels_ (which he opened with), _Ultralight Beam_, and _Same Drugs_, which most of the
 crowd sang along to. [He was so taken aback by it!](https://youtu.be/3QKIlTwZDPo).

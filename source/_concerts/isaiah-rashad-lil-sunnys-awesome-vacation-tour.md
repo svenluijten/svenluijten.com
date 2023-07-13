@@ -13,5 +13,5 @@ a great show.
 Isaiah persisted through all that though and put on a show as best he could, and I still had a great night! The moshing
 at the end of the show to other TDE-tracks was memorable!
 
-![Isaiah Rashad](/assets/images/isaiah-rashad.jpg)
+![Isaiah Rashad](/assets/images/concerts/isaiah-rashad.jpg)
 

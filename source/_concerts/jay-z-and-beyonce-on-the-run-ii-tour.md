@@ -13,7 +13,7 @@ They dropped the single _Apeshit_ off of _The Carters_ just the week before this
 perform it live. Jay Z and Beyoncé traded every couple songs to keep it fresh and keep the crowd happy, and it ended up
 being a pretty entertaining show. 
 
-![Jay Z and Beyoncé](/assets/images/jay-z-beyonce.jpg)
+![Jay Z and Beyoncé](/assets/images/concerts/jay-z-beyonce.jpg)
 
 Standouts from the evening were (of course) _Crazy In Love_, _Ni\*\*as In Paris_, and _Single Ladies_. All classics,
 executed to perfection.

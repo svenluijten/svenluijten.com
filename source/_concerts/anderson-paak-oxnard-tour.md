@@ -15,4 +15,4 @@ fully tuned in. What a fantastic show! Andy showing off his drumming skills inte
 so cool to finally see live. And the show wouldn't be complete without a little tribute to the late Mac Miller at the 
 end.
 
-![Anderson .Paak](/assets/images/anderson-paak.jpg)
+![Anderson .Paak](/assets/images/concerts/anderson-paak.jpg)

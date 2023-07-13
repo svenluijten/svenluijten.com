@@ -10,4 +10,4 @@ I don't listen to TOOL in my daily life, but I knew of their existence and legen
 visuals at this show were absolutely mind-blowing, and the music was incredible. These guys absolutely deserve their
 legendary status, TOOL is not to be messed with.
 
-![TOOL](/assets/images/tool.jpg)
+![TOOL](/assets/images/concerts/tool.jpg)

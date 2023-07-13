@@ -10,6 +10,6 @@ location: Tilburg
 And while (as the tour name might suggest) he didn't play very many of his _big hits_, it was mostly an intimite showing
 of his talent as a songwriter, accordion player, and overall performer. 
 
-![Weird Al Yankovic](/assets/images/weird-al.jpg)
+![Weird Al Yankovic](/assets/images/concerts/weird-al.jpg)
 
 He did treat us to a little medley of all the hits at the end of the show though, so that was nice.

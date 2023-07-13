@@ -15,13 +15,13 @@ I'd seen Anderson .Paak previously [in Copenhagen](./anderson-paak-oxnard-tour.m
 didn't do any of his solo work, but instead focussed solely on NxWorries. _Fan-tas-tic choice_! These songs were _made_
 to be performed live.
 
-![Anderson .Paak performing live, with Knxwledge DJ-ing behind him](/assets/images/nxworries-1.jpg)
+![Anderson .Paak performing live, with Knxwledge DJ-ing behind him](/assets/images/concerts/nxworries-1.jpg)
 
 I absolutely loved this. The long wait at the front of the queue was worth the result; standing all the way up against
 the stage seeing these two heroes of mine do what they do best. And I even managed to get some of my vinyl records 
 signed by both of them!
 
-![Anderson .Paak signing my vinyl record(s)](/assets/images/nxworries-2.jpg)
+![Anderson .Paak signing my vinyl record(s)](/assets/images/concerts/nxworries-2.jpg)
 
-![5 signed vinyl records; Knxwledge's Meek Remixes parts 1 through 6, NxWorries' "Yes Lawd!", and Anderson .Paak's "Malibu"](/assets/images/nxworries-3.jpg){#social-image}
+![5 signed vinyl records; Knxwledge's Meek Remixes parts 1 through 6, NxWorries' "Yes Lawd!", and Anderson .Paak's "Malibu"](/assets/images/concerts/nxworries-3.jpg){#social-image}
 

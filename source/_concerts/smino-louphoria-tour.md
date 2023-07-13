@@ -14,6 +14,6 @@ something every artist should aspire to.
 > 
 > **\- Smino**
 
-![Smino](/assets/images/smino.jpg)
+![Smino](/assets/images/concerts/smino.jpg)
 
 Memorable tracks were _90 Proof_, _Pudgy_, and _Anita_.

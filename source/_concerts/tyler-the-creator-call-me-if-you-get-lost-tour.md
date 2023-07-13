@@ -14,7 +14,7 @@ I would have liked to have been closer to the stage, there was an entire area re
 holders that forced me (and the rest of the plebs) to stay at about 30m distance. Luckily I still had a decent view of
 the stage though!
 
-![Tyler, The Creator](/assets/images/tyler-the-creator.jpg)
+![Tyler, The Creator](/assets/images/concerts/tyler-the-creator.jpg)
 
 The fireworks during _CORSO_, pyrotechnics during _Who Dat Boy_, and moshpits during _NEW MAGIC WAND_ made this a very
 memorable show, I thoroughly enjoyed myself. Worth the 4-hour queue!

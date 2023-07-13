@@ -14,4 +14,4 @@ Luckily the tickets I'd bought were valid, and we stood there in the O2 as Child
 "church". Some unreleased tracks that would later end up on his project _3.15.20_ were played, along with the elusive
 still-unreleased track _Human Sacrifice_. A night to always remember.
 
-![Childish Gambino](/assets/images/childish-gambino.jpg)
+![Childish Gambino](/assets/images/concerts/childish-gambino.jpg)

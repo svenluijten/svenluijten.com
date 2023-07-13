@@ -14,7 +14,7 @@ It wasn't nearly as energetic of a show as [Childish Gambino](./childish-gambino
 [Kendrick Lamar](./kendrick-lamar-damn-tour.md), but it certainly didn't have to be. They played some of their
 discography that I'm not intimitely familiar with, but it was still a fun time to spend with my dad!
 
-![Genesis](/assets/images/genesis.jpg)
+![Genesis](/assets/images/concerts/genesis.jpg)
 
 Of course _Land of Confusion_ and _I Can't Dance_ whipped up the energy at the end of the show, and Phil's son killed it 
 on the drums throughout the show!
