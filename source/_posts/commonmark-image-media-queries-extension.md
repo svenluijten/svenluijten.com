@@ -41,7 +41,11 @@ None!
 ```
 
 You can even simplify it further by making use of (or writing your own) shorthands. Doing this, you can replace the 
-clunky `{media="(prefers-color-scheme: dark)"}` with `{scheme=dark}`.
+clunky `{media="(prefers-color-scheme: dark)"}` with `{scheme=dark}`. You can see the result of this on [my post about
+enabling IntelliSense for PHP Extensions in PhpStorm](./enable-intellisense-for-php-extensions-in-phpstorm.md), or check
+out the image below:
+
+![A side-by-side comparison of this website in light and dark mode, showing how the same image has both a light and a dark appearance](/assets/images/posts/image-media-queries-side-by-side.jpg)
 
 If you're using CommonMark to render Markdown, check out this extension and see if it's a good fit for you. To see how
 the extension works in-depth, visit [the GitHub repository](https://github.com/svenluijten/commonmark-image-media-queries).
