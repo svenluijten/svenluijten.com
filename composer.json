@@ -2,7 +2,7 @@
     "require": {
         "tightenco/jigsaw": "^1.7",
         "ext-dom": "*",
-        "sven/commonmark-dark-mode-images": "^1.0"
+        "sven/commonmark-image-media-queries": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -7,19 +7,23 @@ use League\CommonMark\Extension\CommonMark\Node\Block\ListBlock;
 use League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\Node\Block\Paragraph;
-use Sven\CommonMark\DarkModeImages\DarkModeImagesExtension;
+use Sven\CommonMark\ImageMediaQueries\ImageMediaQueriesExtension;
+use Sven\CommonMark\ImageMediaQueries\Shorthands\ColorScheme;
+
+$imageMediaQueriesExtension = new ImageMediaQueriesExtension();
+$imageMediaQueriesExtension->addShorthand(new ColorScheme());
 
 return [
     'config' => [
         'heading_permalink' => headingPermalinkConfig(),
         'default_attributes' => defaultAttributeConfig(),
-        'dark_mode_images' => darkModeImagesConfig(),
+        'image_media_queries' => imageMediaQueriesConfig(),
     ],
     'extensions' => [
         new HeadingPermalinkExtension(),
         new AttributesExtension(),
         new DefaultAttributesExtension(),
-        new DarkModeImagesExtension(),
+        $imageMediaQueriesExtension,
     ],
 ];
 
@@ -67,11 +71,9 @@ function defaultAttributeConfig(): array
     ];
 }
 
-function darkModeImagesConfig(): array
+function imageMediaQueriesConfig(): array
 {
     return [
         'picture_class' => '',
-        'light_image_class' => 'l',
-        'dark_image_class' => 'd',
     ];
 }
