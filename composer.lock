@@ -2403,16 +2403,16 @@
         },
         {
             "name": "sven/commonmark-image-media-queries",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/svenluijten/commonmark-image-media-queries.git",
-                "reference": "29053c575dfd506ae048c2d807fffc87a574bbd7"
+                "reference": "c89c8ca2395e9448d131376200df32ed0c189476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/svenluijten/commonmark-image-media-queries/zipball/29053c575dfd506ae048c2d807fffc87a574bbd7",
-                "reference": "29053c575dfd506ae048c2d807fffc87a574bbd7",
+                "url": "https://api.github.com/repos/svenluijten/commonmark-image-media-queries/zipball/c89c8ca2395e9448d131376200df32ed0c189476",
+                "reference": "c89c8ca2395e9448d131376200df32ed0c189476",
                 "shasum": ""
             },
             "require": {
@@ -2445,9 +2445,9 @@
             ],
             "support": {
                 "issues": "https://github.com/svenluijten/commonmark-image-media-queries/issues",
-                "source": "https://github.com/svenluijten/commonmark-image-media-queries/tree/v1.0.0"
+                "source": "https://github.com/svenluijten/commonmark-image-media-queries/tree/v1.0.1"
             },
-            "time": "2023-07-31T13:59:35+00:00"
+            "time": "2023-08-01T14:16:01+00:00"
         },
         {
             "name": "symfony/console",
