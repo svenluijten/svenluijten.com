@@ -1,5 +1,5 @@
-<header class="container mx-auto">
-    <div class="mx-auto w-full flex flex-row items-center justify-between py-4 px-6 | lg:w-3/5 lg:px-0 md:pt-12 md:pb-6">
+<header class="container">
+    <div class="mx-auto w-full flex flex-row items-center justify-between py-4 px-6 | lg:w-2/3 lg:px-0 md:pt-12 md:pb-6">
         <a href="/" class="text-2xl font-extrabold justify-center text-black hover:text-black hover:no-underline | dark:text-gray-100 dark:hover:text-indigo-100">
             Sven Luijten
         </a>
