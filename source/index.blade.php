@@ -27,7 +27,7 @@
 
         <p class="mb-4">
             This is where I write technical articles about my learnings, what's happening in my career as a full-stack
-            developer, and the occasional random showerthought. Here are my 5 most recent articles:
+            developer, and the occasional random showerthought. Here are my 5 most recent posts:
         </p>
 
         <ul class="mb-4 list-disc ml-6">
@@ -40,7 +40,7 @@
 
         <p>
             You can <a href="{{ $page->link('posts') }}">visit the overview page</a> for {{ $posts->count() - 5 }} more
-            {{ \Illuminate\Support\Str::plural('article', $posts->count() - 5) }}, or <a
+            {{ \Illuminate\Support\Str::plural('post', $posts->count() - 5) }}, or <a
                     href="{{ $page->link('feeds/posts.xml') }}">subscribe to the RSS feed here</a>.
         </p>
     </section>
