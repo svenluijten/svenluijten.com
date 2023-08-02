@@ -49,11 +49,11 @@
         <meta property="twitter:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-tw">
     </head>
 
-    <body class="font-sans text-base text-gray-900 antialiased border-8 border-gray-200 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
+    <body class="font-sans text-sm text-gray-900 antialiased border-8 border-gray-200 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
         @include('_partials.header')
 
         <main id="post-content" class="container">
-            <div class="mx-auto w-full px-6 text-lg md:text-xl dark:text-gray-100 | lg:w-2/3 md:py-6 lg:px-0">
+            <div class="mx-auto w-full px-6 md:text-lg dark:text-gray-100 | lg:w-2/3 md:py-6 lg:px-0">
                 @yield('content')
             </div>
         </main>

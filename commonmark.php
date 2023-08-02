@@ -41,7 +41,7 @@ function defaultAttributeConfig(): array
 {
     return [
         Paragraph::class => [
-            'class' => 'mb-4 text-xl leading-relaxed',
+            'class' => 'mb-6 leading-relaxed',
         ],
         Heading::class => [
             'class' => static function (Heading $heading) {
