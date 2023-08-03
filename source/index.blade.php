@@ -1,13 +1,13 @@
 @extends('_layouts.main')
 
 @section('content')
-    <div class="flex flex-row justify-center items-start w-[100vw] -ml-8 bg-gray-200 p-2 | dark:bg-gray-900 sm:w-auto sm:ml-0 sm:bg-inherit">
+    <div class="flex flex-row relative justify-center items-start | md:px-0 sm:w-auto">
         <img src="{{ $page->link('/assets/images/headshot.jpg') }}"
              alt="A headshot of an insanely handsome developer looking at the camera with a strapping smile."
-             class="w-24 h-24 my-4 mr-4 rounded-full border-4 border-gray-100 shadow | lg:mr-0 lg:my-0 lg:-ml-36 lg:w-32 lg:h-32 dark:border-gray-700"
+             class="w-24 h-24 my-4 mr-4 rounded-full border-4 border-gray-100 shadow lg:absolute lg:-left-36 lg:-top-3 | lg:mr-0 lg:my-0 md:w-32 md:h-32 dark:border-gray-700"
         >
 
-        <div class="lg:px-4">
+        <div>
             <h1 class="text-2xl font-bold lg:text-3xl">Hi 👋 — My name is Sven</h1>
             <p class="text-xl">
                 I am a full-stack developer for the web, photographer, and lifter of heavy things. I <a
@@ -27,7 +27,7 @@
 
         <p class="mb-4">
             This is where I write technical articles about my learnings, what's happening in my career as a full-stack
-            developer, and the occasional random showerthought. Here are my 5 most recent articles:
+            developer, and the occasional random showerthought. Here are my 5 most recent posts:
         </p>
 
         <ul class="mb-4 list-disc ml-6">
@@ -40,7 +40,7 @@
 
         <p>
             You can <a href="{{ $page->link('posts') }}">visit the overview page</a> for {{ $posts->count() - 5 }} more
-            {{ \Illuminate\Support\Str::plural('article', $posts->count() - 5) }}, or <a
+            {{ \Illuminate\Support\Str::plural('post', $posts->count() - 5) }}, or <a
                     href="{{ $page->link('feeds/posts.xml') }}">subscribe to the RSS feed here</a>.
         </p>
     </section>

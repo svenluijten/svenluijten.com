@@ -7,7 +7,7 @@ a {
 }
 
 .post code, code {
-    @apply bg-gray-50 rounded px-2 py-0.5 text-lg dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 box-decoration-clone;
+    @apply bg-gray-50 rounded text-base px-2 py-0.5 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 box-decoration-clone;
 }
 
 .post pre {
