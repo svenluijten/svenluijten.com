@@ -15,12 +15,12 @@ libraries.
 This is the blog post I wish I had when I was searching for a good workflow for branching and tagging open source 
 packages/libraries.
 
-## Initial Development
+## Initial development
 First off, every repository has a `main` branch. This is always the _latest_ version of the library. This is therefore
-also where development happens _before_ a version is tagged. There is little to no benefit from introducing complexity
-by way of pull requests or approvals at this stage of development.
+also where development happens _before_ [a version is tagged](./how-i-create-signed-git-tags.md). There is little to no
+benefit from introducing complexity by way of pull requests or approvals at this stage of development.
 
-## Tagging the First Version
+## Tagging the first version
 When you're ready to tag your first version (`v1.0.0`, in this case), you would do so _directly from the `main` branch_:
 
 ```sh
@@ -34,7 +34,7 @@ This is also when I _stop_ directly committing to `main`, and work via pull requ
 requests should be targeted towards `main`, and any subsequent minor and patch versions should be tagged from there as
 well.
 
-## Two Point Oh and Beyond
+## Two point oh and beyond
 When you introduce a breaking change in one of your pull requests, it's time to tag the next major version (`v2.0.0`),
 because you're following [SemVer](https://semver.org), right? But before you do, prepare your branches so you and
 contributors can still apply bug fixes to `1.x`. Even if you don't want to actively support this version anymore, it's a
@@ -56,10 +56,10 @@ package, and `main` is still the _latest_ version.
 
 Once you're ready to tag `v2.0.0`, do so directly from `main`.
 
-## Bug Fixes to Previous Versions
-At this point, I normally only accept bug fixes for `1.x`. When one comes in as a pull request, it should be targeted
-towards the `1.x` branch _if it only applies to that version_. If this is not the case, see
-[Porting Bug Fixes to Previous Versions](#porting-bug-fixes-to-previous-versions).
+## Bug fixes to previous versions
+At this point, I normally only accept bug fixes for `1.x`, and no new features. When a bug fix comes in as a pull 
+request, it should be targeted towards the `1.x` branch _if it only applies to that version_. If this is not the case, 
+see [Porting Bug Fixes to Previous Versions](#porting-bug-fixes-to-previous-versions).
 
 When this pull request is merged into `1.x`, tag the next version _from that branch_:
 
@@ -71,7 +71,7 @@ git push origin v1.x.y
 git switch main
 ```
 
-## Porting Bug Fixes to Previous Versions
+## Porting bug fixes to previous versions
 If a bug fix comes in that should be applied to `2.x` _and_ `1.x` (or other previous versions), it should be targeted to
 the latest branch where the bug is present. I will assume `main` in this case. Once the bug fix is merged into `main`,
 you can _cherry-pick_ the commit(s) into the other affected version(s):
