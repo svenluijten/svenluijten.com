@@ -5,6 +5,7 @@ use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
 use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
 use League\CommonMark\Extension\CommonMark\Node\Block\ListBlock;
 use League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension;
+use League\CommonMark\Extension\Footnote\FootnoteExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\Node\Block\Paragraph;
 use Sven\CommonMark\ImageMediaQueries\ImageMediaQueriesExtension;
@@ -18,12 +19,14 @@ return [
         'heading_permalink' => headingPermalinkConfig(),
         'default_attributes' => defaultAttributeConfig(),
         'image_media_queries' => imageMediaQueriesConfig(),
+        'footnote' => footnoteConfig(),
     ],
     'extensions' => [
         new HeadingPermalinkExtension(),
         new AttributesExtension(),
         new DefaultAttributesExtension(),
         $imageMediaQueriesExtension,
+        new FootnoteExtension(),
     ],
 ];
 
@@ -75,5 +78,14 @@ function imageMediaQueriesConfig(): array
 {
     return [
         'picture_class' => '',
+    ];
+}
+
+function footnoteConfig(): array
+{
+    return [
+        'backref_class' => 'text-sm font-bold',
+        'container_class' => 'footnotes',
+        'container_add_hr' => true,
     ];
 }
