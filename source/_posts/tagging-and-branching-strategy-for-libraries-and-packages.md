@@ -59,7 +59,7 @@ Once you're ready to tag `v2.0.0`, do so directly from `main`.
 ## Bug fixes to previous versions
 At this point, I normally only accept bug fixes for `1.x`, and no new features. When a bug fix comes in as a pull 
 request, it should be targeted towards the `1.x` branch _if it only applies to that version_. If this is not the case, 
-see [Porting Bug Fixes to Previous Versions](#porting-bug-fixes-to-previous-versions).
+see [Porting bug fixes to old versions](#porting-bug-fixes-to-old-versions).
 
 When this pull request is merged into `1.x`, tag the next version _from that branch_:
 
@@ -71,7 +71,7 @@ $ git push origin v1.x.y
 $ git switch main
 ```
 
-## Porting bug fixes to previous versions
+## Porting bug fixes to old versions
 If a bug fix comes in that should be applied to `2.x` _and_ `1.x` (or other previous versions), it should be targeted to
 the latest branch where the bug is present. I will assume `main` in this case. Once the bug fix is merged into `main`,
 you can _cherry-pick_ the commit(s) into the other affected version(s):
