@@ -24,10 +24,10 @@ benefit from introducing complexity by way of pull requests or approvals at this
 When you're ready to tag your first version (`v1.0.0`, in this case), you would do so _directly from the `main` branch_:
 
 ```sh
-git switch main
-git pull origin main
-git tag -s v1.0.0 -m 'Version 1.0.0'
-git push origin v1.0.0
+$ git switch main
+$ git pull origin main
+$ git tag -s v1.0.0 -m 'Version 1.0.0'
+$ git push origin v1.0.0
 ```
 
 This is also when I _stop_ directly committing to `main`, and work via pull requests from this point on. These pull
@@ -42,9 +42,9 @@ good idea to make it as easy as possible for others to find old versions of your
 
 ```sh
 # Do this *before* merging the breaking change:
-git switch main
-git pull origin main
-git switch -c 1.x
+$ git switch main
+$ git pull origin main
+$ git switch -c 1.x
 ```
 
 Create a `1.x` branch directly from `main`. This way, `1.x` is an "archived" version of the first version of your
@@ -64,11 +64,11 @@ see [Porting Bug Fixes to Previous Versions](#porting-bug-fixes-to-previous-vers
 When this pull request is merged into `1.x`, tag the next version _from that branch_:
 
 ```sh
-git switch 1.x
-git pull origin 1.x
-git tag -s v1.x.y -m 'Version 1.x.y' # Where 'y' is incremented
-git push origin v1.x.y
-git switch main
+$ git switch 1.x
+$ git pull origin 1.x
+$ git tag -s v1.x.y -m 'Version 1.x.y' # Where 'y' is incremented
+$ git push origin v1.x.y
+$ git switch main
 ```
 
 ## Porting bug fixes to previous versions
@@ -77,16 +77,16 @@ the latest branch where the bug is present. I will assume `main` in this case. O
 you can _cherry-pick_ the commit(s) into the other affected version(s):
 
 ```sh
-git switch main
-git pull origin main
-git switch 1.x
-git cherry-pick <commit sha>
+$ git switch main
+$ git pull origin main
+$ git switch 1.x
+$ git cherry-pick <commit sha>
 # Or, if you want to cherry-pick multiple commits:
 # git cherry-pick <first commit>^..<last commit>
-git push origin 1.x
-git tag -s v1.x.y -m 'Version 1.x.y' # Where 'y' is incremented
-git push origin v1.x.y
-git switch main
+$ git push origin 1.x
+$ git tag -s v1.x.y -m 'Version 1.x.y' # Where 'y' is incremented
+$ git push origin v1.x.y
+$ git switch main
 ```
 
 ## Conclusion
