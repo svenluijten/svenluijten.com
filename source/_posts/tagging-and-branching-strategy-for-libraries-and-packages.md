@@ -16,6 +16,8 @@ This is the blog post I wish I had when I was searching for a good workflow for 
 packages/libraries.
 
 ## My strategy
+This workflow is similar to what I've observed other packages/libraries/frameworks follow. It is not meant to be a
+definitive guide to how _you_ should do it, but serves mainly as a reminder and guide for _myself_. Ok, let's dive in.
 
 ### Initial development
 First off, every repository has a `main` branch. This is always the _next_ major version of the library, and therefore
