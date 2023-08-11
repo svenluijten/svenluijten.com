@@ -40,8 +40,8 @@ Be sure to also [make `1.x` the default branch on GitHub](https://docs.github.co
 From this point on, `main` is for `v2.0.0` development. I would now also _stop_ directly committing to any of these
 branches and work via pull requests instead. These pull requests most often target `1.x`, and are ported over to `main`.
 
-For instance, say I have a new feature _without breaking changes_ in the works. The pull request for this feature will
-target `1.x` so it lands in `v1.1.0`. Once approved and merged into `1.x`, I would then merge that change into `main`:
+For instance, say you have a new feature _without breaking changes_ in the works. The pull request for this feature will
+target `1.x` so it lands in `v1.1.0`. Once approved and merged into `1.x`, you'd merge that change into `main`:
 
 ```sh
 $ git switch 1.x
@@ -56,7 +56,7 @@ $ git push origin main
 > your repository's URL, and you'll see a button to create a pull request to merge the changes from `1.x` into `main`.
 
 ### Tagging new minor and patch versions
-Once `v1.1.0` is ready to be released, you should tag this from the `1.x` branch:
+Once `v1.1.0` is ready to be released, tag it from the `1.x` branch:
 
 ```sh
 $ git switch 1.x
