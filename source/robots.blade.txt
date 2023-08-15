@@ -5,3 +5,6 @@ Disallow:
 User-agent: *
 Disallow: /
 @endif
+
+User-agent: GPTBot
+Disallow: /
