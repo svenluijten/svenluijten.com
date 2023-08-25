@@ -12,7 +12,9 @@ hints.
 
 That is when I found out you can add custom [JSON Schema](https://json-schema.org/) definitions to Jetbrains IDEs to
 allow for extended validation (and autocomplete!) on any of your files. All you need is the JSON Schema for whatever
-configuration you're writing, which most companies will publish.
+configuration you're writing, which most companies will publish. Oddly, the settings pane you use to configure this 
+seems to be [undocumented](https://www.jetbrains.com/help/phpstorm/settings-languages-schemas-and-dtds.html) for all of
+Jetbrains' IDEs at the time of publishing.
 
 I wanted autocomplete on `.gitlab-ci.yml`, so I went looking if GitLab published their own JSON Schema for their CI/CD
 config, and thankfully [they do](https://docs.gitlab.com/ee/development/cicd/schema.html#json-schemas). So I did the 
