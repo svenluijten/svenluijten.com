@@ -3,7 +3,9 @@ title: "Queen + Adam Lambert: Rhapsody tour"
 date: 2022-07-02
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 This was a little family trip; my parents, sister, her boyfriend, and I all went to go and see the (twice rescheduled)

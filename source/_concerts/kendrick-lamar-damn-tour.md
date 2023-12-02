@@ -3,7 +3,9 @@ title: "Kendrick Lamar: DAMN tour"
 date: 2018-02-23
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 This was my first show in a big venue, so of course I made the mistake of arriving _way_ too early, even though I had a

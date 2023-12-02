@@ -1,29 +1,44 @@
 @extends('_layouts.main')
 
-@section('description', $page->title . ' in ' . $page->location . ', a mini-review.')
+@section('title', $page->title)
 
 @section('content')
-    <article class="dark:text-indigo-100">
-        <h1 class="text-3xl font-bold text-center">{{ $page->title }}</h1>
-
+    <article>
         <header>
-            <div class="text-sm text-gray-700 mt-4 text-center | dark:text-indigo-100">
-                <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
-                &mdash;
-                <span class="italic">
-                    {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
-                </span>
-            </div>
+            <h1>{{ $page->title }}</h1>
+
+            <span>
+                {{ $page->venue }}, {{ $page->city }} ({{ $page->country }})
+            </span>
+
+            <time datetime="{{ $page->getDate('Y-m-d') }}" title="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
+
+            <span>
+                {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
+            </span>
         </header>
 
-        <hr class="my-6 | dark:border-gray-900">
-
-        <section class="post text-lg leading-relaxed">
+        <section id="post-content">
             @yield('body')
         </section>
 
-        <footer class="mt-6">
-            <a href="{{ $page->link('concerts') }}">← Other concerts</a>
+        <footer>
+            <h1 id="more-concerts">More concerts</h1>
+            <nav aria-label="Previous and next post(s) if available">
+                <ul role="menu" aria-labelledby="more-concerts">
+                    @if ($page->previous())
+                        <li>
+                            Previous: <a href="{{ $page->previous()->getUrl() }}">{{ $page->previous()->title }}</a>
+                        </li>
+                    @endif
+
+                    @if ($page->next())
+                        <li>
+                            Next: <a href="{{ $page->next()->getUrl() }}">{{ $page->next()->title }}</a>
+                        </li>
+                    @endif
+                </ul>
+            </nav>
         </footer>
     </article>
 @endsection

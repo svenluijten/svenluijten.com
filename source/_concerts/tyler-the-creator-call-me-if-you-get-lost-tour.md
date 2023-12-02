@@ -3,7 +3,9 @@ title: "Tyler, The Creator: Call Me If You Get Lost tour"
 date: 2022-06-07
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "AFAS Live"
 ---
 
 I initially got a ticket for the _IGOR_-tour, but that had to be rescheduled twice due to COVID. In the meantime, Tyler 

@@ -3,7 +3,9 @@ title: "J.I.D: The Forever Story tour"
 date: 2023-07-26
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Melkweg"
 ---
 
 Anticipating a large crowd for this show, I showed up about 3 hours before doors opened. Turns out that wasn't necessary

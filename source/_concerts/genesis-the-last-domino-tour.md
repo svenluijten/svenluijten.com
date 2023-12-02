@@ -3,7 +3,9 @@ title: "Genesis: The Last Domino tour"
 date: 2022-03-21
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 As a present for my dad, I took him with me to see Genesis (and thereby Phil Collins) perform. This ended up being one

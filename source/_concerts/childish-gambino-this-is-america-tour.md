@@ -3,7 +3,9 @@ title: "Childish Gambino: This Is America tour"
 date: 2019-03-24
 extends: _layouts.concert
 section: body
-location: London
+city: London
+country: United Kingdom
+venue: "O2 Arena"
 ---
 
 I'd missed out on the official sale for these tickets, so I had to get them from a fairly shady website. This was at the

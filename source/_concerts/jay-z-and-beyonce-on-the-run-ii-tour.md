@@ -3,7 +3,9 @@ title: "Jay Z & Beyoncé: On The Run II tour"
 date: 2018-06-19
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Johan Cruijff Arena"
 ---
 
 This was insane to get tickets for. I was _super_ excited for this show, both of these artists are legendary in their

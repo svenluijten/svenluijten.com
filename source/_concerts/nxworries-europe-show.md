@@ -3,7 +3,9 @@ title: "NxWorries: Exclusive concert in NL"
 date: 2023-06-05
 extends: _layouts.concert
 section: body
-location: Utrecht
+city: Utrecht
+country: The Netherlands
+venue: "TivoliVredenburg"
 ---
 
 This was absolutely my favorite show to date. It felt like the tickets for this were _so hot_, almost everyone that knew

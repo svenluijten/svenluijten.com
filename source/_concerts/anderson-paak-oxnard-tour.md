@@ -3,7 +3,9 @@ title: "Anderson .Paak: Oxnard tour"
 date: 2019-03-07
 extends: _layouts.concert
 section: body
-location: Copenhagen
+country: Denmark
+city: Copenhagen
+venue: "Royal Arena"
 ---
 
 Sad I missed out on getting tickets for the Amsterdam show, but hellbent on going to see Anderson .Paak live, I had to

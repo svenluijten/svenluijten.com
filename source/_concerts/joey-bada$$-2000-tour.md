@@ -3,7 +3,9 @@ title: "Joey Bada$$: 2000 tour"
 date: 2022-12-08
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Melkweg"
 ---
 
 Apparently this show sold out _so quick_ that the organizers wanted to add another date, but that wouldn't fit into

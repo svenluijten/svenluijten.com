@@ -3,7 +3,9 @@ title: "Pusha T: It's Almost Dry Tour"
 date: 2023-08-13
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Paradiso"
 ---
 
 This show once again proves that Pusha T is one of the best rappers currently out there, and has been for the better

@@ -3,7 +3,9 @@ title: "Deadmau5 Europe 2022 tour"
 date: 2022-06-13
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 Initially Deadmau5 was supposed to bring his "Cube" tour to Europe, but thanks to logistical issues, unfortunately

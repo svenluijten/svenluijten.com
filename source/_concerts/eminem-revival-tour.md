@@ -3,7 +3,9 @@ title: "Eminem: Revival tour"
 date: 2019-07-12
 extends: _layouts.concert
 section: body
-location: Nijmegen
+city: Nijmegen
+country: The Netherlands
+venue: "Goffertpark"
 ---
 
 Ok, sure. _Revival_ was a bad album. But that doesn't discount the fact that I saw Eminem live! Luckily he did plenty of

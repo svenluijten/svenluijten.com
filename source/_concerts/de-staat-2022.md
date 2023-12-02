@@ -3,7 +3,9 @@ title: "De Staat"
 date: 2022-12-10
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 De Staat is a Dutch rockband with a massive catalog of classics. So when friends asked if I wanted to come, I 
