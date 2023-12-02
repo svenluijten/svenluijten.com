@@ -22,11 +22,11 @@ return [
         'footnote' => footnoteConfig(),
     ],
     'extensions' => [
-        new HeadingPermalinkExtension(),
+        // new HeadingPermalinkExtension(),
         new AttributesExtension(),
-        new DefaultAttributesExtension(),
-        $imageMediaQueriesExtension,
-        new FootnoteExtension(),
+        // new DefaultAttributesExtension(),
+        // $imageMediaQueriesExtension,
+        // new FootnoteExtension(),
     ],
 ];
 
