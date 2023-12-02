@@ -1,65 +1,71 @@
-@php
-/** @var \TightenCo\Jigsaw\PageVariable $page */
-@endphp
-
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        @section('meta')
-            <link href="{{ $page->link('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten">
-        @show
+{{--        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">--}}
 
-        @include('_partials.meta')
+        <!-- Theme colors -->
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan">
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
 
-        <link rel="canonical" href="{{ $page->getUrl() }}">
-
-        @if(! $page->production)
-            <meta name="robots" content="noindex, nofollow">
-        @endif
-
-        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <link rel="stylesheet" href="{{ mix('css/hljs-light.css', 'assets/build') }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-        <link rel="stylesheet" href="{{ mix('css/hljs-dark.css', 'assets/build') }}" media="(prefers-color-scheme: dark)">
-
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
-
-        <!-- Primary Meta Tags -->
-        <title>{{ $page->title }}</title>
-        <meta name="title" content="{{ $page->title }}">
-        <meta name="description" content="@yield('description', $page->excerpt ?? $page->description)">
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ $page->getUrl() }}">
-        <meta property="og:title" content="{{ $page->title }}">
-        <meta property="og:description" content="@yield('description', $page->excerpt ?? $page->description)">
-        <meta property="og:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-og">
-
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary">
-        <meta property="twitter:url" content="{{ $page->getUrl() }}">
-        <meta property="twitter:title" content="{{ $page->title }}">
-        <meta property="twitter:description" content="@yield('description', $page->excerpt ?? $page->description)">
-        <meta property="twitter:creator" content="@svenluijten">
-        <meta property="twitter:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-tw">
+        <title>@yield('title') &bull; Sven Luijten</title>
     </head>
 
-    <body class="font-sans text-gray-900 antialiased border-8 border-gray-200 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
-        @include('_partials.header')
+    <body>
+        <header aria-label="">
+            <nav aria-label="Primary navigation">
+                <section>
+                    <a href="{{ $page->link('/') }}">Sven Luijten</a>
+                </section>
 
-        <main id="post-content" class="container text-lg">
-            <div class="mx-auto w-full px-6 dark:text-gray-100 | lg:w-2/3 md:py-6 lg:px-0">
-                @yield('content')
-            </div>
+                <ul>
+                    <li>
+                        <a href="{{ $page->link('posts') }}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{{ $page->link('concerts') }}">Concerts</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            @yield('content')
         </main>
 
-        @include('_partials.footer')
-    </body>
+        <footer>
+            <section>
+                &copy;
+                <a href="{{ $page->link('/') }}">Sven Luijten</a>
+            </section>
 
-    <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li>
+                        <a href="https://github.com/svenluijten">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://mas.to/@svenluijten">Mastodon</a>
+                    </li>
+                    <li>
+                        <a href="https://luijten.photography/">Photography</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <a href="{{ $page->link('now') }}">Now</a>
+                    </li>
+                    <li>
+                        <a href="{{ $page->link('uses') }}">Uses</a>
+                    </li>
+                    <li>
+                        <a href="{{ $page->link('feeds') }}">Feeds</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
 </html>

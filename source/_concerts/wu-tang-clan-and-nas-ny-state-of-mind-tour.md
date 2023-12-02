@@ -3,7 +3,9 @@ title: "Wu-Tang Clan & Nas: NY State Of Mind tour"
 date: 2023-06-06
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 Wu-Tang Clan _and_ Nas in _one show_?! Sign me up! Even though this was literally the day after 

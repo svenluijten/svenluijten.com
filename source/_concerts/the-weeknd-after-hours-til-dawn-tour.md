@@ -3,7 +3,9 @@ title: "The Weeknd: After Hours Til Dawn tour"
 date: 2023-06-25
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Johan Cruijff Arena"
 ---
 
 We arrived just as Mike DEAN (the first opener) was working towards the end of his set, during which we found a spot to

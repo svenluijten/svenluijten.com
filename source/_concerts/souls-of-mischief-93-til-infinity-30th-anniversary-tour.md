@@ -3,7 +3,9 @@ title: "Souls of Mischief: 93 'Til Infinity 30th Anniversary tour"
 date: 2023-03-16
 extends: _layouts.concert
 section: body
-location: Haarlem
+city: Haarlem
+country: The Netherlands
+venue: "Patronaat"
 ---
 
 When I saw they were coming over to The Netherlands, I immediately got a ticket to see the Souls of Mischief live. The 
