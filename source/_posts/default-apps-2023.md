@@ -17,7 +17,7 @@ After seeing this on [Chris Coyier's blog](https://chriscoyier.net/2023/11/25/de
 - 🎨 Photo Management & Editing: [Adobe Lightroom Classic](https://www.adobe.com/products/photoshop-lightroom-classic.html), [Synology Photos](https://www.synology.com/en-global/dsm/feature/photos), and `Photos.app`.
 - 📆 Calendar: `Calendar.app` synced via iCloud.
 - 📁 Cloud File Storage: [iCloud Drive](https://www.apple.com/icloud/) and [Synology DS File](https://www.synology.com/en-global/dsm/overview/file).
-- 📖 RSS: [Readwise Reader](https://readwise.io/read).
+- 📖 RSS: [Readwise Reader](https://readwise.io/read). Or use [my referral link for 2 free months](https://readwise.io/i/sven8).
 - 🙍🏻‍♂️ Contacts: `Contacts.app` synced via iCloud.
 - 🙋‍♂️ Browser: Safari and [Arc](https://arc.net).
 - 💬 Chat: [WhatsApp](https://www.whatsapp.com), [Discord](https://discord.com), [Slack](https://slack.com/).
