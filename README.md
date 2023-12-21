@@ -6,6 +6,11 @@ This is the source code for [my personal website](https://svenluijten.com/). It 
 - [GitHub Actions](https://github.com/features/actions)
 - [Vercel](https://vercel.com/)
 
+## Local development
+This repository includes a [`Taskfile.dist.yml`](./Taskfile.dist.yaml). To use it, install [`task`](https://taskfile.dev/installation/)
+and run `task <name>`. Build the website for local development, use `task build`. Serve the website on `http://localhost:8000/`
+with `task serve`, and watch for any file changes and automatically build the app with `task watch`.
+
 ## Extra functionality
 In addition to how Jigsaw normally works, I've written 2 listeners to add some niceties to the codebase.
 
