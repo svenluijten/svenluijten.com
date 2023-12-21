@@ -1,0 +1,22 @@
+version: 3
+
+tasks:
+  build:
+    desc: Build the application into `build_local`.
+    cmds:
+      - npm run dev
+
+  build:prod:
+    desc: Build the application into `build_production`.
+    cmds:
+      - npm run prod
+
+  serve:
+    desc: Serve the application on `http://localhost:8000/`.
+    cmds:
+      - ./vendor/bin/jigsaw serve
+
+  watch:
+    desc: Watch the source files for changes and build the app automatically.
+    cmds:
+      - npm run watch
