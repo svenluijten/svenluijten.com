@@ -10,6 +10,11 @@ class Post extends CollectionItem
     use HasReadingTime;
     use HasDate;
 
+    public function id(): string
+    {
+        return md5($this->title . '_' . $this->getDate('Y-m-d'));
+    }
+
     public function previous()
     {
         return $this->collection

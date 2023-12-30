@@ -6,8 +6,4 @@
     <section>
         @yield('body')
     </section>
-
-    <hr>
-
-    more content!
 @endsection
