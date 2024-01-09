@@ -24,8 +24,8 @@ return [
     'extensions' => [
         // new HeadingPermalinkExtension(),
         new AttributesExtension(),
-        // new DefaultAttributesExtension(),
-        // $imageMediaQueriesExtension,
+        new DefaultAttributesExtension(),
+        $imageMediaQueriesExtension,
         // new FootnoteExtension(),
     ],
 ];
@@ -43,14 +43,10 @@ function headingPermalinkConfig(): array
 function defaultAttributeConfig(): array
 {
     return [
-        Paragraph::class => [
-            'class' => 'mb-6 leading-relaxed',
-        ],
         Heading::class => [
             'class' => static function (Heading $heading) {
                 $size = match ($heading->getLevel()) {
-                    2 => 'text-2xl',
-                    3 => 'text-xl',
+                    2 => 'text-xl',
                     default => 'text-lg',
                 };
 
@@ -62,13 +58,11 @@ function defaultAttributeConfig(): array
         ],
         ListBlock::class => [
             'class' => static function (ListBlock $list) {
-                $type = match ($list->getListData()->type) {
+                return match ($list->getListData()->type) {
                     ListBlock::TYPE_ORDERED => 'list-decimal',
                     ListBlock::TYPE_BULLET => 'list-disc',
                     default => 'list-disc',
                 };
-
-                return [$type, 'ml-8 mb-4'];
             }
         ]
     ];
