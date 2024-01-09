@@ -13,10 +13,10 @@
         <title>@yield('title') &bull; Sven Luijten</title>
     </head>
 
-    <body class="font-sans bg-white min-h-screen relative antialiased">
-        <div class="w-full border-b-4 border-indigo-700 shadow-md shadow-indigo-300"></div>
-        <header aria-label="" class="container">
+    <body class="font-sans bg-white min-h-screen relative antialiased | dark:bg-gray-900 dark:text-gray-200">
+        <div class="fixed w-full border-b-4 border-indigo-700 shadow-md shadow-indigo-300 | dark:shadow-indigo-950"></div>
 
+        <header aria-label="" class="container">
             <div class="mx-auto w-full items-center py-4 px-6 lg:w-2/3">
                 <nav aria-label="Primary navigation" class="flex flex-row justify-between items-center">
                     <section>
@@ -30,6 +30,7 @@
                             <span class="mr-0.5 font-bold no-underline" aria-hidden="true">&rsaquo;</span>
                             <a href="{{ $page->link('posts') }}" class="underline hover:no-underline">Blog</a>
                         </li>
+
                         <li>
                             <span class="mr-0.5 font-bold no-underline" aria-hidden="true">&rsaquo;</span>
                             <a href="{{ $page->link('concerts') }}" class="underline hover:no-underline">Concerts</a>
@@ -57,9 +58,11 @@
                         <li>
                             <a href="{{ $page->link('now') }}">Now</a>
                         </li>
+
                         <li>
                             <a href="{{ $page->link('uses') }}">Uses</a>
                         </li>
+
                         <li>
                             <a href="{{ $page->link('feeds') }}">Feeds</a>
                         </li>
@@ -69,9 +72,11 @@
                         <li>
                             <a href="https://github.com/svenluijten">GitHub</a>
                         </li>
+
                         <li>
                             <a href="https://mas.to/@svenluijten" rel="me">Mastodon</a>
                         </li>
+
                         <li>
                             <a href="https://luijten.photography/">Photography</a>
                         </li>

@@ -9,3 +9,23 @@
 .footnote-ref:after {
     content: ']'
 }
+
+#post-content a {
+    @apply font-normal;
+}
+
+.code-styles {
+    @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded px-2 py-0.5;
+}
+
+#post-content p code, p code {
+    @apply code-styles text-base box-decoration-clone before:content-[''] after:content-[''];
+}
+
+#post-content pre {
+    @apply code-styles my-2 lg:-mx-8;
+}
+
+#post-content pre code {
+    @apply border-none;
+}
