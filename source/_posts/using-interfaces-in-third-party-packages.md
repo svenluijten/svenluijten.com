@@ -6,7 +6,7 @@ extends: _layouts.post
 section: body
 ---
 
-I was recently working a PR to make [The OG](https://github.com/simonhamp/the-og) more customizable, and I had some
+I was recently working on a PR to make [The OG](https://github.com/simonhamp/the-og) more customizable, and I had some
 thoughts on using interfaces instead of concrete classes or enums in third-party packages.
 
 Say you expose a `ColorOption` enum so that others can change the color of a UI element.
