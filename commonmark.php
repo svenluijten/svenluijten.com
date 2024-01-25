@@ -26,7 +26,7 @@ return [
         new AttributesExtension(),
         new DefaultAttributesExtension(),
         $imageMediaQueriesExtension,
-        // new FootnoteExtension(),
+        new FootnoteExtension(),
     ],
 ];
 
