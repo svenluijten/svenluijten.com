@@ -22,4 +22,4 @@ scenes from the show projected on a large screen above the orchestra. Laughs wer
 I'm also very glad that I got tickets to their Rotterdam show so I can experience this masterpiece one more time. After
 this, we'll have to wait for books 2 and 3 to be released on vinyl and streaming services.
 
-![An orchestra on a stage with the a still from the final battle of Avatar: The Last Airbender on a projector screen behind them.](/assets/images/concerts/avatar-in-concert-london.jpg)
+![An orchestra on a stage with a still from the final battle of Avatar: The Last Airbender on a projector screen behind them.](/assets/images/concerts/avatar-in-concert-london.jpg)
