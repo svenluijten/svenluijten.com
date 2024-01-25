@@ -2,6 +2,15 @@
 
 @section('title', $page->title)
 
+@push('styles')
+    <link rel="stylesheet" href="{{ mix('css/hljs-light.css', 'assets/build') }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="{{ mix('css/hljs-dark.css', 'assets/build') }}" media="(prefers-color-scheme: dark)">
+@endpush
+
+@push('scripts')
+    <script src="{{ mix('js/hljs.js', 'assets/build') }}"></script>
+@endpush
+
 @section('content')
     <article>
         <x-page-header :page="$page" />
