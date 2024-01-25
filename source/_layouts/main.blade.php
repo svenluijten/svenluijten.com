@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+        @stack('styles')
 
         <!-- Theme colors -->
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan">
@@ -85,4 +86,6 @@
             </div>
         </footer>
     </body>
+
+    @stack('scripts')
 </html>

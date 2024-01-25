@@ -15,17 +15,46 @@
 }
 
 .code-styles {
-    @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded px-2 py-0.5;
+    @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded;
 }
 
 #post-content p code, p code {
-    @apply code-styles text-base box-decoration-clone before:content-[''] after:content-[''];
+    @apply code-styles text-base box-decoration-clone before:content-[''] after:content-[''] px-2 py-0.5;
 }
 
 #post-content pre {
-    @apply code-styles my-2 lg:-mx-8;
+    @apply code-styles px-4 py-2 my-2 lg:-mx-8;
+}
+
+#post-content pre code.hljs {
+    background: none;
+    padding: 0;
 }
 
 #post-content pre code {
     @apply border-none;
+}
+
+.footnotes {
+    @apply text-gray-500 dark:text-gray-300
+}
+
+.footnotes hr {
+    @apply my-6 dark:border-gray-900
+}
+
+.footnotes ol {
+    @apply list-decimal ml-8 mb-4
+}
+
+.footnotes p {
+    @apply mb-2
+}
+
+.footnote-ref:before {
+    content: '['
+}
+
+.footnote-ref:after {
+    content: ']'
 }
