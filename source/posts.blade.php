@@ -6,27 +6,27 @@
     <h1 class="sr-only">Blog posts</h1>
 
     @foreach ($posts as $post)
-        <article aria-labelledby="{{ $post->id() }}" class="py-2 my-2">
-            <h2 class="relative">
-                <a href="{{ $post->getUrl() }}" id="{{ $post->id() }}" class="text-xl underline hover:no-underline peer">
-                    {{ $post->title }}
-                </a>
-                <span class="absolute -top-0.5 -left-3.5 font-bold no-underline text-xl invisible peer-hover:visible" aria-hidden="true">&rsaquo;</span>
-            </h2>
+        <a href="{{ $post->getUrl() }}" id="{{ $post->id() }}" class="group block py-2 my-2 px-4 -mx-4">
+            <article aria-labelledby="{{ $post->id() }}" class="no-underline">
+                <h2 class="relative text-xl">
+                    <span class="group-hover:no-underline underline">{{ $post->title }}</span>
+                    <span class="absolute -top-0.5 -left-3.5 font-bold invisible group-hover:visible text-indigo-700" aria-hidden="true">&rsaquo;</span>
+                </h2>
 
-            <p>{{ $post->excerpt }}</p>
+                <p>{{ $post->excerpt }}</p>
 
-            <footer class="text-gray-600 text-sm">
-                <time datetime="{{ $post->getDate('Y-m-d H:i:s') }}" title="{{ $post->getDate('Y-m-d') }}">
-                    {{ $post->getDate('F jS, Y') }}
-                </time>
+                <footer class="text-gray-600 text-sm">
+                    <time datetime="{{ $post->getDate('Y-m-d H:i:s') }}" title="{{ $post->getDate('Y-m-d') }}">
+                        {{ $post->getDate('F jS, Y') }}
+                    </time>
 
-                &bullet;
+                    &bullet;
 
-                <span>
-                    About {{ $post->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $post->minutesToRead()) }} to read
-                </span>
-            </footer>
-        </article>
+                    <span>
+                        About {{ $post->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $post->minutesToRead()) }} to read
+                    </span>
+                </footer>
+            </article>
+        </a>
     @endforeach
 @endsection

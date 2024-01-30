@@ -43,16 +43,6 @@ function headingPermalinkConfig(): array
 function defaultAttributeConfig(): array
 {
     return [
-        Heading::class => [
-            'class' => static function (Heading $heading) {
-                $size = match ($heading->getLevel()) {
-                    2 => 'text-xl',
-                    default => 'text-lg',
-                };
-
-                return [$size, 'font-bold'];
-            },
-        ],
         BlockQuote::class => [
             'class' => 'border-l-4 border-indigo-200, pl-4 dark:border-indigo-500',
         ],
