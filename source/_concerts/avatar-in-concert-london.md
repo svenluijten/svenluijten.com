@@ -3,7 +3,9 @@ title: "Avatar in Concert"
 date: 2024-01-21
 extends: _layouts.concert
 section: body
-location: London
+country: United Kingdom
+city: London
+venue: Royal Festival Hall
 ---
 
 Avatar: The Last Airbender is my favorite TV show, so when [Avatar in Concert](https://www.avatarinconcert.com) was
