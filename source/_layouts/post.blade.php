@@ -21,6 +21,8 @@
             @yield('body')
         </section>
 
+        <x-separator color="indigo-700" />
+
         <x-page-footer title="More posts" :page="$page" />
     </article>
 @endsection

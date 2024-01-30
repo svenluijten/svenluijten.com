@@ -2,12 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.footnote-ref:before {
-    content: '['
-}
-
-.footnote-ref:after {
-    content: ']'
+.link {
+    @apply font-semibold underline;
 }
 
 #post-content a {

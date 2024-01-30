@@ -1,8 +1,6 @@
 @props(['title', 'page'])
 
 <footer class="my-4">
-    <x-separator color="indigo-700" />
-
     <h1 class="text-sm text-center uppercase text-gray-500 mb-4">
         {{ $title }}
     </h1>
