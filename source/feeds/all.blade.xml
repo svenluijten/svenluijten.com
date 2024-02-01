@@ -1,0 +1,16 @@
+@extends('_layouts.atom')
+
+@section('id', $page->link('/archive'))
+@section('title', 'Sven Luijten\'s archive')
+@section('subtitle', 'All of my posts, concert log entries, links, and "now"-page updates.')
+
+@section('links')
+    <link rel="self" href="{{ $page->link('/feeds/all.xml') }}" type="application/xml+atom" />
+    <link rel="alternate" href="{{ $page->link('/archive') }}" type="text/html" />
+@endsection
+
+@section('entries')
+    @foreach(collect([...$posts, ...$concerts])->sortBy('date', descending: true) as $entry)
+        @include('_partials.atom-entry', ['entry' => $entry])
+    @endforeach
+@endsection

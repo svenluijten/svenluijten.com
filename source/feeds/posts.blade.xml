@@ -1,0 +1,16 @@
+@extends('_layouts.atom')
+
+@section('id', $page->link('/posts'))
+@section('title', 'Sven Luijten\'s blog posts')
+@section('subtitle', 'Things I\'ve learned, tips and tricks, and updates on projects I\'m working on.')
+
+@section('links')
+    <link rel="self" href="{{ $page->link('/feeds/posts.xml') }}" type="application/xml+atom" />
+    <link rel="alternate" href="{{ $page->link('/posts') }}" type="text/html" />
+@endsection
+
+@section('entries')
+    @foreach($posts as $entry)
+        @include('_partials.atom-entry', ['entry' => $entry])
+    @endforeach
+@endsection
