@@ -36,11 +36,11 @@
 }
 
 .footnotes hr {
-    @apply my-6 dark:border-gray-900
+    @apply my-6 dark:border-gray-700
 }
 
 .footnotes ol {
-    @apply list-decimal ml-8 mb-4
+    @apply list-decimal mb-4
 }
 
 .footnotes p {
