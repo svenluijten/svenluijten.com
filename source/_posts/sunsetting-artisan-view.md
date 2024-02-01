@@ -1,7 +1,7 @@
 ---
 title: Sunsetting Artisan View
 date: 2023-10-14
-excerpt: Discontinuing my most popular Laravel package
+excerpt: Discontinuing my most popular Laravel package.
 extends: _layouts.post
 section: body
 ---

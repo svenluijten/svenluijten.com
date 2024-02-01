@@ -1,7 +1,7 @@
 ---
 title: My branching/tagging strategy for packages
 date: 2023-08-11
-excerpt: How I manage branches and tags for the PHP packages I've published
+excerpt: How I manage branches and tags for the PHP packages I've published.
 extends: _layouts.post
 section: body
 ---
