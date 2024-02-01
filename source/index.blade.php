@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('body')
-    <section class="flex items-center relative">
+    <section class="flex items-center relative mb-8">
         <img src="/assets/images/headshot.jpg"
              alt="A headshot of an insanely handsome developer looking at the camera with a strapping smile."
              class="w-32 h-32 rounded-full border-4 border-gray-100 dark:border-gray-700 | lg:absolute lg:-left-36"
@@ -21,44 +21,62 @@
         </div>
     </section>
 
-    <x-separator color="indigo-700" />
+    <section id="blog" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+        <header class="pb-2 flex justify-between items-center">
+            <h2 class="text-2xl">Blog</h2>
 
-    <section>
-        <h2>Blog</h2>
-        <p>This is where I write about my learnings as a developer and post updates about my open source projects. Here are the 5 most recent articles:</p>
+            <div class="text-sm">
+                <a href="#">
+                    <span class="sr-only">RSS</span>
+                    <x-icons.rss />
+                </a>
+            </div>
+        </header>
 
-        <ol>
+        <p class="my-2">
+            I post some of my learnings as a developer, updates on projects I'm working on, and other things on
+            <a href="{{ $page->link('posts') }}" class="link">my blog</a>. Below are the 5 most recent posts I've
+            written, out of a total of {{ $posts->count() }}.
+        </p>
+
+        <ol class="my-2 list-disc ml-6">
             @foreach($posts->take(5) as $post)
                 <li>
-                    <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
+                    <a href="{{ $post->getUrl() }}"
+                       title="{{ $post->excerpt }}"
+                       class="link"
+                    >
+                        {{ $post->title }}
+                    </a>
                 </li>
             @endforeach
         </ol>
-
-        <p>
-            You can <a href="{{ $page->link('posts') }}">visit the overview page</a> for {{ $posts->count() - 5 }} more
-            {{ str('post')->plural($posts->count() - 5) }}, or <a href="{{ $page->link('feeds/posts.xml') }}">subscribe to the RSS feed here</a>.
-        </p>
     </section>
 
-    <section>
-        <h2>Concerts</h2>
+    <section id="concerts" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+        <header class="pb-2 flex justify-between items-center">
+            <h2 class="text-2xl">Concerts</h2>
+
+            <div class="text-sm">
+                <a href="{{ $page->link('feeds/concerts.xml') }}">
+                    <span class="sr-only">RSS</span>
+                    <x-icons.rss />
+                </a>
+            </div>
+        </header>
+
         <p>
-            I love live music. In an effort to be more present at the shows I visit, I'm writing a little mini-review about
-            every single one I attend. Some of the most recent ones I've gone to:
+            I love live music! In an effort to be more present at the shows I visit, I'm writing a little mini-review
+            about every single one I attend in <a href="{{ $page->link('concerts') }}" class="link">my concert log</a>.
+            Some of the most recent ones I've gone to:
         </p>
 
-        <ol>
+        <ol class="my-2 list-disc ml-6">
             @foreach ($concerts->take(5) as $concert)
                 <li>
-                    <a href="{{ $concert->getUrl() }}">{{ $concert->title }}</a>
+                    <a href="{{ $concert->getUrl() }}" class="link">{{ $concert->title }}</a>
                 </li>
             @endforeach
         </ol>
-
-        <p>
-            Check out <a href="{{ $page->link('concerts') }}">the concerts page</a> for an overview of all {{ $concerts->count() }}
-            shows I've been to. You can also <a href="{{ $page->link('feeds/concerts.xml') }}">subscribe to the RSS feed here</a>.
-        </p>
     </section>
 @endsection
