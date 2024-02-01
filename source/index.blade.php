@@ -25,6 +25,7 @@
         <header class="pb-2 flex justify-between items-center">
             <h2 class="text-2xl">Blog</h2>
 
+
             <div class="text-sm">
                 <a href="{{ $page->link('feeds/posts.xml') }}">
                     <span class="sr-only">RSS</span>
