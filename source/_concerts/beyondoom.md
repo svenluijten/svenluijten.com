@@ -6,7 +6,7 @@ section: body
 location: Amsterdam
 ---
 
-I was super impressed with how effortless Yasiin Bey made some of MF DOOM's songs sound. The intricate rhyme schemes and
+I was super impressed with how effortless Yasiin Bey performed MF DOOM's songs. The intricate rhyme schemes and
 hard-to-predict flows of the original tracks makes them very (_very_) difficult to rap along to, let alone perform live.
 But I suppose that's what prompted Yasiin to say:
 
