@@ -3,7 +3,9 @@ title: "Yasiin Bey: BEYONDOOM"
 date: 2024-02-06
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Paradiso
 ---
 
 I was super impressed with how effortless Yasiin Bey performed MF DOOM's songs. The intricate rhyme schemes and
