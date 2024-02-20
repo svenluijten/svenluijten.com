@@ -14,7 +14,7 @@
     @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded;
 }
 
-#post-content.prose code {
+#post-content.prose code, code.inline {
     @apply code-styles text-base box-decoration-clone before:content-[''] after:content-[''] px-2 py-0.5;
 }
 
