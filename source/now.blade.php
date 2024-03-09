@@ -26,7 +26,7 @@
 
     <x-separator color="indigo-700" />
 
-    <main class="prose lg:prose-xl dark:prose-invert">
+    <main class="prose dark:prose-invert">
         <h2>Work</h2>
         <p>
             I'm currently working as a full time PHP developer at <a href="https://onlinepaymentplatform.com">Online Payment Platform</a>,
@@ -37,7 +37,7 @@
 
         <h2>Health</h2>
         <ul>
-            <li>Lifting 4 times a week.</li>
+            <li>I've been lifting 4 times a week consistently for about a year now. I hope to keep that habit alive.</li>
             <li>2024 goal is to get all my big lifts (bench, squat, deadlift) up to at least 100kg.</li>
             <li>Cardio trend has been going down lately, working on getting that back up by taking long(er) walks.</li>
         </ul>
