@@ -15,5 +15,3 @@ the vast majority of it, but I still had a great time vibing out!
 
 The crowd got into it more and more as the evening progressed, with Conway treating us to his remix of Keem and Kendrick's
 _Family Ties_ at the very end. I loved this show!
-
-![Conway the Machine on a stage performing in front of a crowd]()
