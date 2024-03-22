@@ -61,6 +61,10 @@ echo BonzuPippinpaddleopsicopolisTheThird::greet(); // Flameo!
 This can be useful for using classes with a long FQCN in views, where importing
 classes with `use` statements might not be possible or is just plain ugly.
 
+The most obvious downside is that you lose autocomplete in most IDEs, because your
+IDE can't know when/if the `class_alias()` function has been called at that point
+in your application.
+
 ## The Confusion
 Laravel aliases all facades it ships with to their base classname. That means
 [all classes in the `Illuminate\Support\Facades` namespace](https://github.com/laravel/framework/tree/428f86d2734d7ce4a40b3826bf78500c395b419d/src/Illuminate/Support/Facades) are available
