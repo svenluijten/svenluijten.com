@@ -7,12 +7,12 @@ section: body
 ---
 
 There's a difference between what Laravel calls facades and class aliases. Let's
-take a look at both, and how they became so intertwined with each other in the
-public eye.
+take a look at both, how they're different from each other, and how they became
+so intertwined with each other in the public eye.
 
 ## Facades
-Facades are nothing but _proxies_ to an object in the service container. In
-other words, if an object is bound to the service container as `'my-service'`,
+A facade in Laravel is nothing but _a proxy_ to an object in the service container.
+In other words, if an object is bound to the service container as `'my-service'`,
 you can call methods on that object by using static methods on the following
 facade:
 
@@ -68,7 +68,7 @@ in your application.
 ## The Confusion
 Laravel aliases all facades it ships with to their base classname. That means
 [all classes in the `Illuminate\Support\Facades` namespace](https://github.com/laravel/framework/tree/428f86d2734d7ce4a40b3826bf78500c395b419d/src/Illuminate/Support/Facades) are available
-as if they are in the global namespace. You can see this happen in your own
+as if they were in the global namespace. You can see this happen in your own
 `config/app.php` (the `aliases` key).
 
 I think this default behavior is why a lot of people in the Laravel community have
@@ -76,15 +76,15 @@ conflated facades and class aliases.
 
 Using a namespaced class as if it lives in the global namespace is not only for
 facades. You can alias whatever classes you want in the aforementioned `config/app.php`.
-For example you might alias `Illuminate\Support\Str` to just `Str` and
+For example, you might alias `Illuminate\Support\Str` to just `Str` and
 `Illuminate\Support\Number` to `Num` for quick and easy use in views.
 
 ## Conclusion
 `\Config` is not a _facade_, it's a class alias for the facade. There is no reason
 why you shouldn't import the full namespace to a facade in PHP-only files.
 
-I generally think that for facades, you should import the full namespace 
-(`use Illuminate\Support\Facades\Config`) and not the alias. I also try to limit
-the use of class aliases in views and opt for the global functions Laravel provides
-instead because aliases don't work with autocomplete in my IDE without external
-tooling.
+I generally think that you should import the full namespace 
+(`use Illuminate\Support\Facades\Config`) for facades, and not the alias. I also
+try to limit the use of class aliases in views and opt for the global functions
+Laravel provides instead because aliases don't work with autocomplete in my IDE
+without external tooling.
