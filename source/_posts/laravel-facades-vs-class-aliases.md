@@ -1,6 +1,6 @@
 ---
 title: Laravel facades vs class aliases
-date: 2024-03-22
+date: 2024-03-26
 excerpt: Diving into the difference between Laravel's facades and class aliases.
 extends: _layouts.post
 section: body
