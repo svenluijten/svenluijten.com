@@ -19,7 +19,7 @@ jobs:
 
       - name: Restore node_modules folder
         id: cache-node
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
@@ -32,7 +32,7 @@ jobs:
 
       - name: Restore Composer dependencies
         id: cache-php
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -91,7 +91,7 @@ jobs:
 
       - name: Restore node_modules folder
         id: cache-node
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
@@ -163,7 +163,7 @@ jobs:
 
       - name: Restore node_modules folder
         id: cache-node
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
@@ -176,7 +176,7 @@ jobs:
 
       - name: Restore Composer dependencies
         id: cache-php
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -233,7 +233,7 @@ jobs:
 
       - name: Restore node_modules folder
         id: cache-node
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-v2-${{ hashFiles('**/package-lock.json') }}
