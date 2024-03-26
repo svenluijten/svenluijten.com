@@ -15,7 +15,7 @@ jobs:
     if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Restore node_modules folder
         id: cache-node
@@ -73,7 +73,7 @@ jobs:
       - build_preview
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Download build artifact
         uses: actions/download-artifact@v3
@@ -159,7 +159,7 @@ jobs:
     if: github.event.ref == 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Restore node_modules folder
         id: cache-node
@@ -215,7 +215,7 @@ jobs:
       - build_production
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Download build artifact
         uses: actions/download-artifact@v3
