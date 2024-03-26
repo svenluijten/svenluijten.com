@@ -147,7 +147,7 @@ jobs:
           env: 'Pull Request #${{ github.event.number }} Preview'
 
       - name: Delete build artifact
-        uses: geekyeggo/delete-artifact@v2
+        uses: geekyeggo/delete-artifact@v5
         if: always()
         with:
           name: build_${{ github.event.number }}_zip
@@ -281,7 +281,7 @@ jobs:
           env: production
 
       - name: Delete production build artifact
-        uses: geekyeggo/delete-artifact@v2
+        uses: geekyeggo/delete-artifact@v5
         if: always()
         with:
           name: build_zip
