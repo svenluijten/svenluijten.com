@@ -3,7 +3,9 @@ title: "TOOL: Fear Inocolum tour"
 date: 2022-05-19
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 I don't listen to TOOL in my daily life, but I knew of their existence and legendary status in the metal genre. The

@@ -3,7 +3,9 @@ title: "Denzel Curry: Melt My Eyez, See Your Future tour"
 date: 2022-05-08
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 I actually skipped out on a Denzel Curry show in 2019 (that would've been my last show before COVID), and I regretted

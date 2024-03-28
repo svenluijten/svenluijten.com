@@ -1,8 +1,8 @@
 @extends('_layouts.atom')
 
 @section('id', $page->link('/concerts'))
-@section('title', 'Sven Luijten Concerts')
-@section('subtitle', 'Sven Luijten\'s concert posts.')
+@section('title', 'Sven Luijten\'s concert log entries')
+@section('subtitle', 'Mini-reviews of live concerts and shows I\'ve been to.')
 
 @section('links')
     <link rel="self" href="{{ $page->link('/feeds/concerts.xml') }}" type="application/xml+atom" />

@@ -1,74 +1,83 @@
-@extends('_layouts.main')
+@extends('_layouts.home')
 
-@section('content')
-    <div class="flex flex-row relative justify-center items-start | md:px-0 sm:w-auto">
-        <img src="{{ $page->link('/assets/images/headshot.jpg') }}"
+@section('title', 'Home')
+
+@section('body')
+    <section class="flex items-center relative mb-8">
+        <img src="/assets/images/headshot.jpg"
              alt="A headshot of an insanely handsome developer looking at the camera with a strapping smile."
-             class="w-24 h-24 my-4 mr-4 rounded-full border-4 border-gray-100 shadow lg:absolute lg:-left-36 lg:-top-3 | lg:mr-0 lg:my-0 md:w-32 md:h-32 dark:border-gray-700"
+             class="w-32 h-32 rounded-full border-4 border-gray-100 dark:border-gray-700 | lg:absolute lg:-left-36"
         >
 
-        <div>
-            <h1 class="text-2xl font-bold lg:text-3xl">Hi 👋 — My name is Sven</h1>
-            <p class="text-xl">
-                I am a full-stack developer for the web, photographer, and lifter of heavy things. I <a
-                        href="{{ $page->link('posts') }}">write blog posts</a>, <a
-                        href="{{ $page->link('concerts') }}">go to concerts</a>, and <a
-                        href="https://instagram.com/luijten.photography">photograph animals</a>.
+        <div class="ml-4 lg:ml-0">
+            <h1 class="text-3xl font-bold mb-2">Hi 👋 &mdash; My name is Sven!</h1>
+            <p class="text-lg">
+                I am <a href="https://github.com/svenluijten" class="link">a developer for the web</a>,
+                <a href="{{ $page->link('posts') }}" class="link">occasional blog post writer</a>,
+                <a href="{{ $page->link('concerts') }}" class="link">enjoyer of concerts</a>, and
+                <a href="https://luijten.photography" class="link">photography enthusiast</a>. If you'd like to see what
+                I'm up to now, go visit <a href="{{ $page->link('now') }}" class="link">my <code>now</code> page</a>.
             </p>
         </div>
-    </div>
-
-    <section class="py-4 leading-relaxed" id="blog">
-        <h2 class="text-2xl font-bold">
-            <a href="{{ $page->link('posts') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
-                <span class="absolute -left-8 invisible group-hover:visible hidden md:inline-block">&rarr;</span> Blog
-            </a>
-        </h2>
-
-        <p class="mb-4">
-            This is where I write technical articles about my learnings, what's happening in my career as a full-stack
-            developer, and the occasional random showerthought. Here are my 5 most recent posts:
-        </p>
-
-        <ul class="mb-4 list-disc ml-6">
-            @foreach ($posts->take(5) as $post)
-                <li>
-                    <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
-                </li>
-            @endforeach
-        </ul>
-
-        <p>
-            You can <a href="{{ $page->link('posts') }}">visit the overview page</a> for {{ $posts->count() - 5 }} more
-            {{ \Illuminate\Support\Str::plural('post', $posts->count() - 5) }}, or <a
-                    href="{{ $page->link('feeds/posts.xml') }}">subscribe to the RSS feed here</a>.
-        </p>
     </section>
 
-    <section class="py-4 leading-relaxed" id="concerts">
-        <h2 class="text-2xl font-bold">
-            <a href="{{ $page->link('concerts') }}" class="text-black hover:text-black relative group | dark:text-gray-100 dark:hover:text-indigo-100">
-                <span class="absolute -left-8 invisible group-hover:visible hidden md:inline-block">&rarr;</span> Concert log
-            </a>
-        </h2>
+    <section id="blog" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+        <header class="pb-2 flex justify-between items-center">
+            <h2 class="text-2xl">Blog</h2>
 
-        <p class="mb-4">
-            I'm an avid music enjoyer, and so I visit a lot of concerts. This is my attempt to log every show I go to
-            with a bite-sized review. Some of the most recent shows I've gone to:
+
+            <div class="text-sm">
+                <a href="{{ $page->link('feeds/posts.xml') }}">
+                    <span class="sr-only">RSS</span>
+                    <x-icons.rss />
+                </a>
+            </div>
+        </header>
+
+        <p class="my-2">
+            I post some of my learnings as a developer, updates on projects I'm working on, and other things on
+            <a href="{{ $page->link('posts') }}" class="link">my blog</a>. Below are the 5 most recent posts I've
+            written, out of a total of {{ $posts->count() }}.
         </p>
 
-        <ul class="mb-4 list-disc ml-6">
-            @foreach ($concerts->take(5) as $concert)
+        <ol class="my-2 list-disc ml-6">
+            @foreach($posts->take(5) as $post)
                 <li>
-                    <a href="{{ $concert->getUrl() }}">{{ $concert->title }} ({{ $concert->getDate('Y') }})</a>
+                    <a href="{{ $post->getUrl() }}"
+                       title="{{ $post->excerpt }}"
+                       class="link"
+                    >
+                        {{ $post->title }}
+                    </a>
                 </li>
             @endforeach
-        </ul>
+        </ol>
+    </section>
+
+    <section id="concerts" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+        <header class="pb-2 flex justify-between items-center">
+            <h2 class="text-2xl">Concerts</h2>
+
+            <div class="text-sm">
+                <a href="{{ $page->link('feeds/concerts.xml') }}">
+                    <span class="sr-only">RSS</span>
+                    <x-icons.rss />
+                </a>
+            </div>
+        </header>
 
         <p>
-            Check out <a href="{{ $page->link('concerts') }}">the concerts page</a> for an overview of all
-            {{ $concerts->count() }} shows I've been to. You can also <a
-                    href="{{ $page->link('feeds/concerts.xml') }}">subscribe to the RSS feed here</a>.
+            I love live music! In an effort to be more present at the shows I visit, I'm writing a little mini-review
+            about every single one I attend in <a href="{{ $page->link('concerts') }}" class="link">my concert log</a>.
+            Some of the most recent ones I've gone to:
         </p>
+
+        <ol class="my-2 list-disc ml-6">
+            @foreach ($concerts->take(5) as $concert)
+                <li>
+                    <a href="{{ $concert->getUrl() }}" class="link">{{ $concert->title }}</a>
+                </li>
+            @endforeach
+        </ol>
     </section>
 @endsection

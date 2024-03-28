@@ -2,20 +2,33 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-a {
-    @apply text-indigo-700 dark:text-indigo-300 hover:text-indigo-600 hover:dark:text-indigo-200 hover:underline;
+.link {
+    @apply font-semibold underline;
 }
 
-.post code, code {
-    @apply bg-gray-50 rounded text-base px-2 py-0.5 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 box-decoration-clone;
+#post-content a {
+    @apply font-normal;
 }
 
-.post pre {
-    @apply my-4;
+.code-styles {
+    @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded;
 }
 
-.post pre code {
-    @apply lg:-mx-8 my-4 bg-gray-50 dark:bg-gray-900 border;
+#post-content.prose code, code.inline {
+    @apply code-styles text-base box-decoration-clone before:content-[''] after:content-[''] px-2 py-0.5;
+}
+
+#post-content pre {
+    @apply code-styles px-4 py-2 my-2 lg:-mx-8;
+}
+
+#post-content pre code.hljs {
+    background: none;
+    padding: 0;
+}
+
+#post-content pre code {
+    @apply border-none;
 }
 
 .footnotes {
@@ -23,11 +36,11 @@ a {
 }
 
 .footnotes hr {
-    @apply my-6 dark:border-gray-900
+    @apply my-6 dark:border-gray-700
 }
 
 .footnotes ol {
-    @apply list-decimal ml-8 mb-4
+    @apply list-decimal mb-4
 }
 
 .footnotes p {

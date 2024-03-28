@@ -3,7 +3,9 @@ title: "Chance The Rapper: Coloring Book tour"
 date: 2016-11-17
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 My first show ever, and it was a good one! Started off with Samm Henshaw and Jay Prince as openers; Samm Henshaw's act

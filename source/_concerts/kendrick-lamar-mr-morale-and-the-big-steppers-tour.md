@@ -3,7 +3,9 @@ title: "Kendrick Lamar: Mr. Morale and the Big Steppers tour"
 date: 2022-10-07
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Ziggo Dome"
 ---
 
 When you [see Kendrick once](./kendrick-lamar-damn-tour.md), you _have_ to go see him again. With his new album

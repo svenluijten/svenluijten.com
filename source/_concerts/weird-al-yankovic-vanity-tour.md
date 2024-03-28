@@ -3,7 +3,9 @@ title: "\"Weird Al\" Yankovic: The Unfortunate Return of the Ridiculously Self-I
 date: 2023-02-19
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 "Weird Al" Yankovic is one of those artists that just have this spot in my mind as being "legends" for any given genre.
