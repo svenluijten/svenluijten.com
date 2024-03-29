@@ -13,6 +13,11 @@ module.exports = {
             md: '768px',
             lg: '1024px',
         },
+        fontFamily: {
+            sans: 'Montserrat, montserrat, "Source Sans", "Helvetica Neue", "Helvetica", "Arial Black", Arial, sans-serif',
+            serif: '"Source Serif 4", "Lucida Serif", Georgia, serif',
+            mono: '"JetBrains Mono", Courier, monospace',
+        },
         container: {
             center: true
         }
