@@ -9,7 +9,7 @@
         <a href="{{ $post->getUrl() }}" id="{{ $post->id() }}" class="group block py-2 my-2 px-4 -mx-4">
             <article aria-labelledby="{{ $post->id() }}" class="no-underline">
                 <h2 class="relative text-xl link">
-                    <span class="group-hover:no-underline underline">{{ $post->title }}</span>
+                    <span class="font-sans group-hover:no-underline underline">{{ $post->title }}</span>
                     <span class="absolute -top-0.5 -left-3.5 font-bold invisible group-hover:visible text-indigo-700" aria-hidden="true">&rsaquo;</span>
                 </h2>
 

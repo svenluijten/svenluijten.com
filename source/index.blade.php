@@ -6,11 +6,11 @@
     <section class="flex items-center relative mb-8">
         <img src="/assets/images/headshot.jpg"
              alt="A headshot of an insanely handsome developer looking at the camera with a strapping smile."
-             class="w-32 h-32 rounded-full border-4 border-gray-100 dark:border-gray-700 | lg:absolute lg:-left-36"
+             class="w-32 h-32 rounded-full border-4 border-gray-200 dark:border-gray-700 | lg:absolute lg:-left-36"
         >
 
         <div class="ml-4 lg:ml-0">
-            <h1 class="text-3xl font-bold mb-2">Hi 👋 &mdash; My name is Sven!</h1>
+            <h1 class="font-sans text-3xl font-bold mb-2">Hi 👋 &mdash; My name is Sven!</h1>
             <p class="text-lg">
                 I am <a href="https://github.com/svenluijten" class="link">a developer for the web</a>,
                 <a href="{{ $page->link('posts') }}" class="link">occasional blog post writer</a>,
@@ -21,10 +21,9 @@
         </div>
     </section>
 
-    <section id="blog" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+    <section id="blog" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
         <header class="pb-2 flex justify-between items-center">
-            <h2 class="text-2xl">Blog</h2>
-
+            <h2 class="text-2xl font-sans">Blog</h2>
 
             <div class="text-sm">
                 <a href="{{ $page->link('feeds/posts.xml') }}">
@@ -54,9 +53,9 @@
         </ol>
     </section>
 
-    <section id="concerts" class="mb-6 p-4 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+    <section id="concerts" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
         <header class="pb-2 flex justify-between items-center">
-            <h2 class="text-2xl">Concerts</h2>
+            <h2 class="text-2xl font-sans">Concerts</h2>
 
             <div class="text-sm">
                 <a href="{{ $page->link('feeds/concerts.xml') }}">

@@ -17,7 +17,7 @@
 
         <x-separator color="indigo-700" />
 
-        <section id="post-content" class="prose lg:prose-xl dark:prose-invert">
+        <section id="post-content" class="post-body">
             @yield('body')
         </section>
 

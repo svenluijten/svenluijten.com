@@ -12,7 +12,7 @@
 
         <hr class="my-6 | dark:border-gray-950">
 
-        <section id="post-content" class="prose lg:prose-xl dark:prose-invert">
+        <section id="post-content" class="">
             @yield('body')
         </section>
 

@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
+        <link rel="preconnect" href="https://fonts.bunny.net">
+
+        <link href="https://fonts.bunny.net/css?family=jetbrains-mono:500,500i|montserrat:500,500i|source-serif-4:500,500i" rel="stylesheet" />
+
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         @stack('styles')
 
@@ -14,27 +18,28 @@
         <title>@yield('title') &bull; Sven Luijten</title>
     </head>
 
-    <body class="font-sans bg-white min-h-screen relative antialiased | dark:bg-gray-900 dark:text-gray-200">
+    <body class="font-serif bg-gray-100 min-h-screen relative antialiased | dark:bg-gray-900 dark:text-gray-200">
         <div class="fixed w-full border-b-4 border-indigo-700 shadow-md shadow-indigo-300 | dark:shadow-indigo-950"></div>
 
         <header aria-label="" class="container pt-3">
             <div class="mx-auto w-full items-center py-4 px-6 lg:w-2/3">
                 <nav aria-label="Primary navigation" class="flex flex-row justify-between items-center">
                     <section>
-                        <a href="{{ $page->link('/') }}" class="text-xl font-bold p-4 -m-4">
+                        <a href="{{ $page->link('/') }}" class="text-xl font-sans font-bold p-4 -m-4">
                             Sven Luijten
                         </a>
                     </section>
 
                     <ul class="flex flex-row">
                         <li class="mr-4">
-                            <span class="mr-0.5 font-bold no-underline" aria-hidden="true">&rsaquo;</span>
-                            <a href="{{ $page->link('posts') }}" class="p-4 -m-4 underline hover:no-underline">Blog</a>
+                            <span class="mr-0.5 font-sans font-bold no-underline" aria-hidden="true">&rsaquo;</span>
+                            <a href="{{ $page->link('posts') }}" class="font-sans p-4 -m-4 underline hover:no-underline">Blog</a>
                         </li>
 
+
                         <li>
-                            <span class="mr-0.5 font-bold no-underline" aria-hidden="true">&rsaquo;</span>
-                            <a href="{{ $page->link('concerts') }}" class="p-4 -m-4 underline hover:no-underline">Concerts</a>
+                            <span class="mr-0.5 font-sans font-bold no-underline" aria-hidden="true">&rsaquo;</span>
+                            <a href="{{ $page->link('concerts') }}" class="font-sans p-4 -m-4 underline hover:no-underline">Concerts</a>
                         </li>
                     </ul>
                 </nav>
@@ -47,7 +52,7 @@
             </div>
         </main>
 
-        <footer class="container">
+        <footer class="container font-sans">
             <div class="mx-auto w-full items-start py-4 px-6 lg:w-2/3 flex flex-row justify-between">
                 <section>
                     &copy;

@@ -7,7 +7,7 @@
 
     @foreach ($page->groupByYear($concerts) as $year => $concerts)
         <section>
-            <h2 id="{{ $year }}" class="text-3xl text-center font-bold {{ $loop->first ? '' : 'mt-8' }}">{{ $year }}</h2>
+            <h2 id="{{ $year }}" class="text-3xl text-center font-bold font-sans {{ $loop->first ? '' : 'mt-8' }}">{{ $year }}</h2>
 
             @foreach ($concerts as $concert)
                 <article aria-labelledby="{{ $concert->id() }}" class="my-4">
