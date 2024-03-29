@@ -21,7 +21,7 @@
         </div>
     </section>
 
-    <section id="blog" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+    <section id="blog" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg drop-shadow-xl border-t-4 border-indigo-700 rounded">
         <header class="pb-2 flex justify-between items-center">
             <h2 class="text-2xl font-sans">Blog</h2>
 
@@ -53,7 +53,7 @@
         </ol>
     </section>
 
-    <section id="concerts" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg border-indigo-700 border-l-4 border-b-4 border-t border-r">
+    <section id="concerts" class="mb-6 p-4 bg-white dark:bg-gray-800 text-lg drop-shadow-xl border-t-4 border-indigo-700 rounded">
         <header class="pb-2 flex justify-between items-center">
             <h2 class="text-2xl font-sans">Concerts</h2>
 

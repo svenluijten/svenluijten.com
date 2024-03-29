@@ -44,7 +44,7 @@
 }
 
 .code-styles {
-    @apply font-normal bg-gray-50 dark:bg-gray-900 border border-indigo-100 dark:border-indigo-900 rounded;
+    @apply font-normal bg-gray-50 dark:bg-gray-800 border border-indigo-100 dark:border-indigo-900 rounded;
 }
 
 #post-content code, code.inline {
