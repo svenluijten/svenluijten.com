@@ -3,7 +3,9 @@ title: "Amaarae: Fountain Baby tour"
 date: 2024-03-08
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Melkweg
 ---
 
 When Amaarae's album "Fountain Baby" dropped last year, I was instantly hooked. She was initially planning on coming to
