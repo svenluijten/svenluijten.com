@@ -127,6 +127,7 @@ jobs:
           github-comment: false
           # This is not a typo. This structure is created by unzipping the build artifact.
           working-directory: ./build/build_preview
+          scope: team-svenluijten
           alias-domains: |
             preview-{{PR_NUMBER}}.website.sven.luijten.dev
 
@@ -265,6 +266,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-comment: false
           working-directory: ./build/build_production
+          scope: team-svenluijten
           # This argument tells the Vercel Action to mark the deployment for production.
           vercel-args: '--prod'
 
