@@ -3,7 +3,9 @@ title: "Conway the Machine: Europe tour 2024"
 date: 2024-03-21
 extends: _layouts.concert
 section: body
-location: Eindhoven
+country: The Netherlands
+city: Eindhoven
+venue: Effenaar
 ---
 
 This show had a lot going for it! It was my first time in this venue (Effenaar in Eindhoven), and it was great. They even

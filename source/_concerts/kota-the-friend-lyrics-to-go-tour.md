@@ -3,7 +3,9 @@ title: "Kota The Friend: Lyrics To Go tour"
 date: 2024-03-24
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Melkweg
 ---
 
 After three honestly pretty decent openers (Stripe, W.O.N, and Roets), Kota took the stage and his energy immediately 
