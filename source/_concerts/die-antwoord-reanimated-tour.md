@@ -22,7 +22,7 @@ over the years.
 
 Either way, it was a really fun show! Very bombastic sounds with a real _zef_ edge to it. 
 
-![Die Antwoord performing live on stage](/assets/images/concerts/amaarae.jpg)
+![Die Antwoord performing live on stage](/assets/images/concerts/die-antwoord.jpg)
 
 _Fatty Boom Boom_ — which they opened with — will be stuck in my head for the next week or so. 
 And their live performances of _Ugly Boy_ and _Baby's On Fire_ were fantastic, too!
