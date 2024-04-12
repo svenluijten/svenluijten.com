@@ -3,7 +3,9 @@ title: "Thundercat: Europe tour (Utrecht)"
 date: 2024-04-10
 extends: _layouts.concert
 section: body
-location: Utrecht
+country: The Netherlands
+city: Utrecht
+venue: TivoliVredenburg
 ---
 
 This is one of my all-time favorite shows I've ever been to! When I showed up to the queue I met some people I'd seen at

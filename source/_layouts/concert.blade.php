@@ -5,7 +5,8 @@
 @section('content')
     <article>
         <x-page-header :page="$page">
-            <span>
+            <span class="pill mr-1">
+                <x-icons.location class="inline w-3 h-3 mb-1 align-middle fill-indigo-950 dark:fill-gray-200" />
                 {{ $page->venue }}, {{ $page->city }} ({{ $page->country }})
             </span>
         </x-page-header>

@@ -3,7 +3,9 @@ title: "Die Antwoord: REANIMATED tour"
 date: 2024-04-03
 extends: _layouts.concert
 section: body
-location: Utrecht
+country: The Netherlands
+city: Utrecht
+venue: TivoliVredenburg
 ---
 
 I used to listen to Die Antwoord a lot back when their music was still relatively fresh, so 
