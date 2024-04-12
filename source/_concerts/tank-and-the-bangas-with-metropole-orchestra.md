@@ -3,7 +3,9 @@ title: "Tank and the Bangas with the Metropole Orkest"
 date: 2024-04-04
 extends: _layouts.concert
 section: body
-location: Tilburg
+country: The Netherlands
+city: Tilburg
+venue: "013"
 ---
 
 This was a super fun show! Ever since their Tiny Desk concert Tank and the Bangas' eclectic mix of soul, funk, spoken

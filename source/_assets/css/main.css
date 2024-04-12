@@ -65,7 +65,7 @@
 }
 
 .footnotes {
-    @apply text-gray-500 dark:text-gray-300
+    @apply text-gray-500 dark:text-gray-300 text-base
 }
 
 .footnotes hr {
@@ -86,4 +86,8 @@
 
 .footnote-ref:after {
     content: ']'
+}
+
+.pill {
+    @apply bg-indigo-100 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-800 py-0.5 px-1 rounded-full;
 }

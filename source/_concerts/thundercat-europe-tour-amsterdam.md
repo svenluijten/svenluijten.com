@@ -3,7 +3,9 @@ title: "Thundercat: Europe tour (Amsterdam)"
 date: 2024-04-11
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Paradiso
 ---
 
 Yes I've [seen Thundercat once](./thundercat-europe-tour-utrecht.md), but what about _second_ Thundercat? I mean, who
