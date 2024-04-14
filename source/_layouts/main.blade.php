@@ -52,7 +52,7 @@
             </div>
         </main>
 
-        <footer class="container font-sans">
+        <footer class="container font-sans mt-8">
             <div class="mx-auto w-full items-start py-4 px-6 lg:w-2/3 flex flex-row justify-between">
                 <section>
                     &copy;
@@ -62,29 +62,29 @@
                 <nav aria-label="Footer navigation" class="flex flex-row justify-around">
                     <ul class="mr-8">
                         <li>
-                            <a href="{{ $page->link('now') }}">Now</a>
+                            <a href="{{ $page->link('now') }}" class="link">Now</a>
                         </li>
 
                         <li>
-                            <a href="{{ $page->link('uses') }}">Uses</a>
+                            <a href="{{ $page->link('uses') }}" class="link">Uses</a>
                         </li>
 
                         <li>
-                            <a href="{{ $page->link('feeds') }}">Feeds</a>
+                            <a href="{{ $page->link('feeds') }}" class="link">Feeds</a>
                         </li>
                     </ul>
 
                     <ul>
                         <li>
-                            <a href="https://github.com/svenluijten">GitHub</a>
+                            <a href="https://github.com/svenluijten" class="link">GitHub</a>
                         </li>
 
                         <li>
-                            <a href="https://mas.to/@svenluijten" rel="me">Mastodon</a>
+                            <a href="https://mas.to/@svenluijten" rel="me" class="link">Mastodon</a>
                         </li>
 
                         <li>
-                            <a href="https://luijten.photography/">Photography</a>
+                            <a href="https://luijten.photography/" class="link">Photography</a>
                         </li>
                     </ul>
                 </nav>
