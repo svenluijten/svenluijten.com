@@ -29,15 +29,17 @@ return [
         ],
     ],
 
-    'getDate' => function (PageVariable $page, string $format, string $key = 'date'): string {
+    'getDate' => static function (PageVariable $page, string $format, string $key = 'date'): string {
         return (new Carbon($page->{$key}))->format($format);
     },
-    'link' => function (PageVariable $page, string $path) {
+    'link' => static function (PageVariable $page, string $path) {
         return rtrim($page->baseUrl, '/') . '/' . ltrim($path, '/');
     },
-    'groupByYear' => function (PageVariable $page, iterable $items) {
-        return collect($items)->mapToGroups(function (CollectionItem $item) {
-            return [$item->getDate('Y') => $item];
-        })->sortByDesc(fn ($_, $year) => $year);
+    'groupByYear' => static function (PageVariable $page, iterable $items) {
+        return collect($items)
+            ->sortByDesc(fn ($item) => $item->getDate('Y-m-d'))
+            ->mapToGroups(function (CollectionItem $item) {
+                return [$item->getDate('Y') => $item];
+            });
     }
 ];
