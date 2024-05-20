@@ -21,7 +21,9 @@ Paramore (yes, _that_ Paramore!) opened the show and they absolutely _rocked_ it
 And... _wow_. She dominates the stage and does this 3-hour long set seemingly without effort. At times I had to genuinely ground myself to realize I was looking at the real-life Taylor Swift. This is what an artist in their prime looks like. Each of the "eras" in her music were visualized brilliantly with the outfits (so many outfit changes!), the stage design, and the incredible backup singers and dancers.
 
 ![Taylor Swift performing on stage](/assets/images/concerts/taylor-swift-eras-1.jpg)
+
 ![Taylor Swift performing on stage](/assets/images/concerts/taylor-swift-eras-2.jpg)
+
 ![Taylor Swift performing on stage](/assets/images/concerts/taylor-swift-eras-3.jpg)
 
 Once the show was over, the nearly 60,000 people in the arena flocked out and slowly but surely spread out over the city. My friend and I met up with his sister at a fast food place somewhat near the arena that wasn't _too_ busy and chatted until about 1 AM. Once I was back at the hotel, I spent some time going through the photos and videos I took in bed and fell asleep satisfied with my exceptional experience.
