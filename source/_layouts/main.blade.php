@@ -1,65 +1,96 @@
-@php
-/** @var \TightenCo\Jigsaw\PageVariable $page */
-@endphp
-
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        @section('meta')
-            <link href="{{ $page->link('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten">
-        @show
+        <link rel="preconnect" href="https://fonts.bunny.net">
 
-        @include('_partials.meta')
-
-        <link rel="canonical" href="{{ $page->getUrl() }}">
-
-        @if(! $page->production)
-            <meta name="robots" content="noindex, nofollow">
-        @endif
+        <link href="https://fonts.bunny.net/css?family=jetbrains-mono:500,500i|montserrat:500,500i|source-serif-4:500,500i" rel="stylesheet" />
 
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <link rel="stylesheet" href="{{ mix('css/hljs-light.css', 'assets/build') }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-        <link rel="stylesheet" href="{{ mix('css/hljs-dark.css', 'assets/build') }}" media="(prefers-color-scheme: dark)">
+        @stack('styles')
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+        <!-- Theme colors -->
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan">
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
 
-        <!-- Primary Meta Tags -->
-        <title>{{ $page->title }}</title>
-        <meta name="title" content="{{ $page->title }}">
-        <meta name="description" content="@yield('description', $page->excerpt ?? $page->description)">
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ $page->getUrl() }}">
-        <meta property="og:title" content="{{ $page->title }}">
-        <meta property="og:description" content="@yield('description', $page->excerpt ?? $page->description)">
-        <meta property="og:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-og">
-
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary">
-        <meta property="twitter:url" content="{{ $page->getUrl() }}">
-        <meta property="twitter:title" content="{{ $page->title }}">
-        <meta property="twitter:description" content="@yield('description', $page->excerpt ?? $page->description)">
-        <meta property="twitter:creator" content="@svenluijten">
-        <meta property="twitter:image" content="@yield('social-image', $page->link('/assets/images/card.jpg'))" id="social-img-tw">
+        <title>@yield('title') &bull; Sven Luijten</title>
     </head>
 
-    <body class="font-sans text-gray-900 antialiased border-8 border-gray-200 bg-white min-h-screen relative | dark:bg-gray-800 dark:border-gray-900 lg:border-0">
-        @include('_partials.header')
+    <body class="font-serif bg-gray-100 min-h-screen relative antialiased | dark:bg-gray-900 dark:text-gray-200">
+        <div class="fixed w-full border-b-4 border-indigo-700 shadow-md shadow-indigo-300 | dark:shadow-indigo-950"></div>
 
-        <main id="post-content" class="container text-lg">
-            <div class="mx-auto w-full px-6 dark:text-gray-100 | lg:w-2/3 md:py-6 lg:px-0">
+        <header aria-label="" class="container pt-3">
+            <div class="mx-auto w-full items-center py-4 px-6 lg:w-2/3">
+                <nav aria-label="Primary navigation" class="flex flex-row justify-between items-center">
+                    <section>
+                        <a href="{{ $page->link('/') }}" class="text-xl font-sans font-bold p-4 -m-4">
+                            Sven Luijten
+                        </a>
+                    </section>
+
+                    <ul class="flex flex-row">
+                        <li class="mr-4">
+                            <span class="mr-0.5 font-sans font-bold no-underline" aria-hidden="true">&rsaquo;</span>
+                            <a href="{{ $page->link('posts') }}" class="font-sans p-4 -m-4 underline hover:no-underline">Blog</a>
+                        </li>
+
+
+                        <li>
+                            <span class="mr-0.5 font-sans font-bold no-underline" aria-hidden="true">&rsaquo;</span>
+                            <a href="{{ $page->link('concerts') }}" class="font-sans p-4 -m-4 underline hover:no-underline">Concerts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="mx-auto w-full items-center px-6 lg:w-2/3">
                 @yield('content')
             </div>
         </main>
 
-        @include('_partials.footer')
+        <footer class="container font-sans mt-8">
+            <div class="mx-auto w-full items-start py-4 px-6 lg:w-2/3 flex flex-row justify-between">
+                <section>
+                    &copy;
+                    <a href="{{ $page->link('/') }}">Sven Luijten</a>
+                </section>
+
+                <nav aria-label="Footer navigation" class="flex flex-row justify-around">
+                    <ul class="mr-8">
+                        <li>
+                            <a href="{{ $page->link('now') }}" class="link">Now</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ $page->link('uses') }}" class="link">Uses</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ $page->link('feeds') }}" class="link">Feeds</a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <a href="https://github.com/svenluijten" class="link">GitHub</a>
+                        </li>
+
+                        <li>
+                            <a href="https://mas.to/@svenluijten" rel="me" class="link">Mastodon</a>
+                        </li>
+
+                        <li>
+                            <a href="https://luijten.photography/" class="link">Photography</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
     </body>
 
-    <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+    @stack('scripts')
 </html>

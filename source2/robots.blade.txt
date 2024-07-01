@@ -1,0 +1,10 @@
+@if ($page->production)
+User-agent: *
+Disallow:
+@else
+User-agent: *
+Disallow: /
+@endif
+
+User-agent: GPTBot
+Disallow: /

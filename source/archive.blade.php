@@ -1,26 +1,23 @@
----
-title: Archive
----
-
 @extends('_layouts.main')
 
-@section('meta')
-    <link href="{{ $page->link('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten Posts">
-    @parent
-@endsection
+@section('title', 'Archive')
 
 @section('content')
-    <ul>
-        @foreach ($page->groupByYear([...$posts, ...$concerts]) as $year => $articles)
-            <h1 class="text-3xl font-bold" id="{{ $year }}">{{ $year }}</h1>
+    <h1 class="sr-only">Archive</h1>
 
-            <ul class="mb-4">
-                @foreach($articles as $post)
-                    <li class="list-disc ml-6">
-                        <a href="{{ $post->getUrl() }}">{{ $post->title }}</a>
+    @foreach ($page->groupByYear([...$posts, ...$concerts]) as $year => $entries)
+        <section>
+            <h2 id="{{ $year }}" class="text-3xl font-bold {{ $loop->first ? '' : 'mt-8' }}">{{ $year }}</h2>
+
+            <ol class="list-disc ml-6">
+                @foreach ($entries as $entry)
+                    <li>
+                        <a href="{{ $entry->getUrl() }}" id="{{ $entry->id() }}" class="text-lg link">
+                            {{ $entry->title }}
+                        </a>
                     </li>
                 @endforeach
-            </ul>
-        @endforeach
-    </ul>
+            </ol>
+        </section>
+    @endforeach
 @endsection

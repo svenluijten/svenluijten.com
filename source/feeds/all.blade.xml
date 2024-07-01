@@ -1,8 +1,8 @@
 @extends('_layouts.atom')
 
 @section('id', $page->link('/archive'))
-@section('title', 'Sven Luijten')
-@section('subtitle', 'All of Sven Luijten\'s posts.')
+@section('title', 'Sven Luijten\'s archive')
+@section('subtitle', 'All of my posts, concert log entries, links, and "now"-page updates.')
 
 @section('links')
     <link rel="self" href="{{ $page->link('/feeds/all.xml') }}" type="application/xml+atom" />

@@ -3,7 +3,9 @@ title: "Porter Robinson: Nurture tour"
 date: 2022-04-11
 extends: _layouts.concert
 section: body
-location: Utrecht
+city: Utrecht
+country: The Netherlands
+venue: "TivoliVredenburg"
 ---
 
 I had a long phase of listening to EDM, and Porter Robinson is one of the artists that I still keep an eye on. This show

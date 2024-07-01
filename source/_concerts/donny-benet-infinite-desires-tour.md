@@ -3,7 +3,9 @@ title: "Donny Benét: Infinite Desires tour"
 date: 2024-03-30
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Paradiso
 ---
 
 Donny's music was new to me, but I was very pleasantly surprised when I looked it up before coming to his concert. What

@@ -3,7 +3,9 @@ title: "James Blake: Playing Robots Into Heaven tour"
 date: 2023-09-26
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 I saw James open for Kendrick Lamar [back in 2018](./kendrick-lamar-damn-tour.md), but now that he had a new album out I

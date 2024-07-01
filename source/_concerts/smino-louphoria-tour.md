@@ -3,7 +3,9 @@ title: "Smino: Louphoria tour"
 date: 2023-04-18
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Melkweg"
 ---
 
 Smino is one of those artists you don't hear a lot about in the mainstream, but once you dig a big deeper you'll see how

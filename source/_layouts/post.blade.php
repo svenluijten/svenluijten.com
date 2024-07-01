@@ -1,46 +1,28 @@
 @extends('_layouts.main')
 
+@section('title', $page->title)
+
+@push('styles')
+    <link rel="stylesheet" href="{{ mix('css/hljs-light.css', 'assets/build') }}" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link rel="stylesheet" href="{{ mix('css/hljs-dark.css', 'assets/build') }}" media="(prefers-color-scheme: dark)">
+@endpush
+
+@push('scripts')
+    <script src="{{ mix('js/hljs.js', 'assets/build') }}"></script>
+@endpush
+
 @section('content')
-    <article class="dark:text-indigo-100">
-        <h1 class="text-3xl font-bold text-center mt-4 sm:mt-0">{{ $page->title }}</h1>
+    <article>
+        <x-page-header :page="$page" />
 
-        <header>
-            <div class="text-sm text-gray-700 mt-4 text-center | dark:text-indigo-100">
-                <span>
-                    Published on
-                    <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
-                </span>
-                &mdash;
-                <span class="italic">
-                    {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
-                </span>
-            </div>
-        </header>
+        <x-separator color="indigo-700" />
 
-        <hr class="my-6 | dark:border-gray-900">
-
-        <section class="post">
+        <section id="post-content" class="post-body">
             @yield('body')
         </section>
 
-        <footer class="mt-6">
-            @if($previous = $page->previous())
-                <div class="flex justify-between items-center mb-6">
-                    <hr class="flex-1 border-indigo-100 | dark:border-gray-900">
-                    <div class="text-center text-sm text-gray-600 px-2 | dark:text-indigo-100">Previous Post</div>
-                    <hr class="flex-1 border-indigo-100 | dark:border-gray-900">
-                </div>
+        <x-separator color="indigo-700" />
 
-                <x-post-card :post="$previous"/>
-            @elseif($next = $page->next())
-                <div class="flex justify-between items-center mb-6">
-                    <hr class="flex-1 border-indigo-100 | dark:border-gray-900">
-                    <div class="text-center text-sm text-gray-600 px-2 | dark:text-indigo-100">Next Post</div>
-                    <hr class="flex-1 border-indigo-100 | dark:border-gray-900">
-                </div>
-
-                <x-post-card :post="$next"/>
-            @endif
-        </footer>
+        <x-page-footer title="More posts" :page="$page" />
     </article>
 @endsection

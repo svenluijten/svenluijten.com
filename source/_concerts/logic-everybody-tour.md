@@ -3,7 +3,9 @@ title: "Logic: Everybody tour"
 date: 2017-10-24
 extends: _layouts.concert
 section: body
-location: Tilburg
+city: Tilburg
+country: The Netherlands
+venue: "013"
 ---
 
 I'm writing this in 2023, and honestly I don't remember a lot from this show besides the fact that Logic sounds _great_

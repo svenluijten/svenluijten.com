@@ -3,7 +3,9 @@ title: "Taylor Bennett: Restoration of an American Idol tour"
 date: 2018-04-18
 extends: _layouts.concert
 section: body
-location: Amsterdam
+city: Amsterdam
+country: The Netherlands
+venue: "Melkweg"
 ---
 
 After [seeing Chance 2 years prior](./chance-the-rapper-coloring-book-tour.md), I got introduced to his brother's music.
