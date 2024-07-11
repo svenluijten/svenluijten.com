@@ -6,7 +6,7 @@
     <article>
         <header class="text-center my-2">
             <picture>
-                <img src="https://picsum.photos/640/144" alt="..." class="w-full h-36 mb-4" loading="lazy">
+                <img src="{{ $page->headerImage()->source() }}" alt="{{ $page->headerImage()->alt() }}" class="w-full h-36 mb-4 object-cover" loading="lazy">
             </picture>
 
             <h1 class="text-3xl font-bold font-sans mb-4">{{ $page->title }}</h1>

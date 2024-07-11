@@ -3,7 +3,9 @@ title: "SiR: Life Is Good Tour"
 date: 2024-06-29
 extends: _layouts.concert
 section: body
-location: Utrecht
+country: The Netherlands
+city: Utrecht
+venue: TivoliVredenburg
 ---
 
 I arrived halfway through the opening act, and the crowd was already buzzing. A pretty good DJ set from Jazmine Nikitta

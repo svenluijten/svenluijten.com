@@ -2,7 +2,7 @@
 
 <header class="text-center my-2">
     <picture>
-        <img src="https://picsum.photos/640/144" alt="{{ $page->headerImageAlt }}" class="w-full h-36 mb-4" loading="lazy">
+        <img src="{{ $page->headerImage()->source() }}" alt="{{ $page->headerImage()->alt() }}" class="w-full h-36 object-cover mb-4" loading="lazy">
     </picture>
 
     <h1 class="text-4xl font-bold font-sans">{{ $page->title }}</h1>

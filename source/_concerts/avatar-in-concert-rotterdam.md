@@ -3,7 +3,9 @@ title: "Avatar in Concert"
 date: 2024-04-28
 extends: _layouts.concert
 section: body
-location: Rotterdam
+country: The Netherlands
+city: Rotterdam
+venue: De Doelen
 ---
 
 As mentioned in the post I made when I went to [Avatar in Concert in London](./avatar-in-concert-london.md) earlier this

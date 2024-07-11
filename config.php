@@ -1,6 +1,7 @@
 <?php
 
 use App\Concert;
+use App\HeaderImage;
 use App\Post;
 use Carbon\Carbon;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
@@ -41,5 +42,8 @@ return [
             ->mapToGroups(function (CollectionItem $item) {
                 return [$item->getDate('Y') => $item];
             });
-    }
+    },
+    'headerImage' => static function (PageVariable $page) {
+        return new HeaderImage($page);
+    },
 ];

@@ -3,7 +3,9 @@ title: "Taylor Swift: The Eras Tour"
 date: 2024-05-18
 extends: _layouts.concert
 section: body
-location: Stockholm
+country: Sweden
+city: Stockholm
+venue: Friends Arena
 ---
 
 What can be said about the Eras Tour that hasn't been said a million times? It was a phenomenal show! But I'm getting ahead of myself.

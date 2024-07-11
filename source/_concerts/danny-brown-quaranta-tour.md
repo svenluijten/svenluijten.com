@@ -3,7 +3,9 @@ title: "Danny Brown: Quaranta tour"
 date: 2024-05-21
 extends: _layouts.concert
 section: body
-location: Amsterdam
+country: The Netherlands
+city: Amsterdam
+venue: Melkweg
 ---
 
 Man the crowd was _feeling_ this show! First the opener (Keenan Mundane) pleasantly
