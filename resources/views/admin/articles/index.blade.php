@@ -41,7 +41,6 @@
     <ul>
         @foreach ($articles as $article)
             <li>
-                {{ $article->status === ArticleStatus::Draft ? '[DRAFT]' : '' }}
                 {{ $article->id }} - <a href="{{ route('admin.articles.update', $article) }}">{{ $article->title }}</a> ({{ $article->published_at->format('Y-m-d H:i:s') }})
             </li>
         @endforeach

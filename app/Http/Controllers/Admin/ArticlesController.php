@@ -49,7 +49,7 @@ class ArticlesController
             'title' => $request->string('title'),
             'content' => $request->string('content'),
             'slug' => $request->string('slug'),
-            'published_at' => $published = $request->date('published'),
+            'published_at' => $request->date('published'),
         ]);
 
         event(new ArticleUpdated($article->fresh()));
