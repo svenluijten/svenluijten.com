@@ -1,21 +1,20 @@
-module.exports = {
-    content: require('fast-glob').sync([
-        'config.php',
-        'commonmark.php',
-        'source/**/*.{blade.php,blade.md,md,html,vue}',
-        '!source/**/_tmp/*' // exclude temporary files
-    ], {dot: true}),
-    darkMode: 'media',
+import defaultTheme from 'tailwindcss/defaultTheme';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
     theme: {
-        extend: {},
-        screens: {
-            sm: '640px',
-            md: '768px',
-            lg: '1024px',
+        extend: {
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
         },
-        container: {
-            center: true
-        }
     },
     plugins: [],
 };

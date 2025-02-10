@@ -1,39 +1,66 @@
-# svenluijten.com
-This is the source code for [my personal website](https://svenluijten.com/). It is built with:
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-- [Jigsaw](https://github.com/tighten/jigsaw)
-- [TailwindCSS](https://github.com/tailwindlabs/tailwindcss)
-- [GitHub Actions](https://github.com/features/actions)
-- [Vercel](https://vercel.com/)
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Extra functionality
-In addition to how Jigsaw normally works, I've written 2 listeners to add some niceties to the codebase.
+## About Laravel
 
-### Images next to built files
-[The `\App\Listeners\ImagesNextToBuiltFiles` class](./app/Listeners/ImagesNextToBuiltFiles.php) ensures that images that
-are shown on a page (eg. `/blog/example-blog-post`) are stored in the same folder as the post's `index.html` file. So
-in case of that example, the images would be built into `/blog/example-blog-post/<image>`, next to `index.html`.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Relative Markdown links
-[The `\App\Listeners\RelativeMarkdownLinks` class](./app/Listeners/RelativeMarkdownLinks.php) makes it so that I can
-link to other collection items by using their relative links (so something like `[link to post](./another-post.md)`).
-This also works across collections, so I can `[link to another collection](../collectionB/post.md)`.
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-### Social images
-The social image (`og:image` and `twitter:image` `<meta>` tags) is determined in the following order:
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-1. If there is an image with the `social-image` ID present on the `<img>` tag, that will be used.
-2. If there are images on the page, the first image on the page will be used.
-3. If none of the above conditions are met, [the default image](./source/assets/images/card.jpg) will be used.
+## Learning Laravel
 
-This is all done thanks to [the `\App\Listeners\SetSocialImagesForCollectionItems` listener](./app/Listeners/SetSocialImagesForCollectionItems.php).
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Deployments
-Deployments are handled by [this workflow](./.github/workflows/integrate.yml). When a commit is pushed onto `main`, that
-branch will automatically be built using `jigsaw build production` and deployed onto Vercel. If anything happens to a
-pull request (commit pushed, opened, rebased, ...), the workflow will deploy a preview build to Vercel which can be
-seen from `https://preview-<PR NUMBER>.website.sven.luijten.dev`.
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-## Dependencies
-Dependencies are automatically updated by [Dependabot](./.github/dependabot.yml). Every week it will create new pull
-requests for dependencies that can be updated.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+
+### Premium Partners
+
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[WebReinvent](https://webreinvent.com/)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Jump24](https://jump24.co.uk)**
+- **[Redberry](https://redberry.international/laravel/)**
+- **[Active Logic](https://activelogic.com)**
+- **[byte5](https://byte5.de)**
+- **[OP.GG](https://op.gg)**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
