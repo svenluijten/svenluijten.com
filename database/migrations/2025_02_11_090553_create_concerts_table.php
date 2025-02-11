@@ -8,11 +8,15 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('concerts', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('title');
+            $table->string('artist');
+            $table->string('tour_name');
             $table->string('slug')->unique();
+            $table->date('date');
             $table->text('content');
+            $table->foreignUlid('venue_id')->constrained('venues');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
 
@@ -22,6 +26,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('concerts');
     }
 };

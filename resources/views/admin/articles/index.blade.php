@@ -1,4 +1,3 @@
-@php use App\ArticleStatus; @endphp
 <div>
     <form action="{{ route('admin.articles') }}" method="post">
         {{ csrf_field() }}

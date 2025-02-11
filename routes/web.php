@@ -24,4 +24,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
     Route::get('/concerts', [ConcertsController::class, 'index'])->name('admin.concerts');
+    Route::post('/concerts', [ConcertsController::class, 'store']);
+    Route::get('/concerts/{concert}', [ConcertsController::class, 'show'])->name('admin.concerts.update');
+    Route::put('/concerts/{concert}', [ConcertsController::class, 'update']);
 });

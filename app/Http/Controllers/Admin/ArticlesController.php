@@ -15,7 +15,7 @@ class ArticlesController
 {
     public function index(): View
     {
-        $articles = Article::all();
+        $articles = Article::query()->latest('published_at')->get();
 
         return view('admin.articles.index', ['articles' => $articles]);
     }

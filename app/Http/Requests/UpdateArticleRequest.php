@@ -14,9 +14,12 @@ class UpdateArticleRequest extends FormRequest
 
     public function rules(): array
     {
+        /** @var \App\Models\Article $article */
+        $article = $this->route('article');
+
         return [
             'title' => ['string'],
-            'slug' => ['string', Rule::unique('articles', 'slug')],
+            'slug' => ['string', Rule::unique('articles', 'slug')->ignore($article)],
             'published' => [Rule::date()->todayOrAfter()],
             'content' => ['string'],
         ];
