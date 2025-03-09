@@ -10,7 +10,7 @@ Porter's "SMILE! :D" album was such a bop, I couldn't help myself but go see him
 [I'd seen him before in 2022 when he toured around with his "Nurture" album](./porter-robinson-nurture-tour.md), so I
 kind of knew what to expect. However, this show exceeded my expectations by a wide margin!
 
-Despite Porter not feeling very well, he still pushed through and delivered an amazinzg show for a sold out venue. The
+Despite Porter not feeling very well, he still pushed through and delivered an amazing show for a sold out venue. The
 crowd was super into it, sang along most of the songs, and was energetic from the front all the way to the back. Great
 vibes all around.
 
