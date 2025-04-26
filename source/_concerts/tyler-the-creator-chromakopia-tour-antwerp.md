@@ -17,15 +17,15 @@ Tyler opened his set with the first couple songs off of his most recent album, C
 songs hit even harder live than they do when listening to the album on streaming. The mosh pits during _Rah Tah Tah_ were
 absolutely insane where I was, and I'm not the type to stand on the sidelines and watch 😉
 
-![](/assets/images/concerts/tyler-chromakopia-antwerp-1.jpg)
+![Tyler, The Creator with his arms stretched out looking commanding over the crowd visible in the foreground. He's backlit by several 3m high flames](/assets/images/concerts/tyler-chromakopia-antwerp-1.jpg)
 
 The show moved to the center stage during _Sticky_, where he ended up doing a bunch of stuff off older albums, ushered in
 by him putting the corresponding vinyl record on a turntable. He moved back to the "main" stage after a fair few songs,
 and then closed out the show with a few more bangers from all different eras of his music.
 
-![](/assets/images/concerts/tyler-chromakopia-antwerp-2.jpg)
+![Tyler, The Creator in his signature CHROMAKOPIA outfit, standing on a bridge singing into his mic. The photograph is taken from a low angle, looking up to him](/assets/images/concerts/tyler-chromakopia-antwerp-2.jpg)
 
-![](/assets/images/concerts/tyler-chromakopia-antwerp-3.jpg)
+![Tyler, The Creator visible on stage, with a crowd in the foreground looking at him. Behind him is a massive logotype spelling "CHROMAKOPIA" on big shipping containers](/assets/images/concerts/tyler-chromakopia-antwerp-3.jpg)
 
 Definitely a night to remember, and this is a new contender for "the best show I've been to"; though it's hard to pick
 from all of them.
