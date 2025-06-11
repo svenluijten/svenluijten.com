@@ -10,10 +10,6 @@
                     Published on
                     <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
                 </span>
-                &mdash;
-                <span class="italic">
-                    {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
-                </span>
             </div>
         </header>
 

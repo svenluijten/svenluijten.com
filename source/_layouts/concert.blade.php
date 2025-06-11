@@ -8,11 +8,7 @@
 
         <header>
             <div class="text-sm text-gray-700 mt-4 text-center | dark:text-indigo-100">
-                <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
-                &mdash;
-                <span class="italic">
-                    {{ $page->minutesToRead() }} {{ \Illuminate\Support\Str::plural('minute', $page->minutesToRead()) }} to read
-                </span>
+                Published on <time datetime="{{ $page->getDate('Y-m-d') }}">{{ $page->getDate('F jS, Y') }}</time>
             </div>
         </header>
 
