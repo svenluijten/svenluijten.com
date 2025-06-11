@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-a {
+a:not(:has(article)) {
     @apply text-indigo-700 dark:text-indigo-300 hover:text-indigo-600 hover:dark:text-indigo-200 hover:underline;
 }
 

@@ -16,17 +16,22 @@ title: Concerts
 @section('social-image', $page->link('/assets/images/card-concerts.jpg'))
 
 @section('content')
-    <ul>
+    <ol>
         @foreach ($page->groupByYear($concerts) as $year => $concerts)
             <h1 class="text-3xl font-bold" id="{{ $year }}">{{ $year }}</h1>
 
-            <ul class="mb-4">
+            <ol class="mb-4 flex flex-col">
                 @foreach($concerts as $concert)
-                    <li class="list-disc ml-6">
-                        <a href="{{ $concert->getUrl() }}">{{ $concert->title }} in {{ $concert->location }}</a>
+                    <li class="rounded-lg border-2 border-indigo-300 my-2 bg-indigo-50 hover:bg-indigo-100 transition-all hover:mb-3 hover:mt-1 shadow hover:shadow-lg">
+                        <a href="{{ $concert->getUrl() }}" class="p-4 block">
+                            <article>
+                                <h2 class="font-bold text-xl">{{ $concert->title }}</h2>
+                                <p>📍 {{ $concert->location }}</p>
+                            </article>
+                        </a>
                     </li>
                 @endforeach
-            </ul>
+            </ol>
         @endforeach
-    </ul>
+    </ol>
 @endsection
