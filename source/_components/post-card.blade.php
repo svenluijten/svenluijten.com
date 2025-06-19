@@ -2,7 +2,7 @@
     /** @var \App\Post $post */
 @endphp
 
-<article class="mb-4">
+<article class="mb-8">
     <header class="text-2xl font-extrabold mb-1">
         <h2>
             <a href="{{ $post->getUrl() }}"
