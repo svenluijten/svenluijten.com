@@ -26,7 +26,10 @@ title: Concerts
                         <a href="{{ $concert->getUrl() }}" class="p-4 block">
                             <article>
                                 <h2 class="font-bold text-xl">{{ $concert->title }}</h2>
-                                <p>📍 {{ $concert->location }}</p>
+                                <div class="flex flex-row">
+                                    <span class="mr-2">📍 {{ $concert->location }}</span>
+                                    <span class="mr-2">📅 {{ $concert->getDate('F jS') }}</span>
+                                </div>
                             </article>
                         </a>
                     </li>
