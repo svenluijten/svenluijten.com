@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('concerts', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('title');
-            $table->string('artist');
             $table->string('tour_name');
             $table->string('slug')->unique();
             $table->date('date');
