@@ -25,17 +25,25 @@ class ArticleForm
                     })
                     ->live(onBlur: true)
                     ->required(),
+
                 TextInput::make('slug')
                     ->afterStateUpdated(function (Set $set) {
                         $set('is_slug_changed_manually', true);
                     })
                     ->required(),
+
                 Hidden::make('is_slug_changed_manually')
                     ->default(false)
                     ->dehydrated(false),
+
                 RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
+
+                TextInput::make('summary')
+                    ->required()
+                    ->columnSpanFull(),
+
                 DateTimePicker::make('published_at'),
             ]);
     }
