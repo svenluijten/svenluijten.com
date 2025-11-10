@@ -14,22 +14,22 @@ class ConcertsTable
     {
         return $table
             ->columns([
-                TextColumn::make('id')
-                    ->label('ID')
-                    ->searchable(),
                 TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('artist')
+                    ->hidden()
                     ->searchable(),
                 TextColumn::make('tour_name')
+                    ->label('Tour')
+                    ->hidden()
                     ->searchable(),
                 TextColumn::make('slug')
+                    ->hidden()
                     ->searchable(),
                 TextColumn::make('date')
                     ->date()
                     ->sortable(),
-                TextColumn::make('venue_id')
-                    ->searchable(),
+                TextColumn::make('venue.name'),
                 TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),

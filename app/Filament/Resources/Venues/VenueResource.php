@@ -42,14 +42,11 @@ class VenueResource extends Resource
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                TextColumn::make('id')
-                    ->label('ID')
-                    ->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('country')
-                    ->searchable(),
                 TextColumn::make('city')
+                    ->searchable(),
+                TextColumn::make('country')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

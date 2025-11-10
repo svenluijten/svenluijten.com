@@ -15,12 +15,10 @@ class ArticlesTable
     {
         return $table
             ->columns([
-                TextColumn::make('id')
-                    ->label('ID')
-                    ->searchable(),
                 TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('slug')
+                    ->hidden()
                     ->searchable(),
                 TextColumn::make('published_at')
                     ->dateTime()

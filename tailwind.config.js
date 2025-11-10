@@ -9,12 +9,30 @@ export default {
         './resources/**/*.js',
         './resources/**/*.vue',
     ],
+    darkMode: 'media',
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                system: ['Manrope', 'Figtree', ...defaultTheme.fontFamily.sans],
+                text: ['Newsreader', ...defaultTheme.fontFamily.serif],
+                heading: ['Archivo Narrow', 'sans-serif'],
+            },
+            colors: {
+                primary: '#627254',
+                primaryLight: '#76885B',
+                secondary: '#ECA013',
+                tertiary: '#FAF1DD',
+                ...defaultTheme.colors,
             },
         },
+        screens: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+        },
+        container: {
+            center: true
+        }
     },
     plugins: [],
 };

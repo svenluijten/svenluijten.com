@@ -1,3 +1,5 @@
+@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|manrope:400,600|newsreader:400,400i,800,800i);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
