@@ -8,6 +8,8 @@ class Show
 {
     public function __invoke(Article $article)
     {
-        //
+        return view('articles.show', [
+            'article' => $article,
+        ]);
     }
 }

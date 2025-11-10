@@ -3,8 +3,7 @@
         <p>
             Hello! My name is <strong>Sven Luijten</strong>, and I am a developer with a passion for the web based in
             The Netherlands. I enjoy going to concerts and <a class="link" href="{{ route('concerts.index') }}">writing about my
-            experiences there</a>, lifting heavy stuff in the gym, <a class="link" href="/projects">tinkering on side-projects</a>
-            that may or may not ever see the light of day, and <a class="link" href="{{ route('articles.index') }}">sharing knowledge</a>
+            experiences there</a>, lifting heavy stuff in the gym, and <a class="link" href="{{ route('articles.index') }}">sharing knowledge</a>
             I've picked up along the way.
         </p>
     </section>

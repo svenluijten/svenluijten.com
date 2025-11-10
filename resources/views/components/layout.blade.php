@@ -18,9 +18,6 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
-
     <!-- Primary Meta Tags -->
     <title>Sven Luijten</title>
     <meta name="title" content="Sven Luijten">

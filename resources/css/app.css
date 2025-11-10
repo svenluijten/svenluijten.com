@@ -1,7 +1,10 @@
 @import url(https://fonts.bunny.net/css?family=archivo-narrow:600|manrope:400,600|newsreader:400,400i,800,800i)
+
 layer(base);
 
 @import 'tailwindcss';
+@import 'highlight.js/styles/github-dark-dimmed.css';
+@import 'highlight.js/styles/github.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -10,6 +13,10 @@ layer(base);
 
 @utility container {
   margin-inline: auto;
+}
+
+@utility link {
+    @apply underline decoration-secondary underline-offset-2 decoration-2 hover:decoration-primary transition-colors duration-100;
 }
 
 @theme {
@@ -48,7 +55,42 @@ layer(base);
     border-color: var(--color-gray-200, currentcolor);
   }
 
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading;
+    }
+
+    h1 { @apply text-5xl }
+    h2 { @apply text-3xl }
+    h3 { @apply text-2xl }
+    h4 { @apply text-xl }
+    h5 { @apply text-lg }
+    h6 { @apply text-base }
+
   a.link {
-      @apply underline decoration-secondary underline-offset-2 decoration-2 hover:decoration-primary transition-colors duration-100
+      @apply link;
   }
+
+    #post-content {
+        @apply font-text text-lg;
+
+        p {
+            @apply my-2;
+        }
+    }
+
+    #post-content p a {
+        @apply link;
+    }
+
+    #post-content p > code {
+        @apply text-sm font-mono bg-primary text-white px-1 py-0.5 inline-block rounded-sm;
+    }
+
+    #post-content pre {
+        @apply my-4 block;
+    }
+
+    #post-content pre code {
+        @apply my-4 bg-gray-50;
+    }
 }
