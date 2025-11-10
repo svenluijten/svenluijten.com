@@ -13,16 +13,19 @@
         <ol>
             @foreach ($recentArticles as $article)
                 <li class="flex flex-col md:flex-row md:justify-between mb-1">
-                    <a
-                        href="{{ route('articles.show', $article) }}"
-                        class="underline underline-offset-4 decoration-2 decoration-primary hover:text-primary hover:decoration-secondary transition-colors duration-100"
-                    >
+                    <a href="{{ route('articles.show', $article) }}" class="link">
                         {{ $article->title }}
                     </a>
 
                     <span class="text-gray-500 md:text-base text-sm">{{ $article->published_at->format('F jS, Y') }}</span>
                 </li>
             @endforeach
+
+            <li class="mt-4">
+                <a href="{{ route('articles.index') }}" class="group font-bold">
+                    <span class="group-hover:animate-pulse transition-all duration-100 inline-block font-normal text-primary">&rarr;</span> See all articles&hellip;
+                </a>
+            </li>
         </ol>
     </x-section>
 
@@ -32,7 +35,7 @@
                 <li class="md:flex-1 md:min-w-[calc(50%-0.5rem)] shadow-md group">
                     <a href="{{ $concert->url }}">
                         <article class="bg-white flex flex-row rounded-lg">
-                            <img src="https://picsum.photos/120" alt="" class="grayscale rounded-lg rounded-r-none group-hover:grayscale-0 transition-all duration-100">
+                            <img src="https://picsum.photos/120" alt="" class="grayscale rounded-lg rounded-r-none group-hover:grayscale-0 transition-all duration-100 object-cover h-36 w-36">
                             <div class="py-1 px-2 flex flex-col justify-between">
                                 <h2 class="font-system text-xl underline decoration-secondary decoration-2 line-clamp-2">{{ $concert->title }}</h2>
                                 <span>{{ $concert->date->format('F jS, Y') }}</span>

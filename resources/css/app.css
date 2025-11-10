@@ -1,5 +1,54 @@
-@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|manrope:400,600|newsreader:400,400i,800,800i);
+@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|manrope:400,600|newsreader:400,400i,800,800i)
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@utility container {
+  margin-inline: auto;
+}
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  --font-system:
+    Manrope, Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-text:
+    Newsreader, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-heading: 'Archivo Narrow', sans-serif;
+
+  --color-primary: #627254;
+  --color-primary-light: #76885b;
+  --color-secondary: #eca013;
+  --color-tertiary: #faf1dd;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  a.link {
+      @apply underline decoration-secondary underline-offset-2 decoration-2 hover:decoration-primary transition-colors duration-100
+  }
+}
