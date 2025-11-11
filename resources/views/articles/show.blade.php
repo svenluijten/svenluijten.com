@@ -9,6 +9,13 @@
 
         <main id="post-content">{!! $article->content !!}</main>
 
-        <footer></footer>
+        <hr class="w-24 border-2 border-secondary my-6">
+
+        <footer class="font-bold rounded-2xl border-2 border-primary border-dotted p-4 shadow-sm">
+            <p class="text-sm">
+                Subscribe to <a href="/feeds" class="link">the RSS feed</a> if you want to be updated whenever new
+                articles are posted.
+            </p>
+        </footer>
     </article>
 </x-layout>

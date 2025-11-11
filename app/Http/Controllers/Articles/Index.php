@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers\Articles;
 
+use App\Models\Article;
+use Illuminate\Contracts\View\View;
+
 class Index
 {
-    public function __invoke()
+    public function __invoke(): View
     {
-        return view('articles.index');
+        $articles = Article::latest('published_at')->get();
+
+        return view('articles.index', [
+            'articles' => $articles,
+        ]);
     }
 }

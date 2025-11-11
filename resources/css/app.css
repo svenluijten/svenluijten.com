@@ -91,6 +91,6 @@ layer(base);
     }
 
     #post-content pre code {
-        @apply my-4 bg-gray-50;
+        @apply my-4 bg-gray-50 border rounded-2xl;
     }
 }
