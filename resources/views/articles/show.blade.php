@@ -7,7 +7,7 @@
 
         <hr class="w-24 border-2 border-secondary my-6">
 
-        <main id="post-content">{!! $article->content !!}</main>
+        <main id="post-content">{!! $article->renderRichContent('content') !!}</main>
 
         <hr class="w-24 border-2 border-secondary my-6">
 

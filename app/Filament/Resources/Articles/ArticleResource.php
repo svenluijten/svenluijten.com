@@ -24,6 +24,8 @@ class ArticleResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
+    protected static ?string $recordRouteKeyName = 'ulid';
+
     public static function form(Schema $schema): Schema
     {
         return ArticleForm::configure($schema);
@@ -39,20 +41,13 @@ class ArticleResource extends Resource
         return ArticlesTable::configure($table);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
             'index' => ListArticles::route('/'),
             'create' => CreateArticle::route('/create'),
-            'view' => ViewArticle::route('/{record}'),
-            'edit' => EditArticle::route('/{record}/edit'),
+            'view' => ViewArticle::route('/{record:ulid}'),
+            'edit' => EditArticle::route('/{record:ulid}/edit'),
         ];
     }
 }

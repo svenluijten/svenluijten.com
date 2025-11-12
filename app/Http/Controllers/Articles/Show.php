@@ -8,6 +8,8 @@ class Show
 {
     public function __invoke(Article $article)
     {
+        // dd($article->getFirstMediaUrl('article-content'));
+
         return view('articles.show', [
             'article' => $article,
         ]);
