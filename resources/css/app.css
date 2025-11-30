@@ -93,4 +93,12 @@ layer(base);
     #post-content pre code {
         @apply my-4 bg-gray-50 border rounded-2xl;
     }
+
+    #post-content blockquote {
+        @apply border-l-4 border-primary pl-4 my-4;
+    }
+
+    #post-content ul {
+        @apply list-disc list-inside;
+    }
 }
