@@ -45,15 +45,18 @@ class ConcertForm
 
                 Select::make('main_artists')
                     ->label('Artist(s)')
-                    ->relationship(name: 'artists', titleAttribute: 'name')
+                    ->relationship(name: 'mainArtists', titleAttribute: 'name')
                     ->multiple()
                     ->pivotData([
                         'position' => 'main',
-                    ]),
+                    ])
+                ->createOptionForm([
+                    TextInput::make('name')->required(),
+                ]),
 
                 Select::make('support_artists')
                     ->label('Support Artist(s)')
-                    ->relationship(name: 'artists', titleAttribute: 'name')
+                    ->relationship(name: 'supportArtists', titleAttribute: 'name')
                     ->multiple()
                     ->pivotData([
                         'position' => 'support',

@@ -52,4 +52,18 @@ class Concert extends Model
     {
         return $this->belongsToMany(Artist::class);
     }
+
+    public function mainArtists(): BelongsToMany
+    {
+        return $this->artists()
+            ->withPivot('position')
+            ->wherePivot('position', 'main');
+    }
+
+    public function supportArtists(): BelongsToMany
+    {
+        return $this->artists()
+            ->withPivot('position')
+            ->wherePivot('position', 'support');
+    }
 }
