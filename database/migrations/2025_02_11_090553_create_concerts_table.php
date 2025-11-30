@@ -9,13 +9,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('concerts', function (Blueprint $table) {
-            $table->ulid('id')->primary();
+            $table->id()->primary();
+            $table->ulid()->unique();
             $table->string('title');
             $table->string('tour_name');
             $table->string('slug')->unique();
             $table->date('date');
-            $table->text('content');
-            $table->foreignUlid('venue_id')->constrained('venues');
+            $table->text('content')->nullable();
+            $table->foreignId('venue_id')->nullable()->constrained('venues');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
 

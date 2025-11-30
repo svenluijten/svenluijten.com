@@ -15,6 +15,16 @@ class Concert extends Model
 
     protected $guarded = [];
 
+    public function uniqueIds(): array
+    {
+        return ['ulid'];
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
     protected function casts(): array
     {
         return [

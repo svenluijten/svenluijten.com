@@ -29,7 +29,7 @@
     </x-section>
 
     <x-section title="Concerts">
-        <ol class="md:-mx-8 mt-4 flex flex-col md:flex-row md:flex-wrap gap-4">
+        <ol class="md:-mx-8 my-4 flex flex-col md:flex-row md:flex-wrap gap-4">
             @foreach ($recentConcerts as $concert)
                 <li class="md:flex-1 md:min-w-[calc(50%-0.5rem)] shadow-md group">
                     <a href="{{ $concert->url }}">
@@ -44,5 +44,9 @@
                 </li>
             @endforeach
         </ol>
+
+        <a href="{{ route('concerts.index') }}" class="group font-bold">
+            <span class="group-hover:animate-pulse transition-all duration-100 inline-block font-normal text-primary">&rarr;</span> See all concerts&hellip;
+        </a>
     </x-section>
 </x-layout>

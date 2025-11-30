@@ -9,14 +9,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->ulid('id')->primary();
+            $table->id()->primary();
+            $table->ulid()->unique();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('content');
+            $table->text('content')->nullable();
+            $table->text('summary')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
 
             $table->index('slug');
+            $table->index('ulid');
         });
     }
 

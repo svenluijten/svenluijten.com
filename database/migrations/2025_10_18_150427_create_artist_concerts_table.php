@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('artist_concert', function (Blueprint $table) {
             $table->id();
-            $table->foreignUlid('artist_id')->constrained('artists');
-            $table->foreignUlid('concert_id')->constrained('concerts');
+            $table->foreignId('artist_id')->constrained('artists');
+            $table->foreignId('concert_id')->constrained('concerts');
             $table->string('position')->comment('Either "support" or "main"');
             $table->timestamps();
         });

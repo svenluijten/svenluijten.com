@@ -9,7 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('artists', function (Blueprint $table) {
-            $table->ulid('id')->primary();
+            $table->id()->primary();
+            $table->ulid()->unique();
             $table->string('name');
             $table->timestamps();
         });

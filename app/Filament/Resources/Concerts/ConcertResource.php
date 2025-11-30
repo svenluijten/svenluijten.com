@@ -22,6 +22,8 @@ class ConcertResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
+    protected static ?string $recordRouteKeyName = 'ulid';
+
     public static function form(Schema $schema): Schema
     {
         return ConcertForm::configure($schema);
@@ -32,19 +34,12 @@ class ConcertResource extends Resource
         return ConcertsTable::configure($table);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
             'index' => ListConcerts::route('/'),
             'create' => CreateConcert::route('/create'),
-            'edit' => EditConcert::route('/{record}/edit'),
+            'edit' => EditConcert::route('/{record:ulid}/edit'),
         ];
     }
 }
