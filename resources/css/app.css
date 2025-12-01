@@ -73,32 +73,22 @@ layer(base);
     #post-content {
         @apply font-text text-lg;
 
-        p {
-            @apply my-2;
-        }
+        p { @apply my-2; }
+
+        a { @apply link }
+
+        ul { @apply list-disc list-inside; }
+
+        blockquote { @apply border-l-4 border-primary pl-4 my-4; }
     }
 
-    #post-content p a {
-        @apply link;
-    }
-
-    #post-content p > code {
-        @apply text-sm font-mono bg-primary text-white px-1 py-0.5 inline-block rounded-sm;
+    #post-content code {
+        @apply rounded text-base px-2 py-0.5 box-decoration-clone bg-white border border-gray-200;
     }
 
     #post-content pre {
         @apply my-4 block;
-    }
 
-    #post-content pre code {
-        @apply my-4 bg-gray-50 border rounded-2xl;
-    }
-
-    #post-content blockquote {
-        @apply border-l-4 border-primary pl-4 my-4;
-    }
-
-    #post-content ul {
-        @apply list-disc list-inside;
+        code { @apply rounded-2xl }
     }
 }
