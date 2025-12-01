@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Articles;
 use App\Http\Controllers\Concerts;
+use App\Http\Controllers\Contact;
 use App\Http\Controllers\Home;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
+Route::get('/contact', Contact::class)->name('contact');
 
 Route::get('articles', Articles\Index::class)->name('articles.index');
 Route::get('articles/{article}', Articles\Show::class)->name('articles.show');

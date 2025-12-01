@@ -11,7 +11,7 @@
         <nav>
             <ul class="flex justify-center text-lg">
                 <li class="px-2 | lg:px-4">
-                    <a href="/contact" class="underline-offset-2 hover:underline">
+                    <a href="{{ route('contact') }}" class="underline-offset-2 hover:underline">
                         Contact
                     </a>
                 </li>

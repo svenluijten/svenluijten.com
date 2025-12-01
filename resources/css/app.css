@@ -82,7 +82,7 @@ layer(base);
         blockquote { @apply border-l-4 border-primary pl-4 my-4; }
     }
 
-    #post-content code {
+    #post-content code, code.code {
         @apply rounded text-base px-2 py-0.5 box-decoration-clone bg-white border border-gray-200;
     }
 
