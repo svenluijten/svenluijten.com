@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\MediaFormat;
 use Filament\Forms\Components\RichEditor\FileAttachmentProviders\SpatieMediaLibraryFileAttachmentProvider;
 use Filament\Forms\Components\RichEditor\Models\Concerns\InteractsWithRichContent;
 use Filament\Forms\Components\RichEditor\Models\Contracts\HasRichContent;
@@ -10,8 +11,10 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Concert extends Model implements HasMedia, HasRichContent
 {
@@ -80,5 +83,17 @@ class Concert extends Model implements HasMedia, HasRichContent
                 SpatieMediaLibraryFileAttachmentProvider::make()
                     ->collection('concert-content')
             );
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion(MediaFormat::Thumbnail->value)
+            ->fit(Fit::Crop, 180, 180)
+            ->sharpen(10);
+    }
+
+    public function thumbnailUrl(): string
+    {
+        return $this->getFirstMediaUrl('concert-content', MediaFormat::Thumbnail->value);
     }
 }
