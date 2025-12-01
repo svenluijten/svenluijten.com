@@ -78,10 +78,9 @@ class ImportMarkdownConcerts extends Command
             $artists = array_filter($artists);
             $artists = array_map(fn (string $name) => Artist::firstOrCreate(['name' => $name]), $artists);
 
-
             $concert->mainArtists()->syncWithPivotValues($artists, ['position' => 'main']);
 
-            AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content');
+            AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content', 'concerts');
             ReplaceImageReferences::make()->execute($concert);
         }
     }
