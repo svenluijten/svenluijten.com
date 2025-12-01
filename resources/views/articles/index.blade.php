@@ -1,10 +1,4 @@
-<x-layout>
-    <section class="mb-6 font-text text-lg">
-        <p>
-            I write stuff and I publish it here.
-        </p>
-    </section>
-
+<x-layout title="Articles" description="Articles written and published by Sven.">
     <x-section title="Articles">
         <ol>
             @foreach ($articles as $article)

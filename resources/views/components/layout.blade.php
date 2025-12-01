@@ -9,7 +9,6 @@
 
     <x-meta.look-feel />
 
-
     <link rel="canonical" href="{{ url()->current() }}">
 
     @if(! app()->isProduction())
@@ -19,14 +18,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Primary Meta Tags -->
-    <title>Sven Luijten</title>
-    <meta name="title" content="Sven Luijten">
+    <title>{{ $title ?? 'Sven Luijten' }}</title>
+    <meta name="title" content="{{ $title ?? 'Sven Luijten' }}">
     <meta name="description" content="{{ $description ?? 'todo: some default description' }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="Sven Luijten">
+    <meta property="og:title" content="{{ $title ?? 'Sven Luijten' }}">
     <meta property="og:description" content="{{ $description ?? 'todo: some default description' }}">
     <meta property="og:image" content="social-image.jpg">
 </head>

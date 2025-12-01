@@ -1,4 +1,4 @@
-<x-layout title="Sven Luijten">
+<x-layout title="Sven Luijten" description="Sven Luijten's personal website.">
     <section class="mb-6 font-text text-lg">
         <p>
             Hello! My name is <strong>Sven Luijten</strong>, and I am a developer with a passion for the web based in

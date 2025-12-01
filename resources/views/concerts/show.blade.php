@@ -14,7 +14,7 @@
         <footer class="font-bold rounded-2xl border-2 border-primary border-dotted p-4 shadow-sm">
             <p class="text-sm">
                 Subscribe to <a href="/feeds" class="link">the RSS feed</a> if you want to be updated whenever new
-                articles are posted.
+                concert logs are posted.
             </p>
         </footer>
     </article>

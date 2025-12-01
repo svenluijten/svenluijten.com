@@ -1,11 +1,12 @@
-<x-layout title="Concerts">
+<x-layout title="Concerts" description="All the concerts Sven has been to.">
     <section class="mb-6 font-text text-lg">
         <p>
-            I write stuff and I publish it here.
+            I love going to concerts. In an effort to remember them better and actually be present when I'm at one, I
+            write a recap of each of them in this concert log.
         </p>
     </section>
 
-    <x-section title="Concerts">
+    <x-section>
         @foreach ($groupedConcerts as $year => $concerts)
             <h2>{{ $year }}</h2>
 
