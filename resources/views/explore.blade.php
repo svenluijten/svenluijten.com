@@ -1,0 +1,25 @@
+<x-layout title="Explore">
+    <x-section title="Articles">
+        <a href="{{ route('articles.index') }}" class="link">My written articles</a> are intended to educate and inform. They tend to
+        be longer(ish) and are well refined. Their target audience is mostly (PHP) developers looking to expand their knowledge and
+        learn new things.
+    </x-section>
+
+    <x-section title="Concert log">
+        <a href="{{ route('concerts.index') }}" class="link">My concert log</a> is the place where I catalogue every concert
+        I've been to. In an effort to be more present at the shows I visit and hopefully remember them a bit better than by
+        just a few blurry pictures and videos, I write about my experience there.
+    </x-section>
+
+    <x-section title="Feeds">
+        <p>This site automatically publishes a handful of feeds for every content type, as well as a generic one that contains everything.</p>
+
+        <ul class="list-disc my-4 ml-4">
+            <li><a href="/feeds/all.xml" class="link"><code class="code">/feeds/all.xml</code></a> contains all content published on this site.</li>
+            <li><a href="/feeds/articles.xml" class="link"><code class="code">/feeds/articles.xml</code></a> contains only the articles I write.</li>
+            <li><a href="/feeds/concerts.xml" class="link"><code class="code">/feeds/concerts.xml</code></a> only contains the concert logs.</li>
+        </ul>
+
+        <p>This same list can be found on <a href="{{ route('feeds.index') }}" class="link">the dedicated <code class="code">/feeds</code> page</a>.</p>
+    </x-section>
+</x-layout>
