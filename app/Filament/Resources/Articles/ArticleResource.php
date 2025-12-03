@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Articles;
 
 use App\Filament\Resources\Articles\Pages\CreateArticle;
 use App\Filament\Resources\Articles\Pages\EditArticle;
+use App\Filament\Resources\Articles\Pages\EditFeedArticle;
 use App\Filament\Resources\Articles\Pages\ListArticles;
 use App\Filament\Resources\Articles\Pages\ViewArticle;
 use App\Filament\Resources\Articles\Schemas\ArticleForm;
@@ -11,6 +12,8 @@ use App\Filament\Resources\Articles\Schemas\ArticleInfolist;
 use App\Filament\Resources\Articles\Tables\ArticlesTable;
 use App\Models\Article;
 use BackedEnum;
+use Filament\Pages\Enums\SubNavigationPosition;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -25,6 +28,8 @@ class ArticleResource extends Resource
     protected static ?string $recordTitleAttribute = 'title';
 
     protected static ?string $recordRouteKeyName = 'ulid';
+
+    protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
 
     public static function form(Schema $schema): Schema
     {
@@ -48,6 +53,16 @@ class ArticleResource extends Resource
             'create' => CreateArticle::route('/create'),
             'view' => ViewArticle::route('/{record:ulid}'),
             'edit' => EditArticle::route('/{record:ulid}/edit'),
+            'edit-feed' => EditFeedArticle::route('/{record:ulid}/edit-feed'),
         ];
+    }
+
+    public static function getRecordSubNavigation(Page $page): array
+    {
+        return $page->generateNavigationItems([
+            Pages\ViewArticle::class,
+            Pages\EditArticle::class,
+            Pages\EditFeedArticle::class,
+        ]);
     }
 }

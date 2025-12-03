@@ -21,7 +21,7 @@
 
     <x-section title="Do not contact me">
         <p>If your reason to contact me is any of the ones listed here, your message will be ignored and marked as spam.</p>
-        <ul class="list-disc ml-4">
+        <ul class="mt-4 list-disc ml-4">
             <li>Guest post requests.</li>
             <li>SEO link exchanges.</li>
             <li>Baseless recruitment.</li>

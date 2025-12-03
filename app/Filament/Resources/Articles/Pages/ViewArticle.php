@@ -9,11 +9,4 @@ use Filament\Resources\Pages\ViewRecord;
 class ViewArticle extends ViewRecord
 {
     protected static string $resource = ArticleResource::class;
-
-    protected function getHeaderActions(): array
-    {
-        return [
-            EditAction::make(),
-        ];
-    }
 }

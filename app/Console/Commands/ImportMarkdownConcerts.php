@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Actions\AddImagesToMediaCollection;
 use App\Actions\ReplaceImageReferences;
+use App\Actions\ReplaceRelativeLinksInConcerts;
 use App\Models\Artist;
 use App\Models\Concert;
 use App\Models\Venue;
@@ -82,6 +83,7 @@ class ImportMarkdownConcerts extends Command
 
             AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content', 'concerts');
             ReplaceImageReferences::make()->execute($concert);
+            ReplaceRelativeLinksInConcerts::make()->execute($concert);
         }
     }
 }
