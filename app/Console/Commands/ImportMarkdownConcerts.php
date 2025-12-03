@@ -81,6 +81,8 @@ class ImportMarkdownConcerts extends Command
 
             $concert->mainArtists()->syncWithPivotValues($artists, ['position' => 'main']);
 
+            $concert->feedData()->updateOrCreate([], ['identifier' => $concert->url]);
+
             AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content', 'concerts');
             ReplaceImageReferences::make()->execute($concert);
             ReplaceRelativeLinksInConcerts::make()->execute($concert);

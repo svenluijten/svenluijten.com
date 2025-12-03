@@ -26,9 +26,7 @@ class ImportMarkdownArticles extends Command
     public function handle(): void
     {
         if ($this->option('prune')) {
-            Article::query()
-                ->delete()
-            ;
+            Article::query()->delete();
 
             $this->comment('Pruned all existing articles.');
         }
@@ -66,6 +64,7 @@ class ImportMarkdownArticles extends Command
                     'content' => $contents->getContent(),
                 ],
             );
+            $article->feedData()->updateOrCreate([], ['identifier' => route('articles.show', $article)]);
 
             AddImagesToMediaCollection::make()->execute($file->getContents(), $article, 'article-content', 'posts');
             ReplaceImageReferences::make()->execute($article);
