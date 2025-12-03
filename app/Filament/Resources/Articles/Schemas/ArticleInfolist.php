@@ -15,8 +15,6 @@ class ArticleInfolist
                     ->label('ID'),
                 TextEntry::make('title'),
                 TextEntry::make('slug'),
-                TextEntry::make('content')
-                    ->columnSpanFull(),
                 TextEntry::make('published_at')
                     ->dateTime()
                     ->placeholder('-'),
