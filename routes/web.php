@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Archive;
 use App\Http\Controllers\Articles;
 use App\Http\Controllers\Concerts;
 use App\Http\Controllers\Contact;
@@ -20,3 +21,5 @@ Route::get('posts/{article}', Articles\Show::class)->name('posts.show');
 
 Route::get('concerts', Concerts\Index::class)->name('concerts.index');
 Route::get('concerts/{date}/{concert}', Concerts\Show::class)->name('concerts.show');
+
+Route::get('/archive', Archive::class)->name('archive');

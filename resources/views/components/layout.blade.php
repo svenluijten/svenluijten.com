@@ -7,7 +7,7 @@
 
     {{ $meta ?? '' }}
 
-    <link href="/feeds/all.xml" type="application/atom+xml" rel="alternate" title="Sven Luijten">
+    <link href="{{ url('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten">
 
     <x-meta.look-feel />
 
