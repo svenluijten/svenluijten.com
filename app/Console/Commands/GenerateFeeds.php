@@ -2,12 +2,14 @@
 
 namespace App\Console\Commands;
 
+use App\Actions\GetAllFeedArticles;
+use App\Actions\GetAllFeedConcerts;
 use App\Feeds\FeedItem;
 use App\Models\Article;
 use App\Models\Concert;
 use DateTimeInterface;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Filesystem\Filesystem;
 
 class GenerateFeeds extends Command
 {
@@ -17,41 +19,57 @@ class GenerateFeeds extends Command
 
     public function handle()
     {
-        $this->generateAllFeed();
-        $this->generateArticlesFeed();
-        $this->generateConcertsFeed();
+        $articles = GetAllFeedArticles::make()->execute();
+        $concerts = GetAllFeedConcerts::make()->execute();
+
+        $content = collect([...$articles, ...$concerts])->sortByDesc('published');
+
+        $this->writeFeed(
+            fileName: 'all.xml',
+            id: 'https://svenluijten.com/archive',
+            title: 'Sven Luijten',
+            subtitle: 'All of Sven Luijten\'s posts.',
+            updated: $content->max('updated'),
+            author: 'Sven Luijten',
+            entries: $content->toArray(),
+        );
+
+        $this->writeFeed(
+            fileName: 'articles.xml',
+            id: route('articles.index'),
+            title: 'Sven Luijten - Articles',
+            subtitle: 'All of Sven Luijten\'s articles.',
+            updated: $articles->max('updated'),
+            author: 'Sven Luijten',
+            entries: $articles->toArray(),
+        );
+
+        $this->writeFeed(
+            fileName: 'concerts.xml',
+            id: route('concerts.index'),
+            title: 'Sven Luijten - Concerts',
+            subtitle: 'All of Sven Luijten\'s concerts.',
+            updated: $concerts->max('updated'),
+            author: 'Sven Luijten',
+            entries: $concerts->toArray(),
+        );
     }
 
-    private function generateAllFeed()
+    /**
+     * @param array<FeedItem> $entries
+     */
+    private function writeFeed(string $fileName, string $id, string $title, string $subtitle, DateTimeInterface $updated, string $author, array $entries): void
     {
-        $articles = Article::query()
-            ->where('published_at', '<=', now())
-            ->chunkMap(function (Article $article) {
-                return new FeedItem(
-                    id: $article->feed_id,
-                    title: $article->title,
-                    url: route('articles.show', $article),
-                    content: $article->content,
-                    updated: $article->updated_at,
-                    published: $article->published_at,
-                );
-            });
+        $contents = view('feeds.atom', [
+            'id' => $id,
+            'title' => $title,
+            'subtitle' => $subtitle,
+            'updated' => $updated,
+            'author' => $author,
+            'entries' => $entries,
+        ])->render();
 
-        $concerts = Concert::query()
-            ->where('published_at', '<=', now())
-            ->chunkMap(function (Concert $concert) {
-                return new FeedItem(
-                    id: $concert->feed_id,
-                    title: $concert->title,
-                    url: $concert->url,
-                    content: $concert->content,
-                    updated: $concert->updated_at,
-                    published: $concert->published_at,
-                );
-            });
-
-        $content = [...$articles, ...$concerts];
-
-        dd($content);
+        $fs = new Filesystem();
+        $fs->put(public_path('feeds/'.$fileName), $contents);
     }
 }
