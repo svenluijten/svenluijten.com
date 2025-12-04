@@ -60,7 +60,7 @@ class ImportMarkdownArticles extends Command
                     'content' => $contents->getContent(),
                 ],
             );
-            $article->feedData()->updateOrCreate([], ['identifier' => route('articles.show', $article)]);
+            $article->feedData()->updateOrCreate([], ['identifier' => route('posts.show', $article)]);
 
             AddImagesToMediaCollection::make()->execute($file->getContents(), $article, 'article-content', 'posts');
             ReplaceImageReferences::make()->execute($article);

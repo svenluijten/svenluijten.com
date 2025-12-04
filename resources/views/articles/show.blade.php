@@ -1,4 +1,10 @@
 <x-layout :title="$article->title">
+    <x-slot:meta>
+        @if (request()->route()->getName() === 'posts.show')
+            <link rel="canonical" href="{{ route('articles.show', $article) }}">
+        @endif
+    </x-slot>
+
     <article>
         <header class="mb-8">
             <h1 class="text-5xl mb-2">{{ $article->title }}</h1>
