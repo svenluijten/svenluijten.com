@@ -10,4 +10,9 @@ class Venue extends Model
     use HasUlids;
 
     protected $guarded = [];
+
+    public function uniqueIds(): array
+    {
+        return ['ulid'];
+    }
 }
