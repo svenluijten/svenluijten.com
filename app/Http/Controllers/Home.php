@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\BlogPost;
 use App\Models\Concert;
 
 class Home
@@ -12,7 +11,6 @@ class Home
     {
         return view('index', [
             'recentArticles' => Article::latest('published_at')->take(5)->get(),
-            'recentBlogPosts' => BlogPost::latest('published_at')->take(5)->get(),
             'recentConcerts' => Concert::latest('date')->take(4)->get(),
         ]);
     }
