@@ -1,4 +1,4 @@
-<x-layout title="Explore">
+<x-layout title="Explore" description="A non-exhaustive list of content on this site.">
     <x-section title="Articles">
         <a href="{{ route('articles.index') }}" class="link">My written articles</a> are intended to educate and inform. They tend to
         be longer(ish) and are well refined. Their target audience is mostly (PHP) developers looking to expand their knowledge and

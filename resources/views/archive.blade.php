@@ -1,4 +1,4 @@
-<x-layout title="Archive">
+<x-layout title="Archive" description="All of the content I've published over the years.">
     @foreach ($items as $year => $group)
         <x-section title="{{ $year }}">
             <ol class="list-disc list-inside">

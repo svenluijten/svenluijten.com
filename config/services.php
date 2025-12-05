@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'oggy' => [
+        'url' => env('OGGY_URL'),
+    ],
+
 ];

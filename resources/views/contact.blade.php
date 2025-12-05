@@ -1,4 +1,4 @@
-<x-layout title="Contact">
+<x-layout title="Contact" description="Ways to contact Sven.">
     <x-section>
         <p>You can get in touch with me on various places online. Feel free to contact me for work inquiries (freelance PHP, Laravel, consulting), interview requests, and feedback on any of the content on the site.</p>
 

@@ -25,9 +25,10 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="{{ $title ?? 'Sven Luijten' }}">
-    <meta property="og:description" content="{{ $description ?? 'todo: some default description' }}">
-    <meta property="og:image" content="social-image.jpg">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{!! oggy($title, $description) !!}">
+    <meta property="og:image:alt" content="{{ $title . ' - ' . $description }}">
 </head>
 
 <body class="text-gray-900 antialiased border-8 border-primary bg-tertiary min-h-screen relative | md:border-0">

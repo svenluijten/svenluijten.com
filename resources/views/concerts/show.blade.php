@@ -1,4 +1,4 @@
-<x-layout :title="$concert->title">
+<x-layout :title="$concert->title" description="A mini review of the show in {{ $concert->venue?->name }}, {{ $concert->venue?->city }}">
     <article>
         <header class="mb-8">
             <h1 class="text-5xl mb-2">{{ $concert->title }}</h1>
