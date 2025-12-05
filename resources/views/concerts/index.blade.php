@@ -1,4 +1,4 @@
-<x-layout title="Concerts" description="All the concerts Sven has been to.">
+<x-layout title="Concerts" description="All the concerts I've been to.">
     <section class="mb-6 font-text text-lg">
         <p>
             I love going to concerts. In an effort to remember them better and actually be present when I'm at one, I

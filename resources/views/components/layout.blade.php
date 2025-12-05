@@ -18,9 +18,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Primary Meta Tags -->
-    <title>{{ $title ?? 'Sven Luijten' }}</title>
-    <meta name="title" content="{{ $title ?? 'Sven Luijten' }}">
-    <meta name="description" content="{{ $description ?? 'todo: some default description' }}">
+    <title>{{ $title }} - Sven</title>
+    <meta name="title" content="{{ $title }}">
+    <meta name="description" content="{{ $description }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">

@@ -1,4 +1,4 @@
-<x-layout title="Articles" description="Articles written and published by Sven.">
+<x-layout title="Articles" description="Articles I've written and published.">
     <x-section title="Articles">
         <ol>
             @foreach ($articles as $article)
