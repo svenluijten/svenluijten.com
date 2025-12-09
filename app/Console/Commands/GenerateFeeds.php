@@ -5,8 +5,6 @@ namespace App\Console\Commands;
 use App\Actions\GetAllFeedArticles;
 use App\Actions\GetAllFeedConcerts;
 use App\Feeds\FeedItem;
-use App\Models\Article;
-use App\Models\Concert;
 use DateTimeInterface;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -24,15 +22,19 @@ class GenerateFeeds extends Command
 
         $content = collect([...$articles, ...$concerts])->sortByDesc('published');
 
+        $this->info('Generating "all" feed...');
+
         $this->writeFeed(
             fileName: 'all.xml',
-            id: 'https://svenluijten.com/archive',
+            id: route('archive'),
             title: 'Sven Luijten',
             subtitle: 'All of Sven Luijten\'s posts.',
             updated: $content->max('updated'),
             author: 'Sven Luijten',
             entries: $content->toArray(),
         );
+
+        $this->info('Generating "articles" feed...');
 
         $this->writeFeed(
             fileName: 'articles.xml',
@@ -44,6 +46,8 @@ class GenerateFeeds extends Command
             entries: $articles->toArray(),
         );
 
+        $this->info('Generating "concerts" feed...');
+
         $this->writeFeed(
             fileName: 'concerts.xml',
             id: route('concerts.index'),
@@ -53,6 +57,10 @@ class GenerateFeeds extends Command
             author: 'Sven Luijten',
             entries: $concerts->toArray(),
         );
+
+        $this->info('Successfully generated all feeds.');
+
+        return 0;
     }
 
     /**
