@@ -29,7 +29,7 @@ class GenerateFeeds extends Command
             id: route('archive'),
             title: 'Sven Luijten',
             subtitle: 'All of Sven Luijten\'s posts.',
-            updated: $content->max('updated'),
+            updated: $content->max('published'),
             author: 'Sven Luijten',
             entries: $content->toArray(),
         );
@@ -41,7 +41,7 @@ class GenerateFeeds extends Command
             id: route('articles.index'),
             title: 'Sven Luijten - Articles',
             subtitle: 'All of Sven Luijten\'s articles.',
-            updated: $articles->max('updated'),
+            updated: $articles->max('published'),
             author: 'Sven Luijten',
             entries: $articles->toArray(),
         );
@@ -53,7 +53,7 @@ class GenerateFeeds extends Command
             id: route('concerts.index'),
             title: 'Sven Luijten - Concerts',
             subtitle: 'All of Sven Luijten\'s concerts.',
-            updated: $concerts->max('updated'),
+            updated: $concerts->max('published'),
             author: 'Sven Luijten',
             entries: $concerts->toArray(),
         );
@@ -68,8 +68,17 @@ class GenerateFeeds extends Command
      */
     private function writeFeed(string $fileName, string $id, string $title, string $subtitle, DateTimeInterface $updated, string $author, array $entries): void
     {
+        $htmlUrl = match ($fileName) {
+            'articles.xml' => route('articles.index'),
+            'concerts.xml' => route('concerts.index'),
+            'all.xml' => route('archive'),
+            default => null,
+        };
+
         $contents = view('feeds.atom', [
             'id' => $id,
+            'self' => url('feeds/'.$fileName),
+            'html' => $htmlUrl,
             'title' => $title,
             'subtitle' => $subtitle,
             'updated' => $updated,

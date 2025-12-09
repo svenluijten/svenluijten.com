@@ -1,4 +1,8 @@
 <x-layout :title="$concert->title" description="A mini review of the show in {{ $concert->venue?->name }}, {{ $concert->venue?->city }}">
+    <x-slot:meta>
+        <link href="{{ url('/feeds/concerts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Concert Log">
+    </x-slot>
+
     <article>
         <header class="mb-8">
             <h1 class="text-5xl mb-2">{{ $concert->title }}</h1>

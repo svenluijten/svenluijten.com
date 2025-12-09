@@ -6,8 +6,8 @@
     <title>{{ $title }}</title>
     <subtitle>{{ $subtitle }}</subtitle>
     <updated>{{ $updated->format(DateTimeInterface::ATOM) }}</updated>
-    <link rel="self" href="https://svenluijten.com/feeds/all.xml" type="application/xml+atom"/>
-    <link rel="alternate" href="https://svenluijten.com/archive" type="text/html"/>
+    <link rel="self" href="{{ $self }}" type="application/xml+atom"/>
+    @if ($html)<link rel="alternate" href="{{ $html }}" type="text/html"/>@endif
     <author>
         <name>Sven Luijten</name>
     </author>
@@ -20,6 +20,7 @@
             <name>Sven Luijten</name>
         </author>
         <published>{{ $entry->published->format(DateTimeInterface::ATOM) }}</published>
+        <link href="{{ $entry->url }}" rel="alternate" type="text/html"/>
     </entry>
 @endforeach
 </feed>

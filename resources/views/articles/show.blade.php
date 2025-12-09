@@ -3,6 +3,8 @@
         @if (request()->route()->getName() === 'posts.show')
             <link rel="canonical" href="{{ route('articles.show', $article) }}">
         @endif
+
+        <link href="{{ url('/feeds/articles.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Articles">
     </x-slot>
 
     <article>

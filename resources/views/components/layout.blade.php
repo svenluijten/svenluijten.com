@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{ $meta ?? '' }}
-
     <link href="{{ url('/feeds/all.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten">
 
     <x-meta.look-feel />

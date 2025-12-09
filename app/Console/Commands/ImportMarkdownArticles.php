@@ -58,12 +58,17 @@ class ImportMarkdownArticles extends Command
                     'title' => $fm['title'],
                     'published_at' => $fm['date'],
                     'content' => $contents->getContent(),
+                    'created_at' => $fm['date'],
+                    'updated_at' => $fm['date'],
                 ],
             );
-            $article->feedData()->updateOrCreate([], ['identifier' => route('posts.show', $article)]);
 
-            AddImagesToMediaCollection::make()->execute($file->getContents(), $article, 'article-content', 'posts');
-            ReplaceImageReferences::make()->execute($article);
+            Article::withoutTimestamps(function () use ($file, $article) {
+                $article->feedData()->updateOrCreate([], ['identifier' => route('posts.show', $article)]);
+
+                AddImagesToMediaCollection::make()->execute($file->getContents(), $article, 'article-content', 'posts');
+                ReplaceImageReferences::make()->execute($article);
+            });
         }
     }
 }

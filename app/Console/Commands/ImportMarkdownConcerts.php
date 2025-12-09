@@ -50,42 +50,52 @@ class ImportMarkdownConcerts extends Command
 
         $converter = new MarkdownConverter($environment);
 
-        /** @var \Symfony\Component\Finder\SplFileInfo $file */
-        foreach ($files as $file) {
-            $contents = $converter->convert($file->getContents());
+        collect($files)
+            ->map(function ($file) use ($converter) {
+                $contents = $converter->convert($file->getContents());
 
-            if (!$contents instanceof RenderedContentWithFrontMatter) {
-                throw new \InvalidArgumentException(
-                    'Could not read Frontmatter from file "'.$file->getRelativePathname().'"'
-                );
-            }
+                if (!$contents instanceof RenderedContentWithFrontMatter) {
+                    throw new \InvalidArgumentException(
+                        'Could not read Frontmatter from file "'.$file->getRelativePathname().'"'
+                    );
+                }
 
-            $fm = $contents->getFrontMatter();
+                $fm = $contents->getFrontMatter();
 
-            /** @var \App\Models\Concert $concert */
-            $concert = Concert::create([
-                'title' => $fm['title'],
-                'date' => $date = CarbonImmutable::parse($fm['date']),
-                // 'location' => $fm['location'],
-                'published_at' => $date,
-                'content' => $contents->getContent(),
-                'tour_name' => Str::after($fm['title'], ': '),
-                'slug' => $file->getBasename('.md'),
-            ]);
+                return ['contents' => $contents, 'frontmatter' => $fm, 'file' => $file];
+            })
+            ->sortByDesc(fn ($item) => $item['frontmatter']['date'])
+            ->each(function ($item) {
+                ['contents' => $contents, 'frontmatter' => $fm, 'file' => $file] = $item;
 
-            $artists = Str::before($fm['title'], ': ');
-            $artists = explode('&', $artists);
-            $artists = array_map('trim', $artists);
-            $artists = array_filter($artists);
-            $artists = array_map(fn (string $name) => Artist::firstOrCreate(['name' => $name]), $artists);
+                /** @var \App\Models\Concert $concert */
+                $concert = Concert::create([
+                    'title' => $fm['title'],
+                    'date' => $date = CarbonImmutable::parse($fm['date']),
+                    'published_at' => $date,
+                    'content' => $contents->getContent(),
+                    'tour_name' => Str::after($fm['title'], ': '),
+                    'slug' => $file->getBasename('.md'),
+                    'created_at' => $date,
+                    'updated_at' => $date,
+                ]);
 
-            $concert->mainArtists()->syncWithPivotValues($artists, ['position' => 'main']);
+                $artists = Str::before($fm['title'], ': ');
+                $artists = explode('&', $artists);
+                $artists = array_map('trim', $artists);
+                $artists = array_filter($artists);
+                $artists = array_map(fn (string $name) => Artist::firstOrCreate(['name' => $name]), $artists);
 
-            $concert->feedData()->updateOrCreate([], ['identifier' => $concert->url]);
+                Concert::withouttimestamps(function () use ($concert, $artists, $file) {
+                    $concert->mainArtists()->syncWithPivotValues($artists, ['position' => 'main']);
 
-            AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content', 'concerts');
-            ReplaceImageReferences::make()->execute($concert);
-            ReplaceRelativeLinksInConcerts::make()->execute($concert);
-        }
+                    $concert->feedData()->updateOrCreate([], ['identifier' => $concert->url]);
+
+                    AddImagesToMediaCollection::make()->execute($file->getContents(), $concert, 'concert-content', 'concerts');
+                    ReplaceImageReferences::make()->execute($concert);
+                    ReplaceRelativeLinksInConcerts::make()->execute($concert);
+                });
+            })
+            ->toArray();
     }
 }
