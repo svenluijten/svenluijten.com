@@ -85,7 +85,8 @@ class Concert extends Model implements HasMedia, HasRichContent
             ->fileAttachmentProvider(
                 SpatieMediaLibraryFileAttachmentProvider::make()
                     ->collection('concert-content')
-            );
+            )
+            ->fileAttachmentsVisibility('public');
     }
 
     public function registerMediaConversions(?Media $media = null): void

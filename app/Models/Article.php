@@ -42,6 +42,7 @@ class Article extends Model implements HasMedia, HasRichContent
             ->fileAttachmentProvider(
                 SpatieMediaLibraryFileAttachmentProvider::make()
                     ->collection('article-content')
-            );
+            )
+            ->fileAttachmentsVisibility('public');
     }
 }
