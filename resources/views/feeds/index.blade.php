@@ -7,7 +7,7 @@
             subscribe to the feed at <code class="code">/feeds/articles.xml</code>.
         </p>
 
-        <table class="table-auto w-full border-collapse mb-4 bg-white border border-gray-200 rounded-lg inline-block">
+        <table class="table-auto w-full border-collapse mb-4 bg-white border border-gray-200 rounded-lg inline-block overflow-x-scroll">
             <thead>
                 <tr class="border-b-2 border-black">
                     <th class="text-left py-3 px-4 align-text-top">Feed</th>
