@@ -26,4 +26,7 @@
             </p>
         </footer>
     </article>
+
+    <image-carousel></image-carousel>
+    <image-lightbox></image-lightbox>
 </x-layout>
