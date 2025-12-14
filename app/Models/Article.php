@@ -12,10 +12,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Article extends Model implements HasMedia, HasRichContent
 {
+    use HasFeed;
     use HasUlids;
     use InteractsWithMedia;
     use InteractsWithRichContent;
-    use HasFeed;
 
     protected $guarded = [];
 

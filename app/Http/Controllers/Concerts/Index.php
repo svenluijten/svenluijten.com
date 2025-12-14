@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Concerts;
 
 use App\Models\Concert;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 
 class Index
 {

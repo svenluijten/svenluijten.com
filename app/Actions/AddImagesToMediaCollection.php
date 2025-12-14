@@ -25,16 +25,16 @@ class AddImagesToMediaCollection
 
             $existing = $model->getMedia($collectionName)
                 ->where('file_name', basename($imageFullPath))
-                ->first()
-            ;
+                ->first();
 
-            if ($existing) continue;
+            if ($existing) {
+                continue;
+            }
 
             $model->addMedia($imageFullPath)
                 ->preservingOriginal()
                 ->withCustomProperties(['alt' => $altText])
-                ->toMediaCollection($collectionName)
-            ;
+                ->toMediaCollection($collectionName);
         }
     }
 }

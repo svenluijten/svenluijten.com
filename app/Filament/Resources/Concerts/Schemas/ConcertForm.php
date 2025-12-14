@@ -2,14 +2,12 @@
 
 namespace App\Filament\Resources\Concerts\Schemas;
 
-use App\Models\Venue;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
@@ -50,9 +48,9 @@ class ConcertForm
                     ->pivotData([
                         'position' => 'main',
                     ])
-                ->createOptionForm([
-                    TextInput::make('name')->required(),
-                ]),
+                    ->createOptionForm([
+                        TextInput::make('name')->required(),
+                    ]),
 
                 Select::make('support_artists')
                     ->label('Support Artist(s)')

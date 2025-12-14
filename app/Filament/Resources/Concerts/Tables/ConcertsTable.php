@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Concerts\Tables;
 
-use App\Models\Venue;
 use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -75,7 +74,7 @@ class ConcertsTable
                             $records->each->update([
                                 'venue_id' => $data['venue_id'],
                             ]);
-                        })
+                        }),
                 ]),
             ]);
     }

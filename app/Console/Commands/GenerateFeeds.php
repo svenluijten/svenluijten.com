@@ -64,7 +64,7 @@ class GenerateFeeds extends Command
     }
 
     /**
-     * @param array<FeedItem> $entries
+     * @param  array<FeedItem>  $entries
      */
     private function writeFeed(string $fileName, string $id, string $title, string $subtitle, DateTimeInterface $updated, string $author, array $entries): void
     {
@@ -86,7 +86,7 @@ class GenerateFeeds extends Command
             'entries' => $entries,
         ])->render();
 
-        $fs = new Filesystem();
+        $fs = new Filesystem;
         $fs->put(public_path('feeds/'.$fileName), $contents);
     }
 }

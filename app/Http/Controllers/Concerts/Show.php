@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Concerts;
 
 use App\Models\Concert;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class Show

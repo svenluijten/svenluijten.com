@@ -36,15 +36,14 @@ class Archive
             ->groupBy('year');
 
         /**
-         * @param object{slug: string, type: string, published_at: string, date: ?string} $item
-         *
+         * @param  object{slug: string, type: string, published_at: string, date: ?string}  $item
          * @return string
          */
         $url = function (object $item) {
             return match ($item->type) {
                 'article' => route('articles.show', $item->slug),
                 'concert' => route('concerts.show', ['date' => $item->date, 'concert' => $item->slug]),
-                default => throw new \InvalidArgumentException('Could not generate URL for item of type ' . $item->type),
+                default => throw new \InvalidArgumentException('Could not generate URL for item of type '.$item->type),
             };
         };
 

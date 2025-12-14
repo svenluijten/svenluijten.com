@@ -13,6 +13,5 @@ readonly class FeedItem
         public string $content,
         public DateTimeInterface $updated,
         public DateTimeInterface $published,
-    ) {
-    }
+    ) {}
 }

@@ -40,13 +40,13 @@ class ImportMarkdownConcerts extends Command
         $folder = $this->argument('folder');
         $path = storage_path($folder);
 
-        $fs = new Filesystem();
+        $fs = new Filesystem;
 
         $files = $fs->allFiles($path);
 
         $environment = new Environment([]);
-        $environment->addExtension(new CommonMarkCoreExtension());
-        $environment->addExtension(new FrontMatterExtension());
+        $environment->addExtension(new CommonMarkCoreExtension);
+        $environment->addExtension(new FrontMatterExtension);
 
         $converter = new MarkdownConverter($environment);
 
@@ -54,7 +54,7 @@ class ImportMarkdownConcerts extends Command
             ->map(function ($file) use ($converter) {
                 $contents = $converter->convert($file->getContents());
 
-                if (!$contents instanceof RenderedContentWithFrontMatter) {
+                if (! $contents instanceof RenderedContentWithFrontMatter) {
                     throw new \InvalidArgumentException(
                         'Could not read Frontmatter from file "'.$file->getRelativePathname().'"'
                     );
