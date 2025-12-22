@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Concerns;
 
+use App\Models\FeedData;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
