@@ -1,4 +1,8 @@
 <x-layout title="Explore" description="A non-exhaustive list of content on this site.">
+    <p class="text-xl mb-4">
+        Here's a non-exhaustive list of pages on this website. Call it a "sitemap", call it an "index", whatever you want.
+    </p>
+
     <x-section title="Articles">
         <a href="{{ route('articles.index') }}" class="link">My written articles</a> are intended to educate and inform. They tend to
         be longer(ish) and are well refined. Their target audience is mostly (PHP) developers looking to expand their knowledge and

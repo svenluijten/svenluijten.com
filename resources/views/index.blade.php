@@ -1,5 +1,5 @@
 <x-layout title="Sven Luijten" description="Homepage of Sven's personal website.">
-    <section class="mb-6 font-text text-lg">
+    <section class="mb-6 font-text text-xl">
         <p>
             Hello! My name is <strong>Sven Luijten</strong>, and I am a developer with a passion for the web based in
             The Netherlands. I enjoy going to concerts and <a class="link" href="{{ route('concerts.index') }}">writing about my
