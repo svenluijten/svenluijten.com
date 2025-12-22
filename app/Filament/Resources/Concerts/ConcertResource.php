@@ -4,11 +4,14 @@ namespace App\Filament\Resources\Concerts;
 
 use App\Filament\Resources\Concerts\Pages\CreateConcert;
 use App\Filament\Resources\Concerts\Pages\EditConcert;
+use App\Filament\Resources\Concerts\Pages\EditFeedConcert;
 use App\Filament\Resources\Concerts\Pages\ListConcerts;
 use App\Filament\Resources\Concerts\Schemas\ConcertForm;
 use App\Filament\Resources\Concerts\Tables\ConcertsTable;
 use App\Models\Concert;
 use BackedEnum;
+use Filament\Pages\Enums\SubNavigationPosition;
+use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -23,6 +26,8 @@ class ConcertResource extends Resource
     protected static ?string $recordTitleAttribute = 'title';
 
     protected static ?string $recordRouteKeyName = 'ulid';
+
+    protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
 
     public static function form(Schema $schema): Schema
     {
@@ -40,6 +45,15 @@ class ConcertResource extends Resource
             'index' => ListConcerts::route('/'),
             'create' => CreateConcert::route('/create'),
             'edit' => EditConcert::route('/{record:ulid}/edit'),
+            'edit-feed' => EditFeedConcert::route('/{record:ulid}/edit-feed'),
         ];
+    }
+
+    public static function getRecordSubNavigation(Page $page): array
+    {
+        return $page->generateNavigationItems([
+            Pages\EditConcert::class,
+            Pages\EditFeedConcert::class,
+        ]);
     }
 }

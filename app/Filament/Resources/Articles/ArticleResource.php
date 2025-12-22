@@ -6,9 +6,7 @@ use App\Filament\Resources\Articles\Pages\CreateArticle;
 use App\Filament\Resources\Articles\Pages\EditArticle;
 use App\Filament\Resources\Articles\Pages\EditFeedArticle;
 use App\Filament\Resources\Articles\Pages\ListArticles;
-use App\Filament\Resources\Articles\Pages\ViewArticle;
 use App\Filament\Resources\Articles\Schemas\ArticleForm;
-use App\Filament\Resources\Articles\Schemas\ArticleInfolist;
 use App\Filament\Resources\Articles\Tables\ArticlesTable;
 use App\Models\Article;
 use BackedEnum;
@@ -36,11 +34,6 @@ class ArticleResource extends Resource
         return ArticleForm::configure($schema);
     }
 
-    public static function infolist(Schema $schema): Schema
-    {
-        return ArticleInfolist::configure($schema);
-    }
-
     public static function table(Table $table): Table
     {
         return ArticlesTable::configure($table);
@@ -51,7 +44,6 @@ class ArticleResource extends Resource
         return [
             'index' => ListArticles::route('/'),
             'create' => CreateArticle::route('/create'),
-            'view' => ViewArticle::route('/{record:ulid}'),
             'edit' => EditArticle::route('/{record:ulid}/edit'),
             'edit-feed' => EditFeedArticle::route('/{record:ulid}/edit-feed'),
         ];
@@ -60,7 +52,6 @@ class ArticleResource extends Resource
     public static function getRecordSubNavigation(Page $page): array
     {
         return $page->generateNavigationItems([
-            Pages\ViewArticle::class,
             Pages\EditArticle::class,
             Pages\EditFeedArticle::class,
         ]);
