@@ -3,9 +3,7 @@
 namespace App\Models;
 
 use App\MediaFormat;
-use Filament\Forms\Components\RichEditor\FileAttachmentProviders\SpatieMediaLibraryFileAttachmentProvider;
-use Filament\Forms\Components\RichEditor\Models\Concerns\InteractsWithRichContent;
-use Filament\Forms\Components\RichEditor\Models\Contracts\HasRichContent;
+use App\Models\Concerns\HasMarkdownContent;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
@@ -16,12 +14,12 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Concert extends Model implements HasMedia, HasRichContent
+class Concert extends Model implements HasMedia
 {
     use HasFeed;
+    use HasMarkdownContent;
     use HasUlids;
     use InteractsWithMedia;
-    use InteractsWithRichContent;
 
     protected $guarded = [];
 
@@ -75,16 +73,6 @@ class Concert extends Model implements HasMedia, HasRichContent
         return $this->artists()
             ->withPivot('position')
             ->wherePivot('position', 'support');
-    }
-
-    public function setUpRichContent(): void
-    {
-        $this->registerRichContent('content')
-            ->fileAttachmentProvider(
-                SpatieMediaLibraryFileAttachmentProvider::make()
-                    ->collection('concert-content')
-            )
-            ->fileAttachmentsVisibility('public');
     }
 
     public function registerMediaConversions(?Media $media = null): void

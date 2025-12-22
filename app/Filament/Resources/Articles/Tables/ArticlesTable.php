@@ -14,6 +14,7 @@ class ArticlesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(fn ($query) => $query->orderBy('published_at', 'desc'))
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),

@@ -12,27 +12,27 @@ class ReplaceRelativeLinksInConcerts
 
     public function execute(Concert $post): void
     {
-        // 1. Find relative links in the content. These should be strings starting with `<a href="./[anything].md">`
-        preg_match_all('/href=\"\.\/(.+)\.md\"/Ui', $post->content, $matches);
+        // 1. Find relative links in the content. These should be strings like `![alt](./slug.md)`
+        preg_match_all('/\[(.*?)]\(\.\/(.*?)\.md\)/', $post->content, $matches, PREG_SET_ORDER);
 
-        if (empty($matches[0])) {
+        if (empty($matches)) {
             return;
         }
 
         $content = $post->content;
 
-        foreach ($matches[1] as $key => $slug) {
-            $replace = $matches[0][$key];
+        foreach ($matches as $match) {
+            $replace = './'.$match[2].'.md';
 
             // 2. Look up the linked-to concert or post by its slug.
-            $concert = Concert::query()->where('slug', $slug)->first();
+            $concert = Concert::query()->where('slug', $match[2])->first();
 
             if ($concert === null) {
                 return;
             }
 
             // 3. Replace the relative path with an absolute link in the content.
-            $content = Str::replace($replace, 'href="'.$concert->url.'"', $content);
+            $content = Str::replace($replace, $concert->url, $content);
         }
 
         $post->update(['content' => $content]);

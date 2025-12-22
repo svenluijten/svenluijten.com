@@ -3,15 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Actions\AddImagesToMediaCollection;
-use App\Actions\ReplaceImageReferences;
+use App\Actions\ConvertToParsedFile;
 use App\Models\Article;
+use App\ParsedFile;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use League\CommonMark\Environment\Environment;
-use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\Extension\FrontMatter\FrontMatterExtension;
-use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter;
-use League\CommonMark\MarkdownConverter;
 
 class ImportMarkdownArticles extends Command
 {
@@ -30,45 +26,32 @@ class ImportMarkdownArticles extends Command
         $folder = $this->argument('folder');
         $path = storage_path($folder);
 
-        $fs = new Filesystem;
+        $files = new Filesystem()->allFiles($path);
 
-        $files = $fs->allFiles($path);
+        $this->info('Importing '.count($files).' articles...');
 
-        $environment = new Environment([]);
-        $environment->addExtension(new CommonMarkCoreExtension);
-        $environment->addExtension(new FrontMatterExtension);
-
-        $converter = new MarkdownConverter($environment);
-
-        /** @var \Symfony\Component\Finder\SplFileInfo $file */
-        foreach ($files as $file) {
-            $contents = $converter->convert($file->getContents());
-
-            if (! $contents instanceof RenderedContentWithFrontMatter) {
-                throw new \InvalidArgumentException(
-                    'Could not read Frontmatter from file "'.$file->getRelativePathname().'"'
+        collect($files)
+            ->map(ConvertToParsedFile::make()->execute(...))
+            ->sortBy(fn (ParsedFile $item) => $item->property('date'))
+            ->each(function (ParsedFile $item) {
+                $article = Article::query()->firstOrCreate(
+                    ['slug' => $item->original->getBasename('.md')],
+                    [
+                        'title' => $item->property('title'),
+                        'published_at' => $item->property('date'),
+                        'content' => $item->markdown,
+                        'created_at' => $item->property('date'),
+                        'updated_at' => $item->property('date'),
+                    ],
                 );
-            }
 
-            $fm = $contents->getFrontMatter();
+                Article::withoutTimestamps(static function () use ($article) {
+                    $article->feedData()->updateOrCreate([], ['identifier' => route('posts.show', $article)]);
 
-            $article = Article::query()->firstOrCreate(
-                ['slug' => $file->getBasename('.md')],
-                [
-                    'title' => $fm['title'],
-                    'published_at' => $fm['date'],
-                    'content' => $contents->getContent(),
-                    'created_at' => $fm['date'],
-                    'updated_at' => $fm['date'],
-                ],
-            );
-
-            Article::withoutTimestamps(function () use ($file, $article) {
-                $article->feedData()->updateOrCreate([], ['identifier' => route('posts.show', $article)]);
-
-                AddImagesToMediaCollection::make()->execute($file->getContents(), $article, 'article-content', 'posts');
-                ReplaceImageReferences::make()->execute($article);
+                    AddImagesToMediaCollection::make()->execute($article->content, $article, 'article-content', 'posts');
+                });
             });
-        }
+
+        $this->info('Import complete!');
     }
 }

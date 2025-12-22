@@ -14,7 +14,6 @@ class ImageCarousel extends HTMLElement {
     }
 
     disconnectedCallback() {
-        // Cleanup event listeners on all carousels
         this.carousels.forEach(({ carousel, handlers }) => {
             carousel.removeEventListener('mousedown', handlers.mousedown);
             carousel.removeEventListener('mouseleave', handlers.mouseleave);

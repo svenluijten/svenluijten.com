@@ -12,6 +12,7 @@
         "laravel/framework": "^11.46",
         "laravel/tinker": "^2.9",
         "league/flysystem-aws-s3-v3": "^3.0",
+        "league/html-to-markdown": "^5.1",
         "symfony/yaml": "^7.3"
     },
     "require-dev": {
@@ -56,6 +57,10 @@
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+        ],
+        "clean-import": [
+            "php artisan app:import-markdown-articles old-content/posts --prune",
+            "php artisan app:import-markdown-concerts old-content/concerts --prune"
         ]
     },
     "extra": {

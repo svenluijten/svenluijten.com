@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
-use Filament\Forms\Components\RichEditor\FileAttachmentProviders\SpatieMediaLibraryFileAttachmentProvider;
-use Filament\Forms\Components\RichEditor\Models\Concerns\InteractsWithRichContent;
-use Filament\Forms\Components\RichEditor\Models\Contracts\HasRichContent;
+use App\Models\Concerns\HasMarkdownContent;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Article extends Model implements HasMedia, HasRichContent
+class Article extends Model implements HasMedia
 {
     use HasFeed;
+    use HasMarkdownContent;
     use HasUlids;
     use InteractsWithMedia;
-    use InteractsWithRichContent;
 
     protected $guarded = [];
 
@@ -34,15 +32,5 @@ class Article extends Model implements HasMedia, HasRichContent
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    public function setUpRichContent(): void
-    {
-        $this->registerRichContent('content')
-            ->fileAttachmentProvider(
-                SpatieMediaLibraryFileAttachmentProvider::make()
-                    ->collection('article-content')
-            )
-            ->fileAttachmentsVisibility('public');
     }
 }

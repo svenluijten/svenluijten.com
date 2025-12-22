@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Articles\Schemas;
 
+use App\Filament\Handlers\SaveUploadedFileAttachment;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
@@ -36,9 +37,24 @@ class ArticleForm
                     ->default(false)
                     ->dehydrated(false),
 
-                RichEditor::make('content')
+                MarkdownEditor::make('content')
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->saveUploadedFileAttachmentUsing((new SaveUploadedFileAttachment('article-content'))(...))
+                    ->getFileAttachmentUrlUsing(function ($component, $file) {
+                        return $file;
+                    })
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'link',
+                        'heading',
+                        'blockquote',
+                        'codeBlock',
+                        'bulletList',
+                        'orderedList',
+                        'attachFiles',
+                    ]),
 
                 TextInput::make('summary')
                     ->required()
