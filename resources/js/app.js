@@ -5,4 +5,6 @@ import './components/image-carousel.js';
 
 hljs.registerLanguage('dockerfile', dockerfile);
 
-hljs.highlightAll();
+(function () {
+    hljs.highlightAll();
+})();
