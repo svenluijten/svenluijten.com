@@ -17,6 +17,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use UnitEnum;
 
 class ArticleResource extends Resource
 {
@@ -29,6 +30,8 @@ class ArticleResource extends Resource
     protected static ?string $recordRouteKeyName = 'ulid';
 
     protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
+
+    protected static string|UnitEnum|null $navigationGroup = 'Content';
 
     public static function form(Schema $schema): Schema
     {
