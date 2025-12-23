@@ -5,10 +5,10 @@ namespace App\Models;
 use App\MediaFormat;
 use App\Models\Concerns\HasFeed;
 use App\Models\Concerns\HasMarkdownContent;
+use App\Models\Concerns\HasUlids;
 use App\Models\Scopes\PublishedScope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -26,11 +26,6 @@ class Concert extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $guarded = [];
-
-    public function uniqueIds(): array
-    {
-        return ['ulid'];
-    }
 
     public function getRouteKeyName(): string
     {

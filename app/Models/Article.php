@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Models\Concerns\HasFeed;
 use App\Models\Concerns\HasMarkdownContent;
+use App\Models\Concerns\HasUlids;
 use App\Models\Scopes\PublishedScope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
-use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -20,11 +20,6 @@ class Article extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $guarded = [];
-
-    public function uniqueIds(): array
-    {
-        return ['ulid'];
-    }
 
     protected function casts(): array
     {
