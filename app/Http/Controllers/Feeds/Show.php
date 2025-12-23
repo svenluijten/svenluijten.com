@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Feeds;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Filesystem\Filesystem;
+
 class Show
 {
-    public function __invoke()
+    public function __invoke(string $feed, Filesystem $filesystem): string
     {
-        // 1. Every hour, a command should be fired to (re)generate the feeds.
-        // 2. This command creates static files that are served directly by NGINX.
+        try {
+            return $filesystem->get(storage_path("feeds/{$feed}.xml"));
+        } catch (FileNotFoundException $e) {
+            abort(404);
+        }
     }
 }

@@ -87,6 +87,6 @@ class GenerateFeeds extends Command
         ])->render();
 
         $fs = new Filesystem;
-        $fs->put(public_path('feeds/'.$fileName), $contents);
+        $fs->put(storage_path('feeds/'.$fileName), $contents);
     }
 }
