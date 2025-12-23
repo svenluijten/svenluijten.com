@@ -32,7 +32,7 @@ trait HasMarkdownContent
 
     protected static function bootHasMarkdownContent(): void
     {
-        static::updated(function ($model) {
+        static::updated(static function ($model) {
             if ($model->wasChanged('content')) {
                 Cache::forget($model->cacheKey('content'));
             }
