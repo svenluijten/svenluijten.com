@@ -3,12 +3,10 @@
         <link href="{{ url('/feeds/concerts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Concert Log">
     </x-slot>
 
-    <section class="mb-6 font-text text-lg">
-        <p>
-            I love going to concerts. In an effort to remember them better and actually be present when I'm at one, I
-            write a recap of each of them in this concert log.
-        </p>
-    </section>
+    <p class="text-xl mb-4">
+        I love going to concerts. In an effort to remember them better and actually be present when I'm at one, I
+        write a recap of each of them in this concert log.
+    </p>
 
     <x-section>
         @foreach ($groupedConcerts as $year => $concerts)
