@@ -1,5 +1,9 @@
 @php use Illuminate\Support\Str; @endphp
 <x-layout title="Blog posts" description="Sven's blog posts">
+    <x-slot:meta>
+        <link href="{{ url('/feeds/blog-posts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Blog Posts">
+    </x-slot>
+
     <div class="flex gap-8 my-8">
         <div class="flex-1 space-y-12">
             @foreach($blogPosts as $year => $posts)
