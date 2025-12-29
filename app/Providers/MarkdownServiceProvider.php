@@ -11,6 +11,8 @@ use Illuminate\Support\ServiceProvider;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
+use Phiki\Adapters\CommonMark\PhikiExtension;
+use Phiki\Theme\Theme;
 
 class MarkdownServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,7 @@ class MarkdownServiceProvider extends ServiceProvider
             ]);
 
             $environment->addExtension(new CommonMarkCoreExtension);
+            $environment->addExtension(new PhikiExtension(Theme::GithubLight, withGutter: true));
             $environment->addExtension(new InternalLinkExtension);
             $environment->addExtension(new ExternalLinkExtension);
 
