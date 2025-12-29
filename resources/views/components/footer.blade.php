@@ -11,7 +11,7 @@
                     GitHub
                 </a>
 
-                <a href="/feeds" class="ml-4 link">
+                <a href="{{ route('feeds.index') }}" class="ml-4 link">
                     Feeds
                 </a>
             </nav>
