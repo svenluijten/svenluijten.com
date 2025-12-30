@@ -5,6 +5,7 @@ namespace App\Models;
 use App\MediaFormat;
 use App\Models\Concerns\HasFeed;
 use App\Models\Concerns\HasMarkdownContent;
+use App\Models\Concerns\HasMediaLibrary;
 use App\Models\Concerns\HasUlids;
 use App\Models\Scopes\PublishedScope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
@@ -14,7 +15,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 #[ScopedBy(PublishedScope::class)]
@@ -22,8 +22,8 @@ class Concert extends Model implements HasMedia
 {
     use HasFeed;
     use HasMarkdownContent;
+    use HasMediaLibrary;
     use HasUlids;
-    use InteractsWithMedia;
 
     protected $guarded = [];
 
@@ -72,6 +72,11 @@ class Concert extends Model implements HasMedia
         return $this->artists()
             ->withPivot('position')
             ->wherePivot('position', 'support');
+    }
+
+    public function getMediaCollection(): string
+    {
+        return 'concert-content';
     }
 
     public function registerMediaConversions(?Media $media = null): void

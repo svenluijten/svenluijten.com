@@ -17,6 +17,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Media Library Disk
+    |--------------------------------------------------------------------------
+    |
+    | This disk will be used by Spatie's Media Library package for storing
+    | uploaded media files. Set to 'public' in development and 'assets' in
+    | production to use cloud storage.
+    |
+    */
+
+    'media' => env('MEDIA_DISK', 'public'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Filesystem Disks
     |--------------------------------------------------------------------------
     |
@@ -44,7 +57,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
-            'report' => false,
+            'report' => true,
         ],
 
         'assets' => [
@@ -56,7 +69,8 @@ return [
             'endpoint' => env('R2_ENDPOINT'),
             'url' => env('R2_PUBLIC_URL'),
             'use_path_style_endpoint' => false,
-            'throw' => true,
+            'throw' => false,
+            'report' => true,
         ],
 
     ],

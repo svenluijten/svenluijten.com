@@ -4,21 +4,22 @@ namespace App\Models;
 
 use App\Models\Concerns\HasFeed;
 use App\Models\Concerns\HasMarkdownContent;
+use App\Models\Concerns\HasMediaLibrary;
 use App\Models\Concerns\HasUlids;
 use App\Models\Scopes\PublishedScope;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
 
 #[ScopedBy(PublishedScope::class)]
-class BlogPost extends Model
+class BlogPost extends Model implements HasMedia
 {
     use HasFactory;
     use HasFeed;
     use HasMarkdownContent;
+    use HasMediaLibrary;
     use HasUlids;
-    use InteractsWithMedia;
 
     protected $guarded = [];
 
@@ -32,5 +33,10 @@ class BlogPost extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function getMediaCollection(): string
+    {
+        return 'blog-content';
     }
 }
