@@ -7,6 +7,7 @@ use App\Http\Controllers\Contact;
 use App\Http\Controllers\Explore;
 use App\Http\Controllers\Feeds;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Records;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
@@ -22,5 +23,7 @@ Route::get('/posts/{article}', Articles\Show::class)->name('posts.show');
 
 Route::get('/concerts', Concerts\Index::class)->name('concerts.index');
 Route::get('/concerts/{date}/{concert}', Concerts\Show::class)->name('concerts.show');
+
+Route::get('/vinyl', Records\Index::class)->name('records.index');
 
 Route::get('/archive', Archive::class)->name('archive');

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Article;
 use App\Models\Concert;
+use App\Models\Record;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 use League\CommonMark\ConverterInterface;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Relation::enforceMorphMap([
             'article' => Article::class,
             'concert' => Concert::class,
+            'record' => Record::class,
         ]);
     }
 }
