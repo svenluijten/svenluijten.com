@@ -9,7 +9,10 @@ class Index
 {
     public function __invoke(): View
     {
-        $articles = Article::latest('published_at')->get();
+        /** @var \Illuminate\Database\Eloquent\Collection<Article> $articles */
+        $articles = Article::query()
+            ->latest('published_at')
+            ->get();
 
         return view('articles.index', [
             'articles' => $articles,

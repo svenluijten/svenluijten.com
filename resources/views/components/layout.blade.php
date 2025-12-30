@@ -35,7 +35,7 @@
         <x-header />
 
         <main class="container grow">
-            <div class="mx-auto w-full px-6 | lg:w-2/3 md:py-6 lg:px-0">
+            <div class="mx-auto w-full px-6 | lg:w-2/3 lg:px-0">
                 {{ $slot }}
             </div>
         </main>

@@ -46,6 +46,16 @@
                     <td class="py-3 px-4 align-text-top">Atom</td>
                     <td class="py-3 px-4 align-text-top">All my concerts. Sorted by concert date, latest first.</td>
                 </tr>
+
+            <tr>
+                <td class="py-3 px-4 align-text-top">
+                    <a href="{{ url('feeds/blog-posts.xml') }}" class="link">
+                        <code class="code">/feeds/blog-posts.xml</code>
+                    </a>
+                </td>
+                <td class="py-3 px-4 align-text-top">Atom</td>
+                <td class="py-3 px-4 align-text-top">All my blog posts. Sorted by publish date, latest first.</td>
+            </tr>
             </tbody>
         </table>
 

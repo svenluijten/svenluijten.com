@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Article;
+use App\Models\BlogPost;
 use App\Models\Concert;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Relation::enforceMorphMap([
             'article' => Article::class,
             'concert' => Concert::class,
+            'blog-post' => BlogPost::class,
         ]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Actions\GetAllFeedArticles;
+use App\Actions\GetAllFeedBlogPosts;
 use App\Actions\GetAllFeedConcerts;
 use App\Feeds\FeedItem;
 use DateTimeInterface;
@@ -19,8 +20,9 @@ class GenerateFeeds extends Command
     {
         $articles = GetAllFeedArticles::make()->execute();
         $concerts = GetAllFeedConcerts::make()->execute();
+        $blogPosts = GetAllFeedBlogPosts::make()->execute();
 
-        $content = collect([...$articles, ...$concerts])->sortByDesc('published');
+        $content = collect([...$articles, ...$concerts, ...$blogPosts])->sortByDesc('published');
 
         $this->info('Generating "all" feed...');
 
@@ -58,6 +60,18 @@ class GenerateFeeds extends Command
             entries: $concerts->toArray(),
         );
 
+        $this->info('Generating "blog-posts" feed...');
+
+        $this->writeFeed(
+            fileName: 'blog-posts.xml',
+            id: route('blog.index'),
+            title: 'Sven Luijten - Blog Posts',
+            subtitle: 'All of Sven Luijten\'s blog posts.',
+            updated: $blogPosts->max('published'),
+            author: 'Sven Luijten',
+            entries: $blogPosts->toArray(),
+        );
+
         $this->info('Successfully generated all feeds.');
 
         return 0;
@@ -71,6 +85,7 @@ class GenerateFeeds extends Command
         $htmlUrl = match ($fileName) {
             'articles.xml' => route('articles.index'),
             'concerts.xml' => route('concerts.index'),
+            'blog-posts.xml' => route('blog.index'),
             'all.xml' => route('archive'),
             default => null,
         };
