@@ -3,10 +3,12 @@
 namespace App\Filament\Resources\Articles\Schemas;
 
 use App\Filament\Handlers\SaveUploadedFileAttachment;
+use App\Models\Article;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
@@ -56,11 +58,17 @@ class ArticleForm
                         'attachFiles',
                     ]),
 
-                TextInput::make('summary')
-                    ->required()
-                    ->columnSpanFull(),
+                Group::make()
+                    ->relationship('contentable', relatedModel: Article::class)
+                    ->schema([
+                        TextInput::make('summary')
+                            ->required()
+                            ->columnSpanFull(),
+                    ]),
 
                 DateTimePicker::make('published_at'),
+
+                Hidden::make('contentable_type')->default('article'),
             ]);
     }
 }
