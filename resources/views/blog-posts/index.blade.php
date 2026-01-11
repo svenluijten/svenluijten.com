@@ -7,20 +7,20 @@
     <div class="flex gap-8 my-8">
         <div class="flex-1 space-y-12">
             @foreach($blogPosts as $year => $posts)
-                <div class="flex gap-8 relative">
-                    <div class="w-24 shrink-0 text-right pt-3">
+                <div class="flex md:gap-8 gap-2 relative flex-col md:flex-row">
+                    <div class="w-24 shrink-0 md:text-right pt-3">
                         <div class="sticky top-2">
                             <span class="text-4xl font-heading text-gray-900">{{ $year }}</span>
                             <div class="text-sm text-gray-500 mt-1">{{ count($posts) }} {{ Str::plural('post', count($posts)) }}</div>
                         </div>
                     </div>
 
-                    <div class="relative w-px bg-secondary shrink-0 min-h-full"></div>
+                    <div class="relative hidden md:block w-px bg-secondary shrink-0 min-h-full"></div>
 
                     <div class="flex-1 space-y-6">
                         @foreach($posts as $post)
                             <div class="relative">
-                                <div class="absolute -left-10 top-8 w-4 h-4 rounded-full bg-white border-4 border-primary"></div>
+                                <div class="absolute hidden md:block -left-10 top-8 w-4 h-4 rounded-full bg-white border-4 border-primary"></div>
 
                                 <a href="{{ route('blog.show', $post->slug) }}" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-gray-300 transition-all">
                                     <div class="flex items-start justify-between gap-4 mb-2">
