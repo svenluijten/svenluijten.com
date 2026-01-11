@@ -28,7 +28,7 @@
                                         <time class="text-sm text-gray-500 whitespace-nowrap">{{ $post->published_at->format('M j') }}</time>
                                     </div>
 
-                                    <p class="text-gray-600 leading-relaxed font-text">{{ Str::limit($post->content, 120) }}</p>
+                                    <p class="text-gray-600 leading-relaxed font-text">{{ $post->preview }}</p>
 
 {{--                                    @if($post->tags->isNotEmpty())--}}
 {{--                                        <div class="flex gap-2 mt-4">--}}
