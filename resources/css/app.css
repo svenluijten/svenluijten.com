@@ -150,3 +150,27 @@ layer(base);
         }
     }
 }
+
+.paper-stack {
+    @apply relative bg-white p-4 border border-gray-50;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.05);
+
+    ::before,
+    ::after {
+        content: '';
+        @apply  w-full h-full absolute -z-1 bg-gray-50;
+        border: 1px solid #eee;
+    }
+
+    ::before {
+        top: 5px;
+        left: -4px;
+        transform: rotate(calc(atan(9px / 100cqh) * -1));
+    }
+
+    ::after {
+        top: 7px;
+        right: -2px;
+        transform: rotate(calc(atan(12px / 100cqh)));
+    }
+}
