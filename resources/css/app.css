@@ -76,6 +76,7 @@ layer(base);
         a { @apply link }
 
         ul { @apply list-disc list-inside; }
+        ol { @apply list-decimal list-inside; }
 
         blockquote { @apply border-l-4 border-primary pl-4 my-4; }
 
