@@ -11,7 +11,9 @@
 
         <hr class="w-24 border-2 border-secondary my-6">
 
-        <main id="post-content">{!! $blogPost->rendered_content !!}</main>
+        <main id="post-content" class="paper-stack">
+            {!! $blogPost->rendered_content !!}
+        </main>
 
         <hr class="w-24 border-2 border-secondary my-6">
 
