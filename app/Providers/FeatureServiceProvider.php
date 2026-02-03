@@ -10,6 +10,6 @@ class FeatureServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Feature::define('blog', static fn(User $user) => $user->exists);
+        // Define features here...
     }
 }
