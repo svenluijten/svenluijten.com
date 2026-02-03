@@ -10,10 +10,6 @@ class Index
 {
     public function __invoke(): View
     {
-        if (Feature::active('blog') === false) {
-            abort(404);
-        }
-
         /** @var \Illuminate\Database\Eloquent\Collection<BlogPost> $blogPosts */
         $blogPosts = BlogPost::query()
             ->latest('published_at')

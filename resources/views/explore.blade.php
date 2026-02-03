@@ -15,14 +15,12 @@
         just a few blurry pictures and videos, I write about my experience there.
     </x-section>
 
-    @feature('blog')
-        <x-section title="Blog">
-            I write on <a href="{{ route('blog.index') }}" class="link">my blog</a> about topics that interest me in that moment.
-            These random thoughts might are used to generate new ideas, help me find like-minded people online, and clarify
-            my thinking about any given subject. Topics might range from development tips or things I've learned, to thoughts
-            on an article or other blog post I read online, to just about anything I'm thinking about at the time.
-        </x-section>
-    @endfeature
+    <x-section title="Blog">
+        I write on <a href="{{ route('blog.index') }}" class="link">my blog</a> about topics that interest me in that moment.
+        These random thoughts can generate new ideas, help me find like-minded people online, and clarify  my thinking about
+        any given subject. Topics might range from development tips or things I've learned, to thoughts on an article or other
+        blog post I read online, to just about anything I'm thinking about at the time.
+    </x-section>
 
     <x-section title="Feeds">
         <p>This site automatically publishes a handful of feeds for every content type, as well as a generic one that contains everything.</p>

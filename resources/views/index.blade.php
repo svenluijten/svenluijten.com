@@ -3,8 +3,9 @@
         <p>
             Hello! My name is <strong>Sven Luijten</strong>, and I am a developer with a passion for the web based in
             The Netherlands. I enjoy going to concerts and <a class="link" href="{{ route('concerts.index') }}">writing about my
-            experiences there</a>, lifting heavy stuff in the gym, and <a class="link" href="{{ route('articles.index') }}">sharing knowledge</a>
-            I've picked up along the way.
+            experiences there</a>, lifting heavy stuff in the gym, <a href="{{ route('blog.index') }}" class="link">sharing
+            my thoughts on my blog</a>, and <a class="link" href="{{ route('articles.index') }}">writing longer form articles</a>
+            to share what I've learned.
         </p>
     </section>
 
@@ -48,5 +49,25 @@
         <a href="{{ route('concerts.index') }}" class="group font-bold">
             <span class="group-hover:animate-pulse transition-all duration-100 inline-block font-normal text-primary">&rarr;</span> See all concerts&hellip;
         </a>
+    </x-section>
+
+    <x-section title="Blog">
+        <ol>
+            @foreach ($recentBlogPosts as $blogPost)
+                <li class="flex flex-col md:flex-row md:justify-between mb-1">
+                    <a href="{{ route('blog.show', $blogPost) }}" class="link">
+                        {{ $blogPost->title }}
+                    </a>
+
+                    <span class="text-gray-500 md:text-base text-sm">{{ $blogPost->published_at->format('F jS, Y') }}</span>
+                </li>
+            @endforeach
+
+            <li class="mt-4">
+                <a href="{{ route('blog.index') }}" class="group font-bold">
+                    <span class="group-hover:animate-pulse transition-all duration-100 inline-block font-normal text-primary">&rarr;</span> See all blog posts&hellip;
+                </a>
+            </li>
+        </ol>
     </x-section>
 </x-layout>
