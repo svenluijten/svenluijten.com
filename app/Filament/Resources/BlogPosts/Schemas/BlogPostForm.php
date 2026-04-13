@@ -6,6 +6,7 @@ use App\Filament\Handlers\SaveUploadedFileAttachment;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
@@ -57,6 +58,28 @@ class BlogPostForm
                     ]),
 
                 DateTimePicker::make('published_at'),
+
+                Select::make('tags')
+                    ->relationship(name: 'tags', titleAttribute: 'name')
+                    ->multiple()
+                    ->searchable()
+                    ->preload()
+                    ->createOptionForm([
+                        TextInput::make('name')
+                            ->required()
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
+                                if (! $get('is_slug_changed_manually') && filled($state)) {
+                                    $set('slug', Str::slug($state));
+                                }
+                            }),
+                        TextInput::make('slug')
+                            ->required()
+                            ->afterStateUpdated(fn (Set $set) => $set('is_slug_changed_manually', true)),
+                        Hidden::make('is_slug_changed_manually')
+                            ->default(false)
+                            ->dehydrated(false),
+                    ]),
             ]);
     }
 }
