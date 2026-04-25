@@ -1,0 +1,5 @@
+[pre-start]
+copy = "wt step copy-ignored"
+composer = "composer install"
+npm = "npm ci"
+
