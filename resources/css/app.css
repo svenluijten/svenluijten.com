@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|manrope:400,600|newsreader:400,400i,800,800i)
+@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|epilogue:400,400i,700,700i|inter:400,400i,700,700i|manrope:400,600)
 
 layer(base);
 
@@ -25,9 +25,9 @@ layer(base);
 
   --font-system:
     Manrope, Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    'Epilogue', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-text:
-    Newsreader, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    Inter, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-heading: 'Archivo Narrow', sans-serif;
 
   --color-primary: #627254;
