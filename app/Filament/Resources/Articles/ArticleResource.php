@@ -9,6 +9,7 @@ use App\Filament\Resources\Articles\Pages\ListArticles;
 use App\Filament\Resources\Articles\Schemas\ArticleForm;
 use App\Filament\Resources\Articles\Tables\ArticlesTable;
 use App\Models\Article;
+use App\Models\ContentItem;
 use BackedEnum;
 use Filament\Pages\Enums\SubNavigationPosition;
 use Filament\Resources\Pages\Page;
@@ -21,13 +22,13 @@ use UnitEnum;
 
 class ArticleResource extends Resource
 {
-    protected static ?string $model = Article::class;
+    protected static ?string $model = ContentItem::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Newspaper;
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static ?string $recordRouteKeyName = 'ulid';
+    protected static ?string $recordRouteKeyName = 'contentable.ulid';
 
     protected static ?SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
 
@@ -63,6 +64,8 @@ class ArticleResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->withoutGlobalScopes();
+        return parent::getEloquentQuery()
+            ->where('contentable_type', 'article')
+            ->withoutGlobalScopes();
     }
 }
