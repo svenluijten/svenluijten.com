@@ -71,12 +71,13 @@ layer(base);
     #post-content {
         @apply font-text text-lg;
 
-        p { @apply my-2; }
+        p { @apply my-8; }
 
         a { @apply link }
 
-        ul { @apply list-disc list-outside ml-4; }
-        ol { @apply list-decimal list-outside ml-4; }
+        ul { @apply list-disc list-outside ml-6; }
+        ol { @apply list-decimal list-outside ml-6; }
+        ul > li, ol > li { @apply pl-2 }
 
         blockquote { @apply border-l-4 border-primary pl-4 my-4; }
 
