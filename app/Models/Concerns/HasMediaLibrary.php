@@ -8,12 +8,12 @@ trait HasMediaLibrary
 {
     use InteractsWithMedia;
 
-    abstract public function getMediaCollection(): string;
+    abstract public function getMediaCollectionName(): string;
 
     public function registerMediaCollections(): void
     {
         $this
-            ->addMediaCollection($this->getMediaCollection())
+            ->addMediaCollection($this->getMediaCollectionName())
             ->useDisk(config('filesystems.media'));
     }
 }

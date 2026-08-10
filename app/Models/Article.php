@@ -33,7 +33,7 @@ class Article extends Model implements HasMedia
         return 'slug';
     }
 
-    public function getMediaCollection(): string
+    public function getMediaCollectionName(): string
     {
         return 'article-content';
     }
