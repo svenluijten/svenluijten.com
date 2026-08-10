@@ -7,22 +7,22 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "filament/filament": "^4.0",
-        "filament/spatie-laravel-media-library-plugin": "^4.1",
-        "laravel/framework": "^12.0",
-        "laravel/pennant": "^1.18",
-        "laravel/tinker": "^3.0",
-        "league/flysystem-aws-s3-v3": "^3.0",
-        "league/html-to-markdown": "^5.1",
-        "phiki/phiki": "^2.0",
-        "symfony/yaml": "^8.0"
+        "filament/filament": "^4.12.6",
+        "filament/spatie-laravel-media-library-plugin": "^4.12.6",
+        "laravel/framework": "^12.65",
+        "laravel/pennant": "^1.24",
+        "laravel/tinker": "^3.0.2",
+        "league/flysystem-aws-s3-v3": "^3.35.2",
+        "league/html-to-markdown": "^5.1.1",
+        "phiki/phiki": "^2.2.1",
+        "symfony/yaml": "^8.0.11"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23",
-        "laravel/pail": "^1.1",
-        "laravel/pint": "^1.13",
-        "mockery/mockery": "^1.6",
-        "phpunit/phpunit": "^11.0.1"
+        "fakerphp/faker": "^1.24.1",
+        "laravel/pail": "^1.2.7",
+        "laravel/pint": "^1.30.4",
+        "mockery/mockery": "^1.6.12",
+        "phpunit/phpunit": "^11.5.50"
     },
     "autoload": {
         "psr-4": {
