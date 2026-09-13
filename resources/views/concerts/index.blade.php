@@ -10,7 +10,7 @@
 
     @foreach ($groupedConcerts as $year => $concerts)
         <x-section :title="$year">
-            <ol class="my-4 grid grid-cols-1 gap-4 | md:-mx-8 md:grid-cols-2">
+            <ol class="my-4 grid grid-cols-1 gap-4 | md:paper-breakout md:grid-cols-2">
                 @foreach ($concerts as $concert)
                     <x-concert-card :concert="$concert" />
                 @endforeach

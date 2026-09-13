@@ -44,8 +44,11 @@
   --shadow-card: 0 1px 2px rgb(98 114 84 / 0.07), 0 4px 12px rgb(98 114 84 / 0.06);
   --shadow-card-hover: 0 2px 4px rgb(98 114 84 / 0.09), 0 8px 24px rgb(98 114 84 / 0.09);
 
-  /* 45rem minus the 1.5rem gutters leaves ~68 characters of Inter at 18px. */
-  --container-measure: 45rem;
+  /*
+    The prose column is 42rem, ~68 characters of Inter at 18px. The page is that
+    column plus the paper sheet's 3rem inset and the 1.5rem gutters, both sides.
+  */
+  --container-page: 51rem;
 
   --text-display: clamp(2.25rem, 1.75rem + 2vw, 3rem);
   --text-display--line-height: 1.05;
@@ -54,6 +57,11 @@
 
 @utility link {
     @apply underline decoration-secondary decoration-2 underline-offset-[3px] hover:decoration-primary transition-colors duration-100;
+}
+
+/* Wider than the prose column, but kept 1rem clear of the paper's edges. */
+@utility paper-breakout {
+    margin-inline: calc(1rem - var(--paper-inset));
 }
 
 @layer base {
@@ -95,6 +103,77 @@
     @apply link;
   }
 
+  /*
+    The off-white sheet every page's content sits on. --paper-inset is its
+    horizontal padding; breakouts derive from it so they stay on the sheet.
+    On phones the sheet runs edge to edge, cancelling the container gutter, so
+    it costs no reading width.
+  */
+  .paper-stack {
+    --paper-inset: 1.5rem;
+    position: relative;
+    isolation: isolate;
+    margin-inline: -1.5rem;
+
+    @variant sm {
+      --paper-inset: 2.5rem;
+      margin-inline: 0;
+    }
+
+    @variant md {
+      --paper-inset: 3rem;
+    }
+  }
+
+  .paper {
+    padding: 2rem var(--paper-inset);
+    background-color: var(--color-surface);
+    border-block: 1px solid var(--color-line);
+    box-shadow: var(--shadow-card);
+
+    @variant sm {
+      padding-block: 3rem;
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius-card);
+    }
+  }
+
+  /*
+    Two sheets peeking out below the top one. They are short strips pinned to
+    the bottom edge rather than full-height sheets, so the tilt looks the same
+    on a short page as on a long article. ::before is the lower of the two.
+  */
+  .paper-stack::before,
+  .paper-stack::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 3rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-card);
+  }
+
+  .paper-stack::before {
+    inset-inline: 1rem;
+    bottom: -0.75rem;
+  }
+
+  .paper-stack::after {
+    inset-inline: 0.5rem;
+    bottom: -0.375rem;
+  }
+
+  @variant sm {
+    .paper-stack::before,
+    .paper-stack::after {
+      border-radius: var(--radius-card);
+    }
+
+    .paper-stack::before { rotate: -0.4deg; }
+    .paper-stack::after  { rotate: 0.5deg; }
+  }
+
   #post-content {
     @apply font-text text-lg leading-relaxed;
 
@@ -127,15 +206,17 @@
   }
 
   #post-content :not(pre) code, code.code {
-    @apply rounded-inline text-[0.9em] px-1.5 py-0.5 box-decoration-clone bg-surface border border-line;
+    @apply rounded-inline text-[0.9em] px-1.5 py-0.5 box-decoration-clone bg-tertiary/50 border border-line;
   }
 
   /*
-    The carousel deliberately breaks out of the prose measure. The 4rem negative
-    margin matches the width of the fade masks below.
+    The carousel breaks out of the prose column to the paper's edges. The fade
+    masks are as wide as the paper inset and fade to the paper colour, so the
+    images appear to slide under the sheet's edge.
   */
   .image-carousel-wrapper {
-    @apply my-8 md:-mx-16;
+    @apply my-8;
+    margin-inline: calc(-1 * var(--paper-inset));
     position: relative;
   }
 
@@ -145,25 +226,26 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 4rem;
+    width: var(--paper-inset);
     pointer-events: none;
     z-index: 10;
   }
 
   .image-carousel-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, var(--color-tertiary), transparent);
+    background: linear-gradient(to right, var(--color-surface), transparent);
   }
 
   .image-carousel-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, var(--color-tertiary), transparent);
+    background: linear-gradient(to left, var(--color-surface), transparent);
   }
 
   .image-carousel {
     scrollbar-width: thin;
     scrollbar-color: var(--color-secondary) transparent;
-    @apply flex gap-4 overflow-x-auto scroll-smooth select-none px-6 md:px-16 py-2;
+    @apply flex gap-4 overflow-x-auto scroll-smooth select-none py-2;
+    padding-inline: var(--paper-inset);
   }
 
   .image-carousel::-webkit-scrollbar {

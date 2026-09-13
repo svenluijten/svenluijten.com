@@ -20,7 +20,7 @@
                     @foreach($posts as $post)
                         <div class="relative">
                             {{-- Timeline node: centred on the vertical rule, 40px left of the card. --}}
-                            <div class="absolute -left-10 top-8 hidden h-4 w-4 rounded-full border-4 border-primary bg-tertiary | md:block"></div>
+                            <div class="absolute -left-10 top-8 hidden h-4 w-4 rounded-full border-4 border-primary bg-surface | md:block"></div>
 
                             <a
                                 href="{{ route('blog.show', $post->slug) }}"

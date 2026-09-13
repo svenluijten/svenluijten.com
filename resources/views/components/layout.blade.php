@@ -36,7 +36,12 @@
 
         <main class="grow py-4">
             <x-container>
-                {{ $slot }}
+                <div class="paper-stack">
+                    {{-- Trimmed so the sheet's padding alone sets the space at its top and bottom. --}}
+                    <div class="paper [&>:first-child]:mt-0 [&>:last-child]:mb-0">
+                        {{ $slot }}
+                    </div>
+                </div>
             </x-container>
         </main>
 
