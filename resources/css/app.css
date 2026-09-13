@@ -1,21 +1,9 @@
-@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|epilogue:400,400i,700,700i|inter:400,400i,700,700i|manrope:400,600)
-
-layer(base);
+@import url(https://fonts.bunny.net/css?family=archivo-narrow:600|inter:400,400i,700,700i|manrope:400,500,600) layer(base);
 
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
-
-@custom-variant dark (@media (prefers-color-scheme: dark));
-
-@utility container {
-  margin-inline: auto;
-}
-
-@utility link {
-    @apply underline decoration-secondary underline-offset-2 decoration-2 hover:decoration-primary transition-colors duration-100;
-}
 
 @theme {
   --breakpoint-*: initial;
@@ -23,130 +11,174 @@ layer(base);
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
 
+  /* Manrope for UI chrome, Inter for reading, Archivo Narrow for headings. */
   --font-system:
-    Manrope, Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Epilogue', 'Segoe UI Symbol', 'Noto Color Emoji';
+    Manrope, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   --font-text:
-    Inter, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-  --font-heading: 'Archivo Narrow', sans-serif;
+    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-heading: 'Archivo Narrow', ui-sans-serif, sans-serif;
 
+  /* Brand palette — unchanged. */
   --color-primary: #627254;
   --color-primary-light: #76885b;
   --color-secondary: #eca013;
   --color-tertiary: #faf1dd;
+
+  /*
+    Warm neutrals. The defaults (gray-200 borders, gray-500 text) are cool-toned
+    and read as muddy against the cream background, so these are tinted toward
+    the cream and olive instead.
+  */
+  --color-surface: #fffdf8;
+  --color-ink: #2e2a24;
+  --color-ink-muted: #7b7263;
+  --color-line: #e6dcc6;
+  --color-line-strong: #d6c9ad;
+
+  --radius-card: 0.5rem;
+  --radius-inline: 0.25rem;
+
+  /* Olive-tinted rather than black, so cards sit on the cream. */
+  --shadow-card: 0 1px 2px rgb(98 114 84 / 0.07), 0 4px 12px rgb(98 114 84 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(98 114 84 / 0.09), 0 8px 24px rgb(98 114 84 / 0.09);
+
+  /* 45rem minus the 1.5rem gutters leaves ~68 characters of Inter at 18px. */
+  --container-measure: 45rem;
+
+  --text-display: clamp(2.25rem, 1.75rem + 2vw, 3rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.015em;
 }
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@utility link {
+    @apply underline decoration-secondary decoration-2 underline-offset-[3px] hover:decoration-primary transition-colors duration-100;
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
+  /*
+    Tailwind v4 defaults the border color to `currentcolor`; pin it to the warm
+    line color so undecorated borders match the palette.
+  */
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-line);
   }
 
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-heading;
-    }
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-ink);
+  }
 
-    h1 { @apply text-5xl }
-    h2 { @apply text-3xl }
-    h3 { @apply text-2xl }
-    h4 { @apply text-xl }
-    h5 { @apply text-lg }
-    h6 { @apply text-base }
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    text-wrap: balance;
+  }
+
+  h1 { @apply text-display; }
+  h2 { font-size: 1.875rem; line-height: 1.15; letter-spacing: -0.01em; }
+  h3 { font-size: 1.5rem;   line-height: 1.2; }
+  h4 { font-size: 1.25rem;  line-height: 1.25; }
+  h5 { font-size: 1.125rem; line-height: 1.3; }
+  h6 { font-size: 1rem;     line-height: 1.4; }
 
   a.link {
-      @apply link;
+    @apply link;
   }
 
-    #post-content {
-        @apply font-text text-lg;
+  #post-content {
+    @apply font-text text-lg leading-relaxed;
 
-        p { @apply my-2; }
-
-        a { @apply link }
-
-        ul { @apply list-disc list-outside ml-4; }
-        ol { @apply list-decimal list-outside ml-4; }
-
-        blockquote { @apply border-l-4 border-primary pl-4 my-4; }
-
-        img { @apply rounded-xl border-8 border-white shadow-lg; }
+    p {
+      @apply my-[1em];
+      text-wrap: pretty;
     }
 
-    .image-carousel-wrapper {
-        @apply my-6 md:-mx-16;
-        position: relative;
+    a { @apply link; }
+
+    ul { @apply list-disc list-outside my-[1em] ml-5 space-y-1; }
+    ol { @apply list-decimal list-outside my-[1em] ml-5 space-y-1; }
+
+    blockquote { @apply border-l-4 border-primary pl-4 my-6; }
+
+    img { @apply rounded-card border border-line shadow-card my-6; }
+
+    h1, h2, h3, h4, h5, h6 {
+      @apply mt-10 mb-3;
     }
 
-    .image-carousel-wrapper::before,
-    .image-carousel-wrapper::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 4rem;
-        pointer-events: none;
-        z-index: 10;
-    }
+    pre {
+      @apply rounded-card text-base border border-line p-4 my-6 overflow-x-auto;
 
-    .image-carousel-wrapper::before {
-        left: 0;
-        background: linear-gradient(to right, var(--color-tertiary), transparent);
+      .line > .line-number {
+        @apply pr-4;
+      }
     }
+  }
 
-    .image-carousel-wrapper::after {
-        right: 0;
-        background: linear-gradient(to left, var(--color-tertiary), transparent);
-    }
+  #post-content :not(pre) code, code.code {
+    @apply rounded-inline text-[0.9em] px-1.5 py-0.5 box-decoration-clone bg-surface border border-line;
+  }
 
-    .image-carousel {
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-secondary) transparent;
-        @apply flex gap-4 overflow-x-auto scroll-smooth select-none px-6 md:px-16 py-2;
-    }
+  /*
+    The carousel deliberately breaks out of the prose measure. The 4rem negative
+    margin matches the width of the fade masks below.
+  */
+  .image-carousel-wrapper {
+    @apply my-8 md:-mx-16;
+    position: relative;
+  }
 
-    .image-carousel::-webkit-scrollbar {
-        height: 8px;
-    }
+  .image-carousel-wrapper::before,
+  .image-carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    pointer-events: none;
+    z-index: 10;
+  }
 
-    .image-carousel::-webkit-scrollbar-track {
-        background: transparent;
-    }
+  .image-carousel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-tertiary), transparent);
+  }
 
-    .image-carousel::-webkit-scrollbar-thumb {
-        background-color: var(--color-secondary);
-        border-radius: 4px;
-    }
+  .image-carousel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-tertiary), transparent);
+  }
 
-    .image-carousel img {
-        @apply h-96 flex-1 object-cover;
-    }
+  .image-carousel {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-secondary) transparent;
+    @apply flex gap-4 overflow-x-auto scroll-smooth select-none px-6 md:px-16 py-2;
+  }
 
-    #post-content pre {
-        @apply rounded-xl text-base border border-gray-200 p-4 overflow-scroll;
+  .image-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
 
-        .line > .line-number {
-            @apply pr-4;
-        }
-    }
+  .image-carousel::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-    #post-content :not(pre) code , code.code {
-        @apply rounded text-base px-2 py-0.5 box-decoration-clone bg-white border border-gray-200;
-    }
+  .image-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+    border-radius: 4px;
+  }
 
-    #post-content {
-        h1, h2, h3, h4, h5, h6 {
-            @apply mt-8;
-        }
-    }
+  .image-carousel img {
+    @apply h-96 flex-1 object-cover rounded-card;
+  }
 }

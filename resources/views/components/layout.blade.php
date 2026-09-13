@@ -30,14 +30,14 @@
     <meta property="og:image:alt" content="{{ $title . ' - ' . $description }}">
 </head>
 
-<body class="text-gray-900 antialiased border-8 border-primary bg-tertiary min-h-screen relative | md:border-0">
-    <div class="flex flex-col min-h-screen">
+<body class="min-h-screen bg-tertiary font-system text-ink antialiased">
+    <div class="flex min-h-screen flex-col">
         <x-header />
 
-        <main class="container grow">
-            <div class="mx-auto w-full px-6 | lg:w-2/3 lg:px-0">
+        <main class="grow py-4">
+            <x-container>
                 {{ $slot }}
-            </div>
+            </x-container>
         </main>
 
         <x-footer />
