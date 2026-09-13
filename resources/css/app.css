@@ -264,15 +264,25 @@
       }
     }
 
+    /*
+      Clear tape: a faint tint with a soft shine, so the printout's edge shows
+      through. The short ends are serrated where it was torn off the roll: each
+      end is a column of right-angled wedges, --tape-tooth tall and half as deep.
+    */
     pre::before,
     pre::after {
+      --tape-tooth: 5px;
+
       content: '';
       position: absolute;
       top: -0.5rem;
-      width: 4.5rem;
-      height: 1.25rem;
-      background-color: color-mix(in srgb, var(--color-line-strong) 55%, transparent);
-      box-shadow: 0 1px 2px rgb(98 114 84 / 0.08);
+      width: 4rem;
+      height: 1.1rem;
+      background-color: color-mix(in srgb, var(--color-line) 30%, transparent);
+      background-image: linear-gradient(to bottom, rgb(255 255 255 / 0.35), rgb(255 255 255 / 0) 60%);
+      mask:
+        conic-gradient(from 45deg at left, #000 90deg, #0000 0) left / 51% var(--tape-tooth) repeat-y,
+        conic-gradient(from -135deg at right, #000 90deg, #0000 0) right / 51% var(--tape-tooth) repeat-y;
       pointer-events: none;
     }
 
