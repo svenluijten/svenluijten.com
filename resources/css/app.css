@@ -221,12 +221,69 @@
       @apply mt-10 mb-3;
     }
 
+    /*
+      Code blocks are a dot-matrix printout taped onto the paper: pale olive
+      bands every three lines, feed holes down the sides from `sm` up, and two
+      strips of tape across the top. Scrolling moves to the inner <code> so
+      the tape can hang over the edges without being clipped.
+    */
     pre {
-      @apply rounded-card text-base border border-line p-4 my-6 overflow-x-auto;
+      /* At most 7% olive keeps every GitHub Light High Contrast colour at 4.5:1 or better. */
+      --printout-band: color-mix(in srgb, var(--color-primary) 6%, var(--color-surface));
+      --printout-hole: var(--color-line);
+
+      @apply text-base my-6;
+      position: relative;
+      padding-block: 1rem;
+      border: 1px solid var(--color-line);
+      box-shadow: var(--shadow-card);
+      /* Phiki writes the theme's white background inline. */
+      background-color: var(--color-surface) !important;
+
+      @variant sm {
+        padding-inline: 1.5rem;
+        /* One hole per three-line band, centred on it, down each side. */
+        background-image:
+          radial-gradient(circle, var(--printout-hole) 0.3rem, transparent calc(0.3rem + 0.5px)),
+          radial-gradient(circle, var(--printout-hole) 0.3rem, transparent calc(0.3rem + 0.5px));
+        background-size: 1.5rem 3lh;
+        background-position: left top 1rem, right top 1rem;
+        background-repeat: repeat-y;
+      }
+
+      > code {
+        display: block;
+        overflow-x: auto;
+        padding-inline: 1rem;
+        background-image: repeating-linear-gradient(to bottom, var(--printout-band) 0 3lh, transparent 3lh 6lh);
+        background-attachment: local;
+      }
 
       .line > .line-number {
         @apply pr-4;
       }
+    }
+
+    pre::before,
+    pre::after {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      width: 4.5rem;
+      height: 1.25rem;
+      background-color: color-mix(in srgb, var(--color-line-strong) 55%, transparent);
+      box-shadow: 0 1px 2px rgb(98 114 84 / 0.08);
+      pointer-events: none;
+    }
+
+    pre::before {
+      left: 0.75rem;
+      rotate: -4deg;
+    }
+
+    pre::after {
+      right: 0.75rem;
+      rotate: 4deg;
     }
   }
 
