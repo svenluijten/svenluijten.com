@@ -1,7 +1,7 @@
 @props([
     'title',
     'description',
-    // Pages that are already a column of cards can opt out of the paper sheet.
+    // Pages that place their own paper sheets, or none at all, turn off the page-wide one.
     'paper' => true,
 ])
 
@@ -46,12 +46,7 @@
         <main class="relative grow py-4">
             <x-container>
                 @if ($paper)
-                    <div class="paper-stack">
-                        {{-- Trimmed so the sheet's padding alone sets the space at its top and bottom. --}}
-                        <div class="paper [&>:first-child]:mt-0 [&>:last-child]:mb-0">
-                            {{ $slot }}
-                        </div>
-                    </div>
+                    <x-paper>{{ $slot }}</x-paper>
                 @else
                     {{ $slot }}
                 @endif

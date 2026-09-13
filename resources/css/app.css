@@ -59,11 +59,6 @@
     @apply underline decoration-secondary decoration-2 underline-offset-[3px] hover:decoration-primary transition-colors duration-100;
 }
 
-/* Wider than the prose column, but kept 1rem clear of the paper's edges. */
-@utility paper-breakout {
-    margin-inline: calc(1rem - var(--paper-inset));
-}
-
 @layer base {
   /*
     Tailwind v4 defaults the border color to `currentcolor`; pin it to the warm
