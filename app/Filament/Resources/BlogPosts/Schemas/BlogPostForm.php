@@ -56,7 +56,8 @@ class BlogPostForm
                         'attachFiles',
                     ]),
 
-                DateTimePicker::make('published_at'),
+                DateTimePicker::make('published_at')
+                    ->helperText(fn (DateTimePicker $component) => "Times are in {$component->getTimezone()}."),
             ]);
     }
 }

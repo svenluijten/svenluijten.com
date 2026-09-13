@@ -89,7 +89,8 @@ class ConcertForm
                     ])
                     ->searchable(),
 
-                DateTimePicker::make('published_at'),
+                DateTimePicker::make('published_at')
+                    ->helperText(fn (DateTimePicker $component) => "Times are in {$component->getTimezone()}."),
 
                 Hidden::make('is_slug_changed_manually')
                     ->default(false)
