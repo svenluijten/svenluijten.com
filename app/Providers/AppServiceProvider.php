@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Article;
 use App\Models\BlogPost;
 use App\Models\Concert;
+use Filament\Support\Facades\FilamentTimezone;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 use League\CommonMark\ConverterInterface;
@@ -33,5 +34,7 @@ class AppServiceProvider extends ServiceProvider
             'concert' => Concert::class,
             'blog-post' => BlogPost::class,
         ]);
+
+        FilamentTimezone::set('Europe/Amsterdam');
     }
 }
