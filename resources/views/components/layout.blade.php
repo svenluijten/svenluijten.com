@@ -1,3 +1,10 @@
+@props([
+    'title',
+    'description',
+    // Pages that place their own paper sheets, or none at all, turn off the page-wide one.
+    'paper' => true,
+])
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,11 +39,17 @@
 
 <body class="min-h-screen bg-tertiary font-system text-ink antialiased">
     <div class="flex min-h-screen flex-col">
-        <x-header />
+        {{-- The header only stays pinned when there's a sheet to slide over it. --}}
+        <x-header :sticky="$paper" />
 
-        <main class="grow py-4">
+        {{-- Positioned and after the sticky header, so the paper paints over it. --}}
+        <main class="relative grow py-4">
             <x-container>
-                {{ $slot }}
+                @if ($paper)
+                    <x-paper>{{ $slot }}</x-paper>
+                @else
+                    {{ $slot }}
+                @endif
             </x-container>
         </main>
 

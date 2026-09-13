@@ -7,7 +7,7 @@
             subscribe to the feed at <code class="code">/feeds/articles.xml</code>.
         </p>
 
-        <div class="mb-4 overflow-x-auto rounded-card border border-line bg-surface shadow-card">
+        <div class="mb-4 overflow-x-auto rounded-card border border-line bg-tertiary/40">
             <table class="w-full table-auto border-collapse text-left">
                 <thead>
                     <tr class="border-b-2 border-line-strong">

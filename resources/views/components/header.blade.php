@@ -1,4 +1,12 @@
-<header>
+@props(['sticky' => true])
+
+{{--
+    When sticky, it's pinned to the top and the page's paper slides over it as
+    you scroll (see layout), fading out as it's covered (`header-fade` in
+    app.css). When a link here has keyboard focus it's lifted above the paper,
+    so focus is never hidden underneath the sheet.
+--}}
+<header @class(['sticky top-0 header-fade | has-focus-visible:z-10 has-focus-visible:bg-tertiary' => $sticky])>
     <x-container class="flex flex-row items-center justify-between py-5">
         <a href="{{ route('home') }}" class="group">
             <img

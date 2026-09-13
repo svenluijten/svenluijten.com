@@ -29,7 +29,7 @@
 
     <hr class="w-16 border-t-2 border-secondary my-8">
 
-    <footer class="my-8 rounded-card border border-line bg-surface p-4 shadow-card">
+    <footer class="mt-8 rounded-card border border-line bg-tertiary/40 p-4">
         <p class="font-system text-sm">
             Subscribe to <a href="{{ url("/feeds/{$feed}.xml") }}" class="link">the {{ $feedLabel }} feed</a> to
             get new posts in your reader, or <a href="{{ route('feeds.index') }}" class="link">browse every

@@ -27,7 +27,8 @@ class MarkdownServiceProvider extends ServiceProvider
 
             $environment->addExtension(new CommonMarkCoreExtension);
             $environment->addExtension(new StrikethroughExtension);
-            $environment->addExtension(new PhikiExtension(Theme::GithubLight, withGutter: true));
+            // High contrast keeps every token colour readable on the code blocks' olive bands.
+            $environment->addExtension(new PhikiExtension(Theme::GithubLightHighContrast, withGutter: true));
             $environment->addExtension(new InternalLinkExtension);
             $environment->addExtension(new ExternalLinkExtension);
 
