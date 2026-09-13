@@ -34,7 +34,8 @@
     <div class="flex min-h-screen flex-col">
         <x-header />
 
-        <main class="grow py-4">
+        {{-- Positioned and after the sticky header, so the paper paints over it. --}}
+        <main class="relative grow py-4">
             <x-container>
                 <div class="paper-stack">
                     {{-- Trimmed so the sheet's padding alone sets the space at its top and bottom. --}}

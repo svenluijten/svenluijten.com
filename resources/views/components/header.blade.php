@@ -1,4 +1,9 @@
-<header>
+{{--
+    Pinned to the top, and the page's paper slides over it as you scroll (see
+    layout). When a link here has keyboard focus it's lifted above the paper,
+    so focus is never hidden underneath the sheet.
+--}}
+<header class="sticky top-0 | has-focus-visible:z-10 has-focus-visible:bg-tertiary">
     <x-container class="flex flex-row items-center justify-between py-5">
         <a href="{{ route('home') }}" class="group">
             <img
