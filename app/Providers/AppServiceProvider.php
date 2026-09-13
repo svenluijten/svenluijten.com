@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Models\Article;
 use App\Models\BlogPost;
 use App\Models\Concert;
+use DateTimeZone;
+use Exception;
 use Filament\Support\Facades\FilamentTimezone;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +37,18 @@ class AppServiceProvider extends ServiceProvider
             'blog-post' => BlogPost::class,
         ]);
 
-        FilamentTimezone::set('Europe/Amsterdam');
+        FilamentTimezone::set(function (): ?string {
+            $timezone = request()->cookie('timezone');
+
+            if (! is_string($timezone)) {
+                return null;
+            }
+
+            try {
+                return (new DateTimeZone($timezone))->getName();
+            } catch (Exception) {
+                return null;
+            }
+        });
     }
 }
