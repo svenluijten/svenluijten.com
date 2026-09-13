@@ -74,7 +74,7 @@ class Concert extends Model implements HasMedia
             ->wherePivot('position', 'support');
     }
 
-    public function getMediaCollection(): string
+    public function getMediaCollectionName(): string
     {
         return 'concert-content';
     }
