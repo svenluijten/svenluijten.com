@@ -1,5 +1,5 @@
 <x-layout title="Explore" description="A non-exhaustive list of content on this site.">
-    <p class="text-xl mb-4">
+    <p class="mb-10 font-text text-xl leading-relaxed">
         Here's a non-exhaustive list of pages on this website. Call it a "sitemap", call it an "index", whatever you want.
     </p>
 
@@ -25,7 +25,7 @@
     <x-section title="Feeds">
         <p>This site automatically publishes a handful of feeds for every content type, as well as a generic one that contains everything.</p>
 
-        <ul class="list-disc my-4 ml-4">
+        <ul class="my-4 ml-5 list-disc space-y-1">
             <li><a href="{{ url('/feeds/all.xml') }}" class="link"><code class="code">/feeds/all.xml</code></a> contains all content published on this site.</li>
             <li><a href="{{ url('/feeds/articles.xml') }}" class="link"><code class="code">/feeds/articles.xml</code></a> contains only the articles I write.</li>
             <li><a href="{{ url('/feeds/concerts.xml') }}" class="link"><code class="code">/feeds/concerts.xml</code></a> only contains the concert logs.</li>

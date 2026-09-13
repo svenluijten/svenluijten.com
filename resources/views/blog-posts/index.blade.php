@@ -1,48 +1,46 @@
 @php use Illuminate\Support\Str; @endphp
-<x-layout title="Blog posts" description="Sven's blog posts">
+{{-- No paper: the timeline is already a column of cards, which read better straight on the cream. --}}
+<x-layout title="Blog posts" description="Sven's blog posts" :paper="false">
     <x-slot:meta>
         <link href="{{ url('/feeds/blog-posts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Blog Posts">
     </x-slot>
 
-    <div class="flex gap-8 my-8">
-        <div class="flex-1 space-y-12">
-            @foreach($blogPosts as $year => $posts)
-                <div class="flex md:gap-8 gap-2 relative flex-col md:flex-row">
-                    <div class="w-24 shrink-0 md:text-right pt-3">
-                        <div class="sticky top-2">
-                            <span class="text-4xl font-heading text-gray-900">{{ $year }}</span>
-                            <div class="text-sm text-gray-500 mt-1">{{ count($posts) }} {{ Str::plural('post', count($posts)) }}</div>
-                        </div>
-                    </div>
-
-                    <div class="relative hidden md:block w-px bg-secondary shrink-0 min-h-full"></div>
-
-                    <div class="flex-1 space-y-6">
-                        @foreach($posts as $post)
-                            <div class="relative">
-                                <div class="absolute hidden md:block -left-10 top-8 w-4 h-4 rounded-full bg-white border-4 border-primary"></div>
-
-                                <a href="{{ route('blog.show', $post->slug) }}" class="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md hover:border-gray-300 transition-all">
-                                    <div class="flex items-start justify-between gap-4 mb-2">
-                                        <h3 class="text-xl font-heading text-gray-900">{{ $post->title }}</h3>
-                                        <time class="text-sm text-gray-500 whitespace-nowrap">{{ $post->published_at->format('M j') }}</time>
-                                    </div>
-
-                                    <p class="text-gray-600 leading-relaxed font-text">{{ $post->preview }}</p>
-
-{{--                                    @if($post->tags->isNotEmpty())--}}
-{{--                                        <div class="flex gap-2 mt-4">--}}
-{{--                                            @foreach($post->tags as $tag)--}}
-{{--                                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">{{ $tag->name }}</span>--}}
-{{--                                            @endforeach--}}
-{{--                                        </div>--}}
-{{--                                    @endif--}}
-                                </a>
-                            </div>
-                        @endforeach
+    <div class="my-8 space-y-12">
+        @foreach($blogPosts as $year => $posts)
+            <div class="relative flex flex-col gap-2 | md:flex-row md:gap-8">
+                <div class="w-24 shrink-0 pt-3 | md:text-right">
+                    <div class="sticky top-2">
+                        <span class="font-heading text-4xl">{{ $year }}</span>
+                        <div class="mt-1 text-sm text-ink-muted">{{ count($posts) }} {{ Str::plural('post', count($posts)) }}</div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+
+                <div class="relative hidden w-px shrink-0 bg-line-strong | md:block"></div>
+
+                <div class="flex-1 space-y-6">
+                    @foreach($posts as $post)
+                        <div class="relative">
+                            {{-- Timeline node: centred on the vertical rule, 40px left of the card. --}}
+                            <div class="absolute -left-10 top-8 hidden h-4 w-4 rounded-full border-4 border-primary bg-tertiary | md:block"></div>
+
+                            <a
+                                href="{{ route('blog.show', $post->slug) }}"
+                                class="block rounded-card border border-line bg-surface p-6 shadow-card transition duration-150 | hover:border-line-strong hover:shadow-card-hover"
+                            >
+                                <div class="mb-2 flex items-start justify-between gap-4">
+                                    <h3>{{ $post->title }}</h3>
+
+                                    <time datetime="{{ $post->published_at->toDateString() }}" class="shrink-0 whitespace-nowrap pt-1 text-sm text-ink-muted">
+                                        {{ $post->published_at->format('M j') }}
+                                    </time>
+                                </div>
+
+                                <p class="font-text leading-relaxed text-ink-muted">{{ $post->preview }}</p>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        @endforeach
     </div>
 </x-layout>
