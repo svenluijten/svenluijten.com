@@ -37,17 +37,17 @@ class AppServiceProvider extends ServiceProvider
             'blog-post' => BlogPost::class,
         ]);
 
-        FilamentTimezone::set(function (): ?string {
+        FilamentTimezone::set(function (): string {
             $timezone = request()->cookie('timezone');
 
             if (! is_string($timezone)) {
-                return null;
+                return 'Europe/Amsterdam';
             }
 
             try {
                 return (new DateTimeZone($timezone))->getName();
             } catch (Exception) {
-                return null;
+                return 'Europe/Amsterdam';
             }
         });
     }
