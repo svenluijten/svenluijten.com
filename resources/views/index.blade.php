@@ -1,5 +1,5 @@
 {{-- Each section is its own sheet of paper, except concerts, whose cards sit straight on the cream. --}}
-<x-layout title="Sven Luijten" description="Homepage of Sven's personal website." :paper="false">
+<x-layout title="Sven Luijten" description="Homepage of Sven's personal website." :paper="false" :sticky="true">
     <x-paper class="mb-12">
         <section class="font-text text-xl leading-relaxed">
             <p>

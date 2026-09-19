@@ -3,6 +3,11 @@
     'description',
     // Pages that place their own paper sheets, or none at all, turn off the page-wide one.
     'paper' => true,
+    // Whether the header stays pinned and fades as the page scrolls over it.
+    // Defaults to the page-wide sheet, but pages placing their own sheets set it
+    // themselves: having paper to slide over is a separate question from whether
+    // the layout is the one providing it.
+    'sticky' => null,
 ])
 
 <!doctype html>
@@ -39,8 +44,7 @@
 
 <body class="min-h-screen bg-tertiary font-system text-ink antialiased">
     <div class="flex min-h-screen flex-col">
-        {{-- The header only stays pinned when there's a sheet to slide over it. --}}
-        <x-header :sticky="$paper" />
+        <x-header :sticky="$sticky ?? $paper" />
 
         {{-- Positioned and after the sticky header, so the paper paints over it. --}}
         <main class="relative grow py-4">

@@ -1,5 +1,6 @@
 @php use Illuminate\Support\Str; @endphp
 {{-- No paper: the timeline is already a column of cards, which read better straight on the cream. --}}
+{{-- Not sticky: with no paper anywhere on this page, a fading header would just overlap the cards. --}}
 <x-layout title="Blog posts" description="Sven's blog posts" :paper="false">
     <x-slot:meta>
         <link href="{{ url('/feeds/blog-posts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Blog Posts">

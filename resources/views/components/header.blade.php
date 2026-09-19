@@ -3,10 +3,13 @@
 {{--
     When sticky, it's pinned to the top and the page's paper slides over it as
     you scroll (see layout), fading out as it's covered (`header-fade` in
-    app.css). When a link here has keyboard focus it's lifted above the paper,
-    so focus is never hidden underneath the sheet.
+    app.css). It carries the page background so that content passing beneath it
+    mid-fade is hidden rather than showing through; on pages with no paper to
+    cover it, that background is the only thing separating the two. When a link
+    here has keyboard focus it's lifted above the paper, so focus is never
+    hidden underneath the sheet.
 --}}
-<header @class(['sticky top-0 header-fade | has-focus-visible:z-10 has-focus-visible:bg-tertiary' => $sticky])>
+<header @class(['sticky top-0 header-fade bg-tertiary | has-focus-visible:z-10' => $sticky])>
     {{--
         Full-bleed brand accent: deliberately outside the container measure.
         Part of the header, so it fades along with it under the paper.

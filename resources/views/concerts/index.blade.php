@@ -1,4 +1,4 @@
-<x-layout title="Concerts" description="All the concerts I've been to." :paper="false">
+<x-layout title="Concerts" description="All the concerts I've been to." :paper="false" :sticky="true">
     <x-slot:meta>
         <link href="{{ url('/feeds/concerts.xml') }}" type="application/atom+xml" rel="alternate" title="Sven Luijten's Concert Log">
     </x-slot>
