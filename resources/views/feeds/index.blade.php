@@ -1,64 +1,68 @@
 <x-layout title="Feeds" description="A list of RSS feeds this website publishes.">
     <x-section title="Feeds">
-        <p class="mb-4">
+        <p class="lead mb-8">
             Here's a list of feeds this website publishes. The right feed(s) should automatically be picked up by your
             reader. For instance, if you want to subscribe to only the <code class="code">articles</code> feed, you can
             point your reader to <a href="{{ route('articles.index') }}" class="link">the articles page</a>, and it'll
             subscribe to the feed at <code class="code">/feeds/articles.xml</code>.
         </p>
 
-        <table class="table-auto w-full border-collapse mb-4 bg-white border border-gray-200 rounded-lg inline-block overflow-x-scroll">
-            <thead>
-                <tr class="border-b-2 border-black">
-                    <th class="text-left py-3 px-4 align-text-top">Feed</th>
-                    <th class="text-left py-3 px-4 align-text-top">Type</th>
-                    <th class="text-left py-3 px-4 align-text-top">Description</th>
-                </tr>
-            </thead>
+        <div class="mb-4 overflow-x-auto rounded-card border border-line bg-tertiary/40">
+            <table class="w-full table-auto border-collapse text-left">
+                <thead>
+                    <tr class="border-b-2 border-line-strong">
+                        <th class="py-3 px-4 align-text-top">Feed</th>
+                        <th class="py-3 px-4 align-text-top">Type</th>
+                        <th class="py-3 px-4 align-text-top">Description</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <tr>
-                    <td class="py-3 px-4 align-text-top">
-                        <a href="{{ url('feeds/all.xml') }}" class="link">
-                            <code class="code">/feeds/all.xml</code>
-                        </a>
-                    </td>
-                    <td class="py-3 px-4 align-text-top">Atom</td>
-                    <td class="py-3 px-4 align-text-top">All the content published on this site, sorted by publish date, latest first.</td>
-                </tr>
+                <tbody>
+                    <tr class="border-t border-line">
+                        <td class="py-3 px-4 align-text-top whitespace-nowrap">
+                            <a href="{{ url('feeds/all.xml') }}" class="link">
+                                <code class="code">/feeds/all.xml</code>
+                            </a>
+                        </td>
+                        <td class="py-3 px-4 align-text-top">Atom</td>
+                        <td class="py-3 px-4 align-text-top">All the content published on this site, sorted by publish date, latest first.</td>
+                    </tr>
 
-                <tr>
-                    <td class="py-3 px-4 align-text-top">
-                        <a href="{{ url('feeds/articles.xml') }}" class="link">
-                            <code class="code">/feeds/articles.xml</code>
-                        </a>
-                    </td>
-                    <td class="py-3 px-4 align-text-top">Atom</td>
-                    <td class="py-3 px-4 align-text-top">All the long(er) form articles published on this site. Sorted by publish date, latest first.</td>
-                </tr>
+                    <tr class="border-t border-line">
+                        <td class="py-3 px-4 align-text-top whitespace-nowrap">
+                            <a href="{{ url('feeds/articles.xml') }}" class="link">
+                                <code class="code">/feeds/articles.xml</code>
+                            </a>
+                        </td>
+                        <td class="py-3 px-4 align-text-top">Atom</td>
+                        <td class="py-3 px-4 align-text-top">All the long(er) form articles published on this site. Sorted by publish date, latest first.</td>
+                    </tr>
 
-                <tr>
-                    <td class="py-3 px-4 align-text-top">
-                        <a href="{{ url('feeds/concerts.xml') }}" class="link">
-                            <code class="code">/feeds/concerts.xml</code>
-                        </a>
-                    </td>
-                    <td class="py-3 px-4 align-text-top">Atom</td>
-                    <td class="py-3 px-4 align-text-top">All my concerts. Sorted by concert date, latest first.</td>
-                </tr>
+                    <tr class="border-t border-line">
+                        <td class="py-3 px-4 align-text-top whitespace-nowrap">
+                            <a href="{{ url('feeds/concerts.xml') }}" class="link">
+                                <code class="code">/feeds/concerts.xml</code>
+                            </a>
+                        </td>
+                        <td class="py-3 px-4 align-text-top">Atom</td>
+                        <td class="py-3 px-4 align-text-top">All my concerts. Sorted by concert date, latest first.</td>
+                    </tr>
 
-            <tr>
-                <td class="py-3 px-4 align-text-top">
-                    <a href="{{ url('feeds/blog-posts.xml') }}" class="link">
-                        <code class="code">/feeds/blog-posts.xml</code>
-                    </a>
-                </td>
-                <td class="py-3 px-4 align-text-top">Atom</td>
-                <td class="py-3 px-4 align-text-top">All my blog posts. Sorted by publish date, latest first.</td>
-            </tr>
-            </tbody>
-        </table>
+                    <tr class="border-t border-line">
+                        <td class="py-3 px-4 align-text-top whitespace-nowrap">
+                            <a href="{{ url('feeds/blog-posts.xml') }}" class="link">
+                                <code class="code">/feeds/blog-posts.xml</code>
+                            </a>
+                        </td>
+                        <td class="py-3 px-4 align-text-top">Atom</td>
+                        <td class="py-3 px-4 align-text-top">All my blog posts. Sorted by publish date, latest first.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <p>These feeds are static files that are regenerated and updated every hour.</p>
+        <div class="prose">
+            <p>These feeds are static files that are regenerated and updated every hour.</p>
+        </div>
     </x-section>
 </x-layout>

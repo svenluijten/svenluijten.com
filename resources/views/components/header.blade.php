@@ -1,27 +1,44 @@
-<div>
-    <div class="bg-secondary h-1 w-full hover:animate-pulse"></div>
-</div>
+@props(['sticky' => true])
 
-<header class="container font-system mb-4">
-    <div class="mx-auto w-full flex flex-row items-center justify-between py-2 px-2 | lg:w-2/3 lg:px-0 md:py-4">
+{{--
+    When sticky, it's pinned to the top and the page's paper slides over it as
+    you scroll (see layout), fading out as it's covered (`header-fade` in
+    app.css). It carries the page background so that content passing beneath it
+    mid-fade is hidden rather than showing through; on pages with no paper to
+    cover it, that background is the only thing separating the two. When a link
+    here has keyboard focus it's lifted above the paper, so focus is never
+    hidden underneath the sheet.
+--}}
+<header @class(['sticky top-0 header-fade bg-tertiary | has-focus-visible:z-10' => $sticky])>
+    {{--
+        Full-bleed brand accent: deliberately outside the container measure.
+        Part of the header, so it fades along with it under the paper.
+    --}}
+    <div class="h-1 w-full bg-secondary"></div>
+
+    <x-container class="flex flex-row items-center justify-between py-5">
         <a href="{{ route('home') }}" class="group">
-            <img src="{{ url('/images/logo.svg') }}" alt="Sven Luijten" class="w-12 h-12 group-hover:scale-105 group-hover:rotate-6 transition-all duration-75">
+            <img
+                src="{{ url('/images/logo.svg') }}"
+                alt="Sven Luijten"
+                class="h-11 w-11 transition-transform duration-150 group-hover:rotate-6 group-hover:scale-105"
+            >
         </a>
 
         <nav>
-            <ul class="flex justify-center text-lg">
-                <li class="px-2 | lg:px-4">
-                    <a href="{{ route('contact') }}" class="underline-offset-2 hover:underline">
+            <ul class="flex items-center gap-6">
+                <li>
+                    <a href="{{ route('contact') }}" class="decoration-secondary decoration-2 underline-offset-[3px] hover:underline">
                         Contact
                     </a>
                 </li>
 
-                <li class="px-2 | lg:px-4">
-                    <a href="{{ route('explore') }}" class="underline-offset-2 hover:underline">
+                <li>
+                    <a href="{{ route('explore') }}" class="decoration-secondary decoration-2 underline-offset-[3px] hover:underline">
                         Explore
                     </a>
                 </li>
             </ul>
         </nav>
-    </div>
+    </x-container>
 </header>

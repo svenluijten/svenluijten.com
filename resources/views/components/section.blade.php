@@ -1,4 +1,4 @@
-<section {{ $attributes->merge(['class' => 'mb-6']) }}>
-    @isset($title)<h2 class="text-3xl">{{ $title }}</h2>@endisset
+<section {{ $attributes->merge(['class' => 'mb-10']) }}>
+    @isset($title)<h2 class="mb-3">{{ $title }}</h2>@endisset
     {{ $slot }}
 </section>
