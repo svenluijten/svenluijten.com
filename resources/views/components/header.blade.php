@@ -7,6 +7,12 @@
     so focus is never hidden underneath the sheet.
 --}}
 <header @class(['sticky top-0 header-fade | has-focus-visible:z-10 has-focus-visible:bg-tertiary' => $sticky])>
+    {{--
+        Full-bleed brand accent: deliberately outside the container measure.
+        Part of the header, so it fades along with it under the paper.
+    --}}
+    <div class="h-1 w-full bg-secondary"></div>
+
     <x-container class="flex flex-row items-center justify-between py-5">
         <a href="{{ route('home') }}" class="group">
             <img

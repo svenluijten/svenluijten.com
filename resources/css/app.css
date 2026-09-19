@@ -161,8 +161,8 @@
 
   /*
     The sticky header fades out as the paper slides over it, driven by scroll
-    position rather than time. The range ends at 6.25rem, the header's 5.25rem
-    height plus main's 1rem padding: the point where the paper fully covers it.
+    position rather than time. The range ends at 6.5rem, the header's 5.5rem
+    height (including the 0.25rem accent bar) plus main's 1rem padding: the point where the paper fully covers it.
     Browsers without scroll-driven animations just see it covered.
   */
   @keyframes header-fade {
@@ -174,7 +174,7 @@
       .header-fade {
         animation: header-fade linear both;
         animation-timeline: scroll(root);
-        animation-range: 0 6.25rem;
+        animation-range: 0 6.5rem;
       }
 
       /* Lifted above the paper for keyboard focus, so it must be fully visible. */
