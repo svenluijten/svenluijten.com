@@ -1,7 +1,8 @@
 {{-- Each section is its own sheet of paper, except concerts, whose cards sit straight on the cream. --}}
 <x-layout title="Sven Luijten" description="Homepage of Sven's personal website." :paper="false" :sticky="true">
     <x-paper class="mb-12">
-        <section class="lead">
+        {{-- Plain prose, not a lead: the bolded name is what stands out here. --}}
+        <section class="prose">
             <p>
                 Hello! My name is <strong>Sven Luijten</strong>, and I am a developer with a passion for the web based in
                 The Netherlands. I enjoy going to concerts and <a class="link" href="{{ route('concerts.index') }}">writing about my
