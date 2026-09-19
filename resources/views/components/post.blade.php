@@ -25,7 +25,7 @@
 
     <hr class="w-16 border-t-2 border-secondary my-8">
 
-    <main id="post-content">{{ $slot }}</main>
+    <main id="post-content" class="prose">{{ $slot }}</main>
 
     <hr class="w-16 border-t-2 border-secondary my-8">
 

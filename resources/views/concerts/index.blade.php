@@ -5,7 +5,7 @@
 
     {{-- Only the intro is on paper; the concert cards sit straight on the cream. --}}
     <x-paper class="mb-12">
-        <p class="font-text text-xl leading-relaxed">
+        <p class="lead">
             I love going to concerts. In an effort to remember them better and actually be present when I'm at one, I
             write a recap of each of them in this concert log.
         </p>

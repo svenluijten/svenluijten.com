@@ -1,6 +1,6 @@
 <x-layout title="Feeds" description="A list of RSS feeds this website publishes.">
     <x-section title="Feeds">
-        <p class="mb-4">
+        <p class="lead mb-8">
             Here's a list of feeds this website publishes. The right feed(s) should automatically be picked up by your
             reader. For instance, if you want to subscribe to only the <code class="code">articles</code> feed, you can
             point your reader to <a href="{{ route('articles.index') }}" class="link">the articles page</a>, and it'll
@@ -61,6 +61,8 @@
             </table>
         </div>
 
-        <p>These feeds are static files that are regenerated and updated every hour.</p>
+        <div class="prose">
+            <p>These feeds are static files that are regenerated and updated every hour.</p>
+        </div>
     </x-section>
 </x-layout>

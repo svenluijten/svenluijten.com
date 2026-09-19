@@ -184,8 +184,17 @@
     }
   }
 
-  #post-content {
+  /*
+    Reading typography, shared by post bodies and the body copy of the standing
+    pages. Post pages also carry #post-content, which the carousel and lightbox
+    scripts look up; this class is what makes the type reusable off them.
+  */
+  .prose {
     @apply font-text text-lg leading-relaxed;
+
+    /* The surrounding heading or sheet sets the space at the edges, not the copy. */
+    > :first-child { @apply mt-0; }
+    > :last-child { @apply mb-0; }
 
     p {
       @apply my-8;
@@ -282,8 +291,18 @@
     }
   }
 
-  #post-content :not(pre) code, code.code {
+  .prose :not(pre) code, code.code {
     @apply rounded-inline text-[0.9em] px-1.5 py-0.5 box-decoration-clone bg-tertiary/50 border border-line;
+  }
+
+  /*
+    The opening paragraph of a standing page, a step up from prose so it reads
+    as an introduction. Sized against prose rather than the UI text it used to
+    sit next to.
+  */
+  .lead {
+    @apply font-text text-[1.375rem] leading-snug;
+    text-wrap: pretty;
   }
 
   /*
