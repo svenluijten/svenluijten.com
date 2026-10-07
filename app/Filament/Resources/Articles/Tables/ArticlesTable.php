@@ -13,14 +13,22 @@ class ArticlesTable
     public static function configure(Table $table): Table
     {
         return $table
-            ->modifyQueryUsing(fn ($query) => $query->orderBy('published_at', 'desc'))
+            ->modifyQueryUsing(function ($query) {
+                return $query
+                    ->join('content_items', function ($join) {
+                        $join->on('articles.id', '=', 'content_items.contentable_id')
+                            ->where('content_items.contentable_type', '=', 'article');
+                    })
+                    ->orderBy('content_items.published_at', 'desc')
+                    ->select('articles.*');
+            })
             ->columns([
-                TextColumn::make('title')
+                TextColumn::make('contentItem.title')
                     ->searchable(),
-                TextColumn::make('slug')
+                TextColumn::make('contentItem.slug')
                     ->hidden()
                     ->searchable(),
-                TextColumn::make('published_at')
+                TextColumn::make('contentItem.published_at')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
