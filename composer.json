@@ -9,7 +9,7 @@
         "php": "^8.4",
         "filament/filament": "^4.12.6",
         "filament/spatie-laravel-media-library-plugin": "^4.12.6",
-        "laravel/framework": "^12.65",
+        "laravel/framework": "^13.39",
         "laravel/pennant": "^1.24",
         "laravel/tinker": "^3.0.2",
         "league/flysystem-aws-s3-v3": "^3.35.2",
@@ -22,7 +22,7 @@
         "laravel/pail": "^1.2.7",
         "laravel/pint": "^1.30.4",
         "mockery/mockery": "^1.6.12",
-        "phpunit/phpunit": "^11.5.50"
+        "phpunit/phpunit": "^13.4.5"
     },
     "autoload": {
         "psr-4": {
