@@ -8,6 +8,7 @@ use App\Http\Controllers\Contact;
 use App\Http\Controllers\Explore;
 use App\Http\Controllers\Feeds;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Projects;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
@@ -26,5 +27,7 @@ Route::get('/concerts/{date}/{concert}', Concerts\Show::class)->name('concerts.s
 
 Route::get('/blog', BlogPosts\Index::class)->name('blog.index');
 Route::get('/blog/{blogPost}', BlogPosts\Show::class)->name('blog.show');
+
+Route::get('/projects', Projects\Index::class)->name('projects.index');
 
 Route::get('/archive', Archive::class)->name('archive');
