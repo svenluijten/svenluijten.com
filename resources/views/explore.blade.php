@@ -28,6 +28,13 @@
         </div>
     </x-section>
 
+    <x-section title="Projects">
+        <div class="prose">
+            <a href="{{ route('projects.index') }}" class="link">My projects</a> are the things I've built and/or maintain,
+            mostly open source. The ones on this page are actively maintained by me.
+        </div>
+    </x-section>
+
     <x-section title="Feeds">
         <div class="prose">
             <p>This site automatically publishes a handful of feeds for every content type, as well as a generic one that contains everything.</p>
