@@ -30,7 +30,10 @@
     <hr class="w-16 border-t-2 border-secondary my-8">
 
     <footer class="mt-8 rounded-card border border-line bg-tertiary/40 p-4">
-        <p class="font-system text-sm">
+        <x-post-reply :title="$title" />
+
+        {{-- Muted so the reply box reads as the primary invitation and this as the quieter second half. --}}
+        <p class="mt-4 font-system text-sm text-ink-muted">
             Subscribe to <a href="{{ url("/feeds/{$feed}.xml") }}" class="link">the {{ $feedLabel }} feed</a> to
             get new posts in your reader, or <a href="{{ route('feeds.index') }}" class="link">browse every
             feed</a> this site publishes.
